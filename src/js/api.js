@@ -39,7 +39,7 @@ async function getDataGenre() {
   try {
     const response = await axios.get(`
     https://api.themoviedb.org/3/genre/movie/list?api_key=44d416356c22cc8e7735ee915c193364&language=ru`);
-    // console.log(response.data.genres);
+
     return response;
   } catch (error) {
     console.log(error);

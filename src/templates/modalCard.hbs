@@ -1,0 +1,27 @@
+{{#with this}}
+
+  <div class='movie_card' id='bright'>
+    <div class='info_section'>
+      <div class='movie_header'>
+        <img class='locandina' src='https://image.tmdb.org/t/p/w500{{poster_path}}' />
+        <h1>{{title}}</h1>
+        <h4>{{release_date}}</h4>
+        <span class='minutes'>{{vote_average}}</span>
+        <span class='minutes'>{{vote_count}}</span>
+        <p class='type'>Action, Crime, Fantasy</p>
+      </div>
+      <div class='movie_desc'>
+        <p class='text'>{{overview}}
+        </p>
+      </div>
+      <div class='movie_social'>
+        <ul>
+          <li><button class='material-icons'>ADD TO WATCED</button></li>
+          <li><button class='material-icons'>ADD TO QUEUE</button></li>
+        </ul>
+      </div>
+    </div>
+    <div id='bgc' class='blur_back bright_back' style=''></div>
+  </div>
+
+{{/with}}

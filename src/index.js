@@ -5,6 +5,6 @@ import { getData, getDataSingleCard, getDataGenre } from './js/api';
 import { modalCardItem } from './js/modal';
 import { singleCardItem } from './js/singleItem';
 
-modalCardItem();
-// singleCardItem();
+// modalCardItem();
+singleCardItem();
 // getDataGenre();

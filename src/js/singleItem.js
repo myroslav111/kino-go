@@ -1,39 +1,29 @@
 import { getDataSingleCard, getDataGenre } from './api';
 import singleCard from '../templates/singleCard.hbs';
 import { refs } from './refs';
+import { observeOnLastElOfGallery } from './infinit-scr';
+import { modalCardItem } from './modal';
+let num = 0;
 
 async function singleCardItem() {
+  num += 1;
   try {
-    const res = await (await getDataSingleCard()).data;
+    const res = await (await getDataSingleCard(num)).data;
     const dataCinema = res.results;
-    // console.log(dataCinema);
-    const genre = await (await getDataGenre()).data.genres;
-    // console.log(genre);
-
-    const d = dataCinema.map(el => {
-      el.genre_ids.map(ele => {
-        const genr = genre.filter(
-          q => (q.id === ele ? q.name : console.log('j')),
-          // console.log(q);
-          // console.log(ele === q.id);
-
-          // console.log(q.name);
-
-          // console.log(genr);
-        );
-        console.log(genr);
-      });
-      // console.log(genr);
-    });
-    // console.log(d);
-
     const markup = singleCard(dataCinema);
-
-    refs.container.insertAdjacentHTML('afterbegin', markup);
+    refs.container.insertAdjacentHTML('beforeend', markup);
+    observeOnLastElOfGallery(document.querySelectorAll('.movie-card'));
+    refs.container.addEventListener('click', e => {
+      console.log(e.target.id);
+      if (e.target.nodeName !== 'IMG') {
+        return;
+      }
+      modalCardItem(e.target.id);
+      refs.modal.classList.remove('is-hidden');
+    });
   } catch (error) {
     console.log(error);
   }
 }
-// singleCardItem();
 
 export { singleCardItem };

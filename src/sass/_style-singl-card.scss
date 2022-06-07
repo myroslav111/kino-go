@@ -7,7 +7,7 @@
 //   font-size: 14px;
 //   color: #010b26;
 // }
-
+// #FF6B08
 * {
   -webkit-transition: 300ms;
   transition: 300ms;
@@ -59,7 +59,7 @@ a:hover {
   box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 315px;
-  margin: 2em;
+  margin: 0.5em;
   border-radius: 10px;
   display: inline-block;
 }
@@ -107,7 +107,7 @@ a:hover {
 }
 
 .movie-content {
-  padding: 1em;
+  padding: 0.51em;
   margin: 0;
 }
 
@@ -134,13 +134,26 @@ a:hover {
 // }
 
 .movie-info {
-  margin-top: 1em;
+  margin-top: 0.51em;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
 }
 
 .info-section {
   display: table-cell;
   text-transform: uppercase;
   text-align: center;
+  color: #ff6b08;
+  margin-right: 1em;
+}
+
+.extend {
+  padding: 0.05em;
+  color: white;
+  background-color: #ff6b08;
+  border-radius: 4px;
+  width: 30px;
 }
 
 .info-section:first-of-type {

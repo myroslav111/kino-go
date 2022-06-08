@@ -59,7 +59,7 @@
     border-radius: 10px;
     .movie_header {
       position: relative;
-      padding: 25px;
+      padding: 25px 30px 25px 25px;
       height: 40%;
       h1 {
         color: #fff;
@@ -221,6 +221,13 @@
   box-sizing: content-box;
 }
 
+.list-btn-modal {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
 @media screen and (min-width: 768.99px) {
   .close-btn {
     display: none;
@@ -229,8 +236,8 @@
 
 .close-btn {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 10px;
+  right: 10px;
   z-index: 15;
 }
 

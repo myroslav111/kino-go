@@ -1,5 +1,9 @@
 footer{
-    background-color: red;
+ 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(225, 225, 74);
     // z-index: 1000;
     // font-family: 'Roboto';
         // font-style: normal;
@@ -21,9 +25,15 @@ footer{
     text-align: center;
 }
 
-.footer__developers{
-    display: flex;
-    justify-content: center;
+// .footer__developers{
+//     display: flex;
+//     justify-content: center;
+    
+// }
+
+.icon-group{
+    width: 14px;
+    height: 12.75px;
 }
 // // произвольно взял вертикальные паддинги секции по 10px
 // .footer {

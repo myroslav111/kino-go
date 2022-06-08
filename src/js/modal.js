@@ -15,10 +15,11 @@ async function modalCardItem(id) {
     bgc.style.backgroundRepeat = 'no-repeat';
     bgc.style.backgroundSize = 'cover';
     refs.modal.addEventListener('click', e => {
-      if (e.target.nodeName !== 'SECTION') {
-        return;
+      console.log(e.target);
+      if (e.target.nodeName === 'SECTION' || e.target.nodeName === 'BUTTON') {
+        refs.modal.classList.add('is-hidden');
       }
-      refs.modal.classList.add('is-hidden');
+      return;
     });
   } catch (error) {
     console.log(error);

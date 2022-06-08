@@ -8,15 +8,16 @@ function observeOnLastElOfGallery(set) {
     rootMargin: '0px',
     threshold: 0.5,
   };
-  const observer = new IntersectionObserver(handleImg, optios);
-  observer.observe(set[set.length - 1]);
+
 
   function handleImg(myImg, observer) {
     if (myImg[0].isIntersecting) {
       loadImage();
     }
   }
-
+  
+  const observer = new IntersectionObserver(handleImg, optios);
+  observer.observe(set[set.length - 1]);
   function loadImage() {
     singleCardItem();
   }

@@ -104,4 +104,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"./api":"cZF8","../templates/singleCard.hbs":"TmKQ","./refs":"VyiV","./infinit-scr":"IspO","./modal":"RSqK"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=require("./js/api"),s=require("./js/modal"),r=require("./js/singleItem");(0,r.singleCardItem)();
 },{"./sass/main.scss":"clu1","./js/api":"cZF8","./js/modal":"RSqK","./js/singleItem":"iRtr"}]},{},["Focm"], null)
-//# sourceMappingURL=/kino-go/src.23d408f3.js.map
+//# sourceMappingURL=/kino-go/src.3c4f213b.js.map

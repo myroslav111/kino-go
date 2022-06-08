@@ -1,10 +1,7 @@
 import './sass/main.scss';
-import { getData, getDataSingleCard, getDataGenre } from './js/api';
-// import modalCard from './templates/modalCard.hbs';
+import { getData, getDataSingleCard, getDataGenre, getDataById } from './js/api';
 // import { refs } from './js/refs';
 import { modalCardItem } from './js/modal';
 import { singleCardItem } from './js/singleItem';
 
-// modalCardItem();
 singleCardItem();
-// getDataGenre();

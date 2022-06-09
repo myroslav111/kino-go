@@ -46,10 +46,10 @@ async function getDataGenre() {
   }
 }
 
-async function getDataById() {
+async function getDataByInput(input) {
   try {
     const response = await axios.get(`
-    https://api.themoviedb.org/3/movie/550?api_key=44d416356c22cc8e7735ee915c193364&language=ru`);
+    https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${input}&language=ru`);
     // console.log(response.data.genres);
     return response;
   } catch (error) {
@@ -57,4 +57,4 @@ async function getDataById() {
   }
 }
 
-export { getData, getDataSingleCard, getDataGenre, getDataById };
+export { getData, getDataSingleCard, getDataGenre, getDataByInput };

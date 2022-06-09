@@ -1,4 +1,4 @@
-import { singleCardItem } from './singleItem';
+import { singleCardItem } from './searchItemList';
 import { refs } from './refs';
 
 //фун. для инфинити скрола
@@ -8,8 +8,6 @@ function observeOnLastElOfGallery(set) {
     rootMargin: '0px',
     threshold: 0.5,
   };
-  const observer = new IntersectionObserver(handleImg, optios);
-  observer.observe(set[set.length - 1]);
 
   function handleImg(myImg, observer) {
     if (myImg[0].isIntersecting) {
@@ -17,6 +15,8 @@ function observeOnLastElOfGallery(set) {
     }
   }
 
+  const observer = new IntersectionObserver(handleImg, optios);
+  observer.observe(set[set.length - 1]);
   function loadImage() {
     singleCardItem();
   }

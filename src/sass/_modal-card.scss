@@ -41,10 +41,14 @@
   overflow: hidden;
   border-radius: 10px;
   transition: all 0.4s;
-  &:hover {
-    transform: scale(1.02);
-    transition: all 0.4s;
+
+  @media screen and (min-width: 768px) {
+    &:hover {
+      transform: scale(1.02);
+      transition: all 0.4s;
+    }
   }
+
   .info_section {
     position: relative;
     width: 100%;
@@ -55,7 +59,7 @@
     border-radius: 10px;
     .movie_header {
       position: relative;
-      padding: 25px;
+      padding: 25px 30px 25px 25px;
       height: 40%;
       h1 {
         color: #fff;
@@ -72,6 +76,9 @@
         padding: 5px;
         border-radius: 5px;
         border: 1px solid rgba(255, 255, 255, 0.13);
+      }
+      .accent {
+        background-color: #ff6b08;
       }
       .type {
         display: inline-block;
@@ -126,6 +133,9 @@
     right: 0;
     background-size: cover;
     border-radius: 11px;
+    @media screen and (max-width: 768px) {
+      border-radius: 0px;
+    }
   }
 }
 
@@ -148,27 +158,31 @@
 
   .blur_back {
     width: 55%;
+    border-radius: 0px;
     // background-position: -100% 10% !important;
   }
 }
 
 @media screen and (max-width: 768px) {
   .movie_card {
-    width: 95%;
+    width: 100%;
     margin: 0px auto;
     min-height: 350px;
-    height: auto;
+    height: 100%;
+
+    border-radius: 0px;
   }
 
   .blur_back {
     width: 100%;
     background-position: 50% 50% !important;
     // height: 100%;
+    border-radius: 0px;
   }
 
   .movie_header {
     width: 100%;
-    margin-top: 85px;
+    // margin-top: 85px;
   }
 
   .text {
@@ -182,6 +196,7 @@
   .info_section {
     background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
     display: inline-grid;
+    border-radius: 0px;
   }
 }
 
@@ -195,15 +210,50 @@
 .bright_back {
   background-repeat: no-repeat;
   background-size: cover;
+  // border-radius: 0px;
 }
 
 .material-icons {
   font-size: 0.8em;
   border: none;
   border-radius: 2px;
-  background-color: rgba(241, 37, 0, 0.5);
+  background-color: #ff6b08;
   height: 30px;
   width: 100px;
   color: rgba(255, 255, 255, 0.8);
   box-sizing: content-box;
+}
+
+.list-btn-modal {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 768.99px) {
+  .close-btn {
+    display: none;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 15;
+}
+
+.close-btn-modal {
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 107, 1, 0.1);
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff6b08;
 }

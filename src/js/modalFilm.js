@@ -1,6 +1,7 @@
 import { getData } from './api';
 import modalCard from '../templates/modalCard.hbs';
 import { refs } from './refs';
+import { closeModalFilm } from './openAndCloseModal';
 
 async function modalCardItem(id) {
   try {
@@ -14,15 +15,18 @@ async function modalCardItem(id) {
     bgc.style.background = `url(https://image.tmdb.org/t/p/w500${bgImage}) 70% 0%`;
     bgc.style.backgroundRepeat = 'no-repeat';
     bgc.style.backgroundSize = 'cover';
-    refs.modal.addEventListener('click', e => {
-      if (e.target.nodeName !== 'SECTION') {
-        return;
-      }
-      refs.modal.classList.add('is-hidden');
-    });
   } catch (error) {
     console.log(error);
   }
 }
+
+refs.modal.addEventListener('click', closeModalFilm);
+
+// function closeModalFilm(e) {
+//   console.log(e.target);
+//   if (e.target.nodeName === 'SECTION' || e.target.nodeName === 'BUTTON') {
+//     refs.modal.classList.add('is-hidden');
+//   }
+// }
 
 export { modalCardItem };

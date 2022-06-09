@@ -3,6 +3,7 @@ import { getData, getDataSingleCard, getDataGenre, getDataByInput } from './js/a
 // import { refs } from './js/refs';
 import { modalCardItem } from './js/modalFilm';
 import { singleCardItem } from './js/searchItemList';
+import { onFormSubmit } from './js/header';
 
 singleCardItem();
 // getDataByInput('рембо');

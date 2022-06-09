@@ -8,7 +8,7 @@ function openModalFilmById(e) {
   }
   modalCardItem(e.target.id);
   refs.modal.classList.remove('is-hidden');
-  document.querySelector('.header').classList.add('is-hidden');
+  refs.headerEl.classList.add('is-hidden');
 }
 
 // фун. закрытия модалки
@@ -16,7 +16,7 @@ function closeModalFilm(e) {
   console.log(e.target);
   if (e.target.nodeName === 'SECTION' || e.target.nodeName === 'BUTTON') {
     refs.modal.classList.add('is-hidden');
-    document.querySelector('.header').classList.remove('is-hidden');
+    refs.headerEl.classList.remove('is-hidden');
   }
 }
 

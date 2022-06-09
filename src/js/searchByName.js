@@ -9,3 +9,5 @@ async function searchFilmByName(name) {
     console.log(error);
   }
 }
+
+export { searchFilmByName };

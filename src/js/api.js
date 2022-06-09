@@ -29,6 +29,7 @@ async function getDataSingleCard(page) {
       customSvgCode:
         '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">...</svg>',
     });
+    // console.log(response.data);
     return response;
   } catch (error) {
     console.log(error);
@@ -42,7 +43,7 @@ async function getDataGenre() {
   try {
     const response = await axios.get(`
     https://api.themoviedb.org/3/genre/movie/list?api_key=44d416356c22cc8e7735ee915c193364&language=ru`);
-
+    console.log(response.data);
     return response;
   } catch (error) {
     console.log(error);

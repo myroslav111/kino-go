@@ -39,13 +39,13 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
 }
 
 .header__home {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 50px;
 }
 
 .header__logo {
@@ -68,6 +68,10 @@ header {
   color: #ffffff;
 }
 
+.header__search--form {
+  position: relative;
+}
+
 .header__search--input {
   background-color: transparent;
   border: none;
@@ -80,6 +84,8 @@ header {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  position: absolute;
+  right: -5px;
 }
 
 // .header__search {
@@ -112,4 +118,13 @@ header {
   background: #ff6b08;
   border-radius: 2px;
   position: absolute;
+}
+
+.header__search--input::placeholder {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+
+  color: #ffffff;
 }

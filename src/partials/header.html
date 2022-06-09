@@ -1,5 +1,32 @@
-<header>
+<header class="header">
   <div class="header-container">
-    <h1 class="header__title">Filmoteka</h1>
+    <div class="header__home">
+      <a class="header__logo" href="">
+        <svg class="header__icon" height="24" width="24">
+          <use href="images/svg/sprite.svg#icon-film"></use>
+        </svg>
+      </a>
+      <h1 class="header__title">Filmoteka</h1>
+    </div>
+    <div class="header__search">
+      <form class="header__search--form" action="">
+        <input class="header__search--input" type="text" placeholder="Поиск фильмов" />
+        <button class="header__search--button" type="submit">
+          <svg class="header__search--icon" height="12" width="12">
+            <use href="images/svg/sprite.svg#icon-search-2"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <nav class="header__navigation">
+      <ul class="header__list">
+        <li class="header__item">
+          <a href="" class="header__link current">HOME</a>
+        </li>
+        <li class="header__item">
+          <a href="" class="header__link">MY LIBRARY</a>
+        </li>
+      </ul>
+    </nav>
   </div>
 </header>

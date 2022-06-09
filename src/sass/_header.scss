@@ -1,56 +1,115 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
 
 :root {
   /* Base font size */
   font-size: 10px;
 
   /* Heading height variable*/
-  --heading-height: 15em;
+  --heading-height: 6em;
 }
 
 header {
+  font-size: 16px;
   position: fixed;
   width: 100%;
   height: var(--heading-height);
-}
 
-/* Create angled background with 'before' pseudo-element */
-header::before {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 6em;
-  width: 100%;
-  height: calc(var(--heading-height) + 10em);
-  z-index: -1;
-  transform: skewY(-3.5deg);
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(https://images.unsplash.com/photo-1495464101292-552d0b52fe41?auto=format&fit=crop&w=1350&q=80)
-      no-repeat center,
-    linear-gradient(#4e4376, #2b5876);
+  // todo
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url(../images/header/home-chairs.jpg);
   background-size: cover;
-  // border-bottom: 0.2em solid #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+
   border-bottom-left-radius: 10%;
   border-bottom-right-radius: 10%;
+  z-index: 1;
+
+  // transform: skewY(-3.5deg);
+  // width: 100%;
+  // height: calc(var(--heading-height) + 10em);
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.header__home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__logo {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  margin-left: 32px;
 }
 
 .header__title {
-  font-size: calc(2.8em + 2.6vw);
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  padding: 2rem 0 0 4.5rem;
-  text-shadow: 0.022em 0.022em 0.022em #111;
-  // color: #fff;
+  font-family: 'Roboto';
 
-  // font-family: 'Roboto';
-  // font-style: normal;
-  // font-size: 30px;
-  // line-height: 35px;
-  // display: flex;
-  // align-items: center;
-  // text-align: center;
+  font-weight: 500;
+  font-size: 1.875em;
+  line-height: 2.188em;
+  display: flex;
+  align-items: center;
+  text-align: center;
 
   color: #ffffff;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.header__search--input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.5px solid #ffffff;
+  color: #ffffff;
+  outline: none;
+}
+
+.header__search--button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+// .header__search {
+//   margin-left: 50px;
+// }
+.header__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__item:not(:last-child) {
+  margin-right: 40px;
+}
+
+.header__link {
+  color: #ffffff;
+}
+
+.current {
+  position: relative;
+}
+
+.current::after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  left: 0;
+  top: 20px;
+  background: #ff6b08;
+  border-radius: 2px;
+  position: absolute;
 }

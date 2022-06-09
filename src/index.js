@@ -4,6 +4,8 @@ import { getData, getDataSingleCard, getDataGenre, getDataByInput } from './js/a
 import { modalCardItem } from './js/modalFilm';
 import { singleCardItem } from './js/searchItemList';
 
+import {onStudentsClick, onModalPressEsc, closeModal} from './js/modalTeam'
+
 singleCardItem();
 // getDataByInput('рембо');
 // getDataGenre();

@@ -28,6 +28,7 @@ function startingPage() {
 startingPage();
 
 // singleCardItem();
+
 // getDataByInput('рембо');
 // getDataGenre();
 

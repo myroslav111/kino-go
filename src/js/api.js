@@ -5,6 +5,7 @@ const key = '44d416356c22cc8e7735ee915c193364';
 const URL = 'https://api.themoviedb.org/3/movie/';
 const URI = `https://api.themoviedb.org/3/movie/popular`;
 
+// поиск по id
 async function getData(id) {
   try {
     const response = await axios.get(`${URL}/${id}?api_key=${key}&language=ru`);
@@ -20,6 +21,7 @@ async function getData(id) {
   }
 }
 
+// поиск популярных фил.
 async function getDataSingleCard(page) {
   try {
     const response = await axios.get(`${URI}?api_key=${key}&language=ru&page=${page}`);
@@ -35,6 +37,7 @@ async function getDataSingleCard(page) {
   }
 }
 
+// пока не определили для чего
 async function getDataGenre() {
   try {
     const response = await axios.get(`
@@ -46,6 +49,7 @@ async function getDataGenre() {
   }
 }
 
+// поиск по инпуту
 async function getDataByInput(input) {
   try {
     const response = await axios.get(`

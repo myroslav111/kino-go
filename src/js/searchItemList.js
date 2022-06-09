@@ -6,6 +6,7 @@ import { modalCardItem } from './modalFilm';
 import { openModalFilmById } from './openAndCloseModal';
 let num = 0;
 
+// фун. рендеру запроса
 async function singleCardItem() {
   num += 1;
   try {
@@ -19,6 +20,7 @@ async function singleCardItem() {
   }
 }
 
+// слухач контейнера з філ.
 refs.container.addEventListener('click', openModalFilmById);
 
 export { singleCardItem };

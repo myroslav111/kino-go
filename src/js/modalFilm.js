@@ -3,6 +3,7 @@ import modalCard from '../templates/modalCard.hbs';
 import { refs } from './refs';
 import { closeModalFilm } from './openAndCloseModal';
 
+// фун. создания и рендера модалки
 async function modalCardItem(id) {
   try {
     const res = await (await getData(id)).data;
@@ -20,13 +21,7 @@ async function modalCardItem(id) {
   }
 }
 
+// слушатель модалки
 refs.modal.addEventListener('click', closeModalFilm);
-
-// function closeModalFilm(e) {
-//   console.log(e.target);
-//   if (e.target.nodeName === 'SECTION' || e.target.nodeName === 'BUTTON') {
-//     refs.modal.classList.add('is-hidden');
-//   }
-// }
 
 export { modalCardItem };

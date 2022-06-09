@@ -4,9 +4,11 @@
  */
 
 // Стили для файла с примером HTML-фрагмента
+@import './background';
 
 @import './modal-card';
 @import './base';
 @import './main-item-list';
 @import './header';
 @import './footer';
+@import './modalTeam.scss';

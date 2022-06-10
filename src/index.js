@@ -3,8 +3,12 @@ import './sass/main.scss';
 // import { refs } from './js/refs';
 // import { modalCardItem } from './js/modalFilm';
 import { singleCardItem } from './js/searchItemList';
+
 import { onFormSubmit } from './js/searchByName';
 import { onStudentsClick, onModalPressEsc, closeModal } from './js/modalTeam';
+
+import { onClickPagSearch } from './js/paginator';
+
 // import { startingPage } from './js/startingPage';
 
 function startingPage() {
@@ -13,23 +17,19 @@ function startingPage() {
   console.log('1');
   setTimeout(() => {
     try {
-      console.log('2');
       singleCardItem();
-      console.log(document.querySelector('.video'));
+      console.dir(document.querySelector('.video'));
     } catch (error) {
-      console.log('er');
-      console.log(error);
     } finally {
       document.querySelector('.video').classList.add('hidden');
-      console.log('3');
     }
   }, 7000);
   console.log('4');
 }
 
-startingPage();
+// startingPage();
 
-// singleCardItem();
+singleCardItem();
 
 // getDataByInput('рембо');
 // getDataGenre();

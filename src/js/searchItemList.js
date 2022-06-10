@@ -4,6 +4,7 @@ import { refs } from './refs';
 import { observeOnLastElOfGallery } from './infinit-scr';
 import { modalCardItem } from './modalFilm';
 import { openModalFilmById } from './openAndCloseModal';
+import { renderButtons, onClickPagSearch } from './paginator';
 let num = 0;
 
 // фун. рендеру запроса
@@ -14,11 +15,24 @@ async function singleCardItem() {
     const dataCinema = res.results;
     const markup = singleCard(dataCinema);
     refs.container.insertAdjacentHTML('beforeend', markup);
-    observeOnLastElOfGallery(document.querySelectorAll('.movie-card'));
+    if (document.querySelector('body').scrollWidth < 765) {
+      // document.querySelector('.nav').classList.add('is-hidden');
+      observeOnLastElOfGallery(document.querySelectorAll('.movie-card'));
+    }
+
+    document.querySelector('.nav').classList.remove('is-hidden');
+    const pagContainer = document.querySelectorAll('.pager__item');
+    console.log(dataCinema.length);
+    pagContainer[1].insertAdjacentHTML('afterend', renderButtons(6));
+    console.log(document.querySelector('.nav'));
+    document.querySelector('.nav').addEventListener('click', onClickPagSearch);
   } catch (error) {
     console.log(error);
   }
 }
+
+// слушатель на список кнопок пагинатора
+document.querySelector('.nav').addEventListener('click', onClickPagSearch);
 
 // слухач контейнера з філ.
 refs.container.addEventListener('click', openModalFilmById);

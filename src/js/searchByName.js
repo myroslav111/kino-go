@@ -1,13 +1,17 @@
 import { refs } from './refs';
 import { getDataByInput } from './api';
+import singleCard from '../templates/singleCard.hbs';
 
-// запрос на бек по инпуту
-async function searchFilmByName(name) {
-  try {
-    const respons = await (await getDataByInput(name)).data;
-  } catch (error) {
-    console.log(error);
+refs.formEl.addEventListener('submit', onFormSubmit);
+
+async function onFormSubmit(e) {
+  e.preventDefault();
+  const formData = e.target.header.value;
+  if (formData === '') {
+    return;
   }
+  const response = await (await getDataByInput(formData)).data;
+  refs.container.innerHTML = singleCard(response.results);
 }
 
-export { searchFilmByName };
+export { onFormSubmit };

@@ -3,7 +3,7 @@ import './sass/main.scss';
 // import { refs } from './js/refs';
 // import { modalCardItem } from './js/modalFilm';
 import { singleCardItem } from './js/searchItemList';
-import { onFormSubmit } from './js/header';
+import { onFormSubmit } from './js/searchByName';
 import { onStudentsClick, onModalPressEsc, closeModal } from './js/modalTeam';
 // import { startingPage } from './js/startingPage';
 
@@ -30,7 +30,6 @@ function startingPage() {
 startingPage();
 
 // singleCardItem();
-
 
 // getDataByInput('рембо');
 // getDataGenre();

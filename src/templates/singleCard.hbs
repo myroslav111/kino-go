@@ -1,5 +1,6 @@
-{{#each this}}
 
+{{#each this}}
+{{#if this.poster_path}}
   <div class='movie-card' >
     <img src="https://image.tmdb.org/t/p/w500{{poster_path}}"
       class='movie-header'
@@ -44,5 +45,5 @@
     </div>
     <!--movie-content-->
   </div>
-
+{{/if}}
 {{/each}}

@@ -32,25 +32,7 @@ ${murkap}
 </li>`;
 }
 
-{
-  /* <li class="pager__item"><button class="pager__link">...</button></li>
-<li class="pager__item"><button class="pager__link">...</button></li>  */
-}
-
-// <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewbox="0 0 8 12">
-//   <g fill="none" fill-rule="evenodd">
-//     <path fill="#33313C" d="M7.41 1.41L6 0 0 6l6 6 1.41-1.41L2.83 6z"></path>
-//   </g>
-// </svg>
-
-// <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewbox="0 0 8 12">
-//   <g fill="none" fill-rule="evenodd">
-//     <path fill="#33313C" d="M7.41 1.41L6 0 0 6l6 6 1.41-1.41L2.83 6z"></path>
-//   </g>
-// </svg>
-
 async function onClickPagSearch(e) {
-  console.log(e.target.nodeName);
   if (e.target.nodeName !== 'BUTTON') {
     return;
   }
@@ -63,7 +45,6 @@ async function onClickPagSearch(e) {
     return;
   }
 
-  console.log(document.querySelectorAll('.pag')[0].dataset.page === '1');
   if (e.target.id === 'left') {
     if (document.querySelectorAll('.pag')[0].dataset.page === '1') {
       return;
@@ -74,15 +55,12 @@ async function onClickPagSearch(e) {
     });
     return;
   }
-  console.dir(e.target);
 
   const res = await (await getDataSingleCard(e.target.dataset.page)).data;
   const dataCinema = res.results;
   const markup = singleCard(dataCinema);
-  console.log(e.target);
   refs.container.innerHTML = '';
   refs.container.insertAdjacentHTML('beforeend', markup);
-  //   getDataSingleCard(e.target.dataset.page);
 }
 
 export { renderButtons, onClickPagSearch };

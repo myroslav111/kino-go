@@ -7,6 +7,8 @@ const refs = {
 
   students: document.querySelector('.footer__team'),
   modalStudents: document.querySelector('.backdrop'),
+
+  pagContainer: document.querySelector('.pager'),
 };
 
 export { refs };

@@ -1,6 +1,10 @@
 .nav {
   background-color: #e9e9e9;
-  padding-bottom: 60px;
+  // padding-bottom: 60px;
+  height: 100px;
+  @media screen and (min-width: 1023.99px) {
+    // padding-bottom: 90px;
+  }
 }
 
 .pager {
@@ -92,4 +96,10 @@
     top: initial;
     left: initial;
   }
+}
+
+#rigth,
+#left {
+  font-size: 1.6em;
+  font-weight: bolder;
 }

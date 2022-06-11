@@ -21,9 +21,11 @@ async function singleCardItem() {
     }
 
     document.querySelector('.nav').classList.remove('is-hidden');
-    const pagContainer = document.querySelectorAll('.pager__item');
     console.log(dataCinema.length);
-    pagContainer[1].insertAdjacentHTML('afterend', renderButtons(6));
+    // if (dataCinema.length < 20) {
+    //   document.querySelector('.nav').classList.add('is-hidden');
+    // }
+    refs.pagContainer.insertAdjacentHTML('afterbegin', renderButtons(6));
     console.log(document.querySelector('.nav'));
     document.querySelector('.nav').addEventListener('click', onClickPagSearch);
   } catch (error) {

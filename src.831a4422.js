@@ -112,4 +112,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"./refs":"VyiV"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=require("./js/searchItemList"),o=require("./js/searchByName"),r=require("./js/modalTeam"),s=require("./js/paginator");function i(){console.log(document.querySelector(".video")),document.querySelector(".video").classList.remove("hidden"),console.log("1"),setTimeout(()=>{try{(0,e.singleCardItem)(),console.dir(document.querySelector(".video"))}catch(o){}finally{document.querySelector(".video").classList.add("hidden")}},7e3),console.log("4")}(0,e.singleCardItem)();
 },{"./sass/main.scss":"clu1","./js/searchItemList":"tBzI","./js/searchByName":"j8Le","./js/modalTeam":"fDFk","./js/paginator":"d4Ms"}]},{},["Focm"], null)
-//# sourceMappingURL=/kino-go/src.2b21163e.js.map
+//# sourceMappingURL=/kino-go/src.831a4422.js.map

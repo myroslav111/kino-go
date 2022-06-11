@@ -16,7 +16,6 @@ async function singleCardItem() {
     const markup = singleCard(dataCinema);
     refs.container.insertAdjacentHTML('beforeend', markup);
     if (document.querySelector('body').scrollWidth < 765) {
-      // document.querySelector('.nav').classList.add('is-hidden');
       observeOnLastElOfGallery(document.querySelectorAll('.movie-card'));
     }
 

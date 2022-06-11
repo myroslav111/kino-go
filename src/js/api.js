@@ -42,19 +42,19 @@ async function getDataSingleCard(page) {
 async function getDataGenre() {
   try {
     const response = await axios.get(`
-    https://api.themoviedb.org/3/genre/movie/list?api_key=44d416356c22cc8e7735ee915c193364&language=ru`);
+    https://api.themoviedb.org/3/search/movie?api_key=44d416356c22cc8e7735ee915c193364&query=bad+boy&language=ru&page=2`);
     console.log(response.data);
     return response;
   } catch (error) {
     console.log(error);
   }
 }
-
+const page = 1;
 // поиск по инпуту
-async function getDataByInput(input) {
+async function getDataByInput(input, page) {
   try {
     const response = await axios.get(`
-    https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${input}&language=ru`);
+    https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${input}&language=ru&page=${page}`);
     // console.log(response.data.genres);
     return response;
   } catch (error) {

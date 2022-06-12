@@ -5,7 +5,7 @@ import './sass/main.scss';
 import { singleCardItem } from './js/searchItemList';
 
 import { onFormSubmit } from './js/searchByName';
-import { onStudentsClick, onModalPressEsc, closeModal } from './js/modalTeam';
+import {onStudentsClick, onModalPressEsc, closeModalOnBackdropClick, closeModalOnCrossClick} from './js/modalTeam';
 
 import { onClickPagSearch } from './js/paginator';
 

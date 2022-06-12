@@ -10,7 +10,7 @@ const refs = {
   students: document.querySelector('.footer__team'),
   modalStudents: document.querySelector('.backdrop'),
   closeModalTeam: document.querySelector('button.close'),
-
+  teamList: document.querySelector('.team-list'),
   pagContainer: document.querySelector('.pager'),
 };
 

@@ -1,8 +1,9 @@
 {{#each this}}
   <div class="developer">
-    <img src='{{webformatURL}}' class="developer-photo" alt={{}} loading="lazy" width="500"/>
-    <p class="developer-data">{{}}</p>
-    <a href="{{https://goit.ua/}}" class="developer-github" target="_blank" rel="noreferrer noopener"></a>    
+    <img src='{{webformatURL}}' class="developer-photo" alt={{description}} loading="lazy" width="500"/>
+    <p class="developer-data">{{name}}</p>
+    <p class="developer-position">{{position}}</p>
+    <a href="{{github}}" class="developer-github" target="_blank" rel="noreferrer noopener"></a>    
 </div>
 {{/each}}
 

@@ -1,4 +1,5 @@
 import './sass/main.scss';
+var _ = require('lodash');
 import { getData, getDataSingleCard, getDataGenre, getDataByInput } from './js/api';
 // import { refs } from './js/refs';
 // import { modalCardItem } from './js/modalFilm';
@@ -29,3 +30,13 @@ singleCardItem();
 
 // getDataByInput('bad boy', 2);
 // getDataGenre();
+
+// _.toArray({ 'a': 1, 'b': 2 });
+// // => [1, 2]
+
+// var object = { 'a': 1, 'b': '2', 'c': 3 };
+
+// _.pick(object, ['a', 'c']);
+// // => { 'a': 1, 'c': 3 }
+
+// .trim()

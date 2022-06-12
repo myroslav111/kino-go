@@ -42,7 +42,7 @@ async function getDataSingleCard(page) {
 async function getDataGenre() {
   try {
     const response = await axios.get(`
-    https://api.themoviedb.org/3/search/movie?api_key=44d416356c22cc8e7735ee915c193364&query=bad+boy&language=ru&page=2`);
+    https://api.themoviedb.org/3/movie/550/videos?api_key=${key}&language=en-US`);
     console.log(response.data);
     return response;
   } catch (error) {

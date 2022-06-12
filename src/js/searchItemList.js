@@ -15,7 +15,9 @@ async function singleCardItem() {
     const dataCinema = res.results;
     const markup = singleCard(dataCinema);
     refs.container.insertAdjacentHTML('beforeend', markup);
+
     if (document.querySelector('body').scrollWidth < 765) {
+      document.querySelector('.nav').classList.add('visually-hidden');
       observeOnLastElOfGallery(document.querySelectorAll('.movie-card'));
     }
 
@@ -24,7 +26,9 @@ async function singleCardItem() {
     // if (dataCinema.length < 20) {
     //   document.querySelector('.nav').classList.add('is-hidden');
     // }
+
     refs.pagContainer.insertAdjacentHTML('afterbegin', renderButtons(6));
+    // refs.container.insertAdjacentHTML('beforeend', renderButtons(6));
     console.log(document.querySelector('.nav'));
     document.querySelector('.nav').addEventListener('click', onClickPagSearch);
   } catch (error) {

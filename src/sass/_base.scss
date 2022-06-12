@@ -7,6 +7,9 @@
   color: #010b26;
   padding-top: 100px;
   padding-bottom: 30px;
+  @media screen and (max-width: 767.99px) {
+    padding-top: 130px;
+  }
 
   // background-image: url('https://wallpaperaccess.com/full/240170.jpg');
   // background-attachment: fixed;

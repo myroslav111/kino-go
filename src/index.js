@@ -10,6 +10,7 @@ import { onStudentsClick, onModalPressEsc, closeModal } from './js/modalTeam';
 
 import { onClickPagSearch } from './js/paginator';
 
+import { onLogoClick } from './js/header';
 // import { startingPage } from './js/startingPage';
 
 function startingPage() {

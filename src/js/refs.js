@@ -3,6 +3,8 @@ const refs = {
   container: document.querySelector('.container'),
 
   headerEl: document.querySelector('.header'),
+  logoEl: document.querySelector('.header__home'),
+
   formEl: document.querySelector('form'),
 
   students: document.querySelector('.footer__team'),

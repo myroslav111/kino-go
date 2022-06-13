@@ -38,7 +38,6 @@ async function getDataSingleCard(page) {
   }
 }
 
-// https://api.themoviedb.org/3/movie/550/videos?api_key=${key}&language=en-US`
 // пока не определили для чего
 async function getDataGenre() {
   try {
@@ -51,8 +50,8 @@ async function getDataGenre() {
   }
 }
 
-const page = 1;
 // поиск по инпуту
+const page = 1;
 async function getDataByInput(input, page) {
   try {
     const response = await axios.get(`
@@ -64,4 +63,16 @@ async function getDataByInput(input, page) {
   }
 }
 
-export { getData, getDataSingleCard, getDataGenre, getDataByInput };
+async function getTrailer(id) {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${key}&language=en-US`,
+    );
+    // console.log(response.data.genres);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export { getData, getDataSingleCard, getDataGenre, getDataByInput, getTrailer };

@@ -1,0 +1,21 @@
+[{
+    "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuhK69ZqpgZZzweFUU2y3yOWpXiJ_riCV6IQ&usqp=CAU",
+    "description": "Photo Myroslav Kozar",
+    "name": "Myroslav Kozar",
+    "position": "Team Lead",
+    "github": "https://github.com/myroslav111"
+},
+{
+    "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-Uluxe_P-hVIU0sdsqf3KII4Ul9WPqtVTFg&usqp=CAU",
+    "description": "Photo Volodymyr Kavun",
+    "name": "Volodymyr Kavun",
+    "position": "Scrum Master",
+    "github": "https://github.com/VolodymyrKavun"
+},
+{
+    "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQyM8LgVM2mwIwDeoBVLwXH3sLVDrE70xdiw&usqp=CAU",
+    "description": "Photo Maksim Peltek",
+    "name": "Maksim Peltek",
+    "position": "Developer",
+    "github": "https://github.com/Maksimchik36"
+}]

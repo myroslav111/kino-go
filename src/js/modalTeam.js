@@ -1,4 +1,5 @@
 import { refs } from './refs';
+import {renderDevelopersCards} from './renderDevelopersCards'
 
 // добавляет слушателя на GoIT Students в футере
 refs.students.addEventListener('click', onStudentsClick);
@@ -10,6 +11,7 @@ function onStudentsClick(event) {
     refs.modalStudents.classList.remove('is-hidden');
     document.addEventListener('keydown', onModalPressEsc);
     refs.closeModalTeam.addEventListener('click', closeModalOnCrossClick);
+    renderDevelopersCards();
 }
 
 // закрывает модалку при Escape

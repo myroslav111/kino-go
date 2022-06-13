@@ -1,6 +1,9 @@
 import './sass/main.scss';
-// var _ = require('lodash');
-import { getData, getDataSingleCard, getDataGenre, getDataByInput } from './js/api';
+
+
+
+import { getData, getDataSingleCard, getDataGenre, getDataByInput, getTrailer } from './js/api';
+
 // import { refs } from './js/refs';
 // import { modalCardItem } from './js/modalFilm';
 import { singleCardItem } from './js/searchItemList';
@@ -34,15 +37,74 @@ function startingPage() {
 
 singleCardItem();
 
-// getDataByInput('bad boy', 2);
-// getDataGenre();
+// // вариант артема
+// let q;
+// getDataGenre().then(data => (q = data));
+// // console.log(q.genres);
+// getDataSingleCard().then(data => {
+//   // console.log(data.data.results);
+//   const films = data.data.results;
 
-// _.toArray({ 'a': 1, 'b': 2 });
-// // => [1, 2]
+//   const x = films.reduce((acc, { genre_ids }) => {
+//     // console.log(genre_ids);
+//     console.log(q.genres);
 
-// var object = { 'a': 1, 'b': '2', 'c': 3 };
+//     const r = q.genres
+//       .filter(el => {
+//         return genre_ids.includes(el.id);
+//       })
+//       .map(({ name }) => {
+//         name;
+//       });
+//     console.log();
+//     return acc + r.join(',');
+//   }, '');
 
-// _.pick(object, ['a', 'c']);
-// // => { 'a': 1, 'c': 3 }
+//   console.log(x);
+// });
 
-// .trim()
+//////////////////////
+// мой вариант
+// async function f() {
+//   const resG = await getDataGenre();
+//   // console.log(resG);
+
+//   const resC = await getDataSingleCard();
+//   const arrC = resC.data.results;
+//   // console.log(arrC);
+
+//   const x = arrC.reduce((acc, { genre_ids }) => {
+//     const genresId = genre_ids;
+//     let g = [];
+//     // console.log(genresId);
+//     // console.log(resG);
+//     genresId.map(el => {
+//       console.log();
+//       const genre = resG.genres.filter(({ id, name }) => {
+//         // console.log(el);
+//         if (id === el) {
+//           // console.log(name);
+//           return name;
+//         }
+//         // if (element.id === el) {
+//         //   console.log(element);
+//         //   // newEl = element.name;
+//         //   return element.name;
+//         // }
+//         // console.log(newEl);
+//         // return newEl;
+//       });
+//       // console.log(genre[0].name);
+//       genre_ids.length = 0;
+//       g.push(genre[0].name);
+
+//       // genre_ids.push(genre[0].name);
+
+//       // console.log(el);
+//     });
+//     console.log(genre_ids);
+//     // return g;
+//   }, []);
+//   // console.log(g);
+// }
+// f();

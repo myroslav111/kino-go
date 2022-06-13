@@ -30,6 +30,7 @@ async function singleCardItem() {
     refs.pagContainer.insertAdjacentHTML('afterbegin', renderButtons(6));
     // refs.container.insertAdjacentHTML('beforeend', renderButtons(6));
     // console.log(document.querySelector('.nav'));
+    // console.log(document.querySelector('.nav'));
     document.querySelector('.nav').addEventListener('click', onClickPagSearch);
   } catch (error) {
     console.log(error);

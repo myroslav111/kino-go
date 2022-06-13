@@ -1,0 +1,86 @@
+.header__library {
+  font-size: 16px;
+  position: fixed;
+  width: 100%;
+  height: 8em;
+  min-width: 20em;
+  z-index: 1;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url(../images/header-library/library-phone-1x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(../images/header-library/library-phone-2x.jpg);
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    position: fixed;
+    width: 100%;
+    height: 6em;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(../images/header-library/library-tablet-1x.jpg);
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url(../images/header-library/library-tablet-2x.jpg);
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(../images/header-library/library-laptop-1x.jpg);
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url(../images/header-library/library-laptop-2x.jpg);
+    }
+  }
+}
+
+.pointer-library {
+  cursor: default;
+}
+
+.header__list--library--btn {
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+.heade__search--item {
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    margin-right: 16px;
+  }
+}
+
+.library__search--btn {
+  @media screen and (min-width: 768px) {
+    min-width: 152px;
+  }
+  @media screen and (min-width: 1024px) {
+    min-width: 147px;
+    min-height: 42px;
+  }
+}
+
+// .current-btn-library {
+//   background: #ff6b01;
+//   box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
+//   border-radius: 5px;
+//   border: none;
+// }

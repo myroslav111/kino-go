@@ -150,13 +150,28 @@ button.close:focus {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.developer-github:hover,
-.developer-github:focus {
-    background-color: #ff6b08;
-}
+// .developer-github:hover,
+// .developer-github:focus {
+//     background-color: #ff6b08;
+// }
 
 .icon-github {
-  width: 30px;
-  height: 30px;
-  // color: black;
+  width: 32px;
+  height: 32px;
+    border-radius: 50%;
+
+  // @media screen and (min-width: 768px){
+  //   width: 20px;
+  //   height: 20px;
+  // }
+  // @media screen and (min-width: 1024px){
+  //   width: 30px;
+  //   height: 30px;
+  // }
+}
+
+.icon-github:hover,
+.icon-github:focus{
+  background-color: #ff6b08;
+  border-radius: 50%;
 }

@@ -4,6 +4,7 @@ const refs = {
 
   headerEl: document.querySelector('.header'),
   logoEl: document.querySelector('.header__home'),
+  libraryBtnEl: document.querySelector('.library__search--btn'),
 
   formEl: document.querySelector('form'),
 

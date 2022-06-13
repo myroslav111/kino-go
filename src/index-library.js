@@ -5,7 +5,7 @@ import { getData, getDataSingleCard, getDataGenre, getDataByInput } from './js/a
 // import { modalCardItem } from './js/modalFilm';
 import { singleCardItem } from './js/searchItemList';
 
-import { onFormSubmit } from './js/searchByName';
+// import { onFormSubmit } from './js/searchByName';
 import {
   onStudentsClick,
   onModalPressEsc,
@@ -15,24 +15,24 @@ import {
 
 import { onClickPagSearch } from './js/paginator';
 
-import { onLogoClick } from './js/header';
+// import { onLogoClick } from './js/header';
 // import { startingPage } from './js/startingPage';
 
-function startingPage() {
-  document.querySelector('.video').classList.remove('hidden');
-  setTimeout(() => {
-    try {
-      singleCardItem();
-    } catch (error) {
-    } finally {
-      document.querySelector('.video').classList.add('hidden');
-    }
-  }, 7000);
-}
+// function startingPage() {
+//   document.querySelector('.video').classList.remove('hidden');
+//   setTimeout(() => {
+//     try {
+//       singleCardItem();
+//     } catch (error) {
+//     } finally {
+//       document.querySelector('.video').classList.add('hidden');
+//     }
+//   }, 7000);
+// }
 
 // startingPage();
 
-singleCardItem();
+// singleCardItem();
 
 // getDataByInput('bad boy', 2);
 // getDataGenre();

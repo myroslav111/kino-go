@@ -1,9 +1,12 @@
 {{#each this}}
   <div class="developer">
-    <img src='{{webformatURL}}' class="developer-photo" alt={{description}} loading="lazy" width="500"/>
+    <img src='{{photo}}' class="developer-photo" alt={{description}} loading="lazy"/>
     <p class="developer-data">{{name}}</p>
     <p class="developer-position">{{position}}</p>
-    <a href="{{github}}" class="developer-github" target="_blank" rel="noreferrer noopener"></a>    
+    <a href="{{github}}" class="developer-github" target="_blank" rel="noreferrer noopener"><svg
+                        class="icon-github">
+                        <use href="/images/svg/sprite.svg#icon-github" width="30px" height="30px">
+                    </svg></a>    
 </div>
 {{/each}}
 

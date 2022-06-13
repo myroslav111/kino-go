@@ -62,10 +62,10 @@ button.close {
 }
 
 button.close:hover,
-button.close:focus{
-    // fill: #FF6B08;
-    background-color:#FF6B08;
-    cursor: pointer;
+button.close:focus {
+  // fill: #FF6B08;
+  background-color: #ff6b08;
+  cursor: pointer;
 }
 
 .team-list {
@@ -74,57 +74,69 @@ button.close:focus{
   align-items: center;
   flex-wrap: wrap;
 
-  padding:0;
+  padding: 0;
   border: 3px solid green;
 }
 
-.developer{
-    text-align: center;
-    border: 1px dash #f145e3;
+.developer {
+  text-align: center;
+  border: 1px dash #f145e3;
 }
 
-.developer:not(:last-child){
+.developer:not(:last-child) {
   margin-right: 10px;
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     margin-right: 20px;
   }
-  @media screen and (min-width: 1024px){
+  @media screen and (min-width: 1024px) {
     margin-right: 30px;
   }
 }
 
-.developer-photo{
+.developer-photo {
   margin-bottom: 10px;
   display: block;
   width: 85px;
-  height: 60px;
+  // height: 60px;
   border: 1px solid rgb(248, 245, 49);
+  background-size:cover;
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     width: 200px;
-    height: 200px;
-   }
+    // height: 200px;
+  }
 
-  @media screen and (min-width: 1024px){
+  @media screen and (min-width: 1024px) {
     width: 280px;
-    height: 280px;
+    // height: 280px;
   }
 }
 
-.developer-data{
+.developer-data {
   margin-bottom: 10px;
   font-size: 11px;
- 
-  @media screen and (min-width: 768px){
-    font-size: 20px;
 
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
   }
-  @media screen and (min-width: 1024px){
+  @media screen and (min-width: 1024px) {
     font-size: 30px;
   }
 }
 
+.developer-position{
+  margin-bottom: 10px;
+  font-size: 9px;
+  
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+    }
+  
+    @media screen and (min-width: 1024px) {
+      font-size: 22px;
+    }
+}
 
 // .developer-github{
 //     border: 3px dashed red;

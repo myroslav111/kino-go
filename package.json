@@ -2,7 +2,7 @@
   "name": "parcel-project-template",
   "version": "1.1.0",
   "description": "",
-  "main": "index-library.js, index.js",
+  "main": " index-home.js, index-library.js",
   "homepage": "https://myroslav111.github.io/kino-go",
   "scripts": {
     "dev": "parcel src/*.html --open",

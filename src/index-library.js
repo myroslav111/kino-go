@@ -1,5 +1,5 @@
 import './sass/main.scss';
-// var _ = require('lodash');
+
 import { getData, getDataSingleCard, getDataGenre, getDataByInput } from './js/api';
 // import { refs } from './js/refs';
 // import { modalCardItem } from './js/modal-film';

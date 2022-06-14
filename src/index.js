@@ -1,14 +1,16 @@
 import './sass/main.scss';
 
-
-
 import { getData, getDataSingleCard, getDataGenre, getDataByInput, getTrailer } from './js/api';
 
-// import { refs } from './js/refs';
-// import { modalCardItem } from './js/modal-film';
+import { refs } from './js/refs';
+import { modalCardItem } from './js/modal-film';
 import { singleCardItem } from './js/search-item-list';
 
 import { onFormSubmit } from './js/search-by-name';
+
+import { onLogoClick } from './js/header';
+import { onClickPagSearch } from './js/paginator';
+
 import {
   onStudentsClick,
   onModalPressEsc,
@@ -16,10 +18,13 @@ import {
   closeModalOnCrossClick,
 } from './js/modal-team';
 
-import { onClickPagSearch } from './js/paginator';
+// import './js/youTube';
+// import { refs } from './js/refs';
 
-import { onLogoClick } from './js/header';
 // import { startingPage } from './js/starting-page';
+
+// import { startingPage } from './js/startingPage';
+import { onYouTubeIframeAPIReady } from './js/youTube';
 
 function startingPage() {
   document.querySelector('.video').classList.remove('hidden');
@@ -39,27 +44,10 @@ singleCardItem();
 
 // // вариант артема
 // let q;
-// getDataGenre().then(data => (q = data));
-// // console.log(q.genres);
-// getDataSingleCard().then(data => {
-//   // console.log(data.data.results);
-//   const films = data.data.results;
 
-//   const x = films.reduce((acc, { genre_ids }) => {
-//     // console.log(genre_ids);
-//     console.log(q.genres);
-
-//     const r = q.genres
-//       .filter(el => {
-//         return genre_ids.includes(el.id);
-//       })
-//       .map(({ name }) => {
-//         name;
-//       });
-//     console.log();
-//     return acc + r.join(',');
-//   }, '');
-
+//   //   el.textContent = x;
+//   //   // console.dir(el);
+//   // });
 //   console.log(x);
 // });
 
@@ -67,44 +55,29 @@ singleCardItem();
 // мой вариант
 // async function f() {
 //   const resG = await getDataGenre();
-//   // console.log(resG);
 
 //   const resC = await getDataSingleCard();
 //   const arrC = resC.data.results;
-//   // console.log(arrC);
-
-//   const x = arrC.reduce((acc, { genre_ids }) => {
+//   console.log(arrC);
+//   const x = arrC.map(({ genre_ids }) => {
 //     const genresId = genre_ids;
+//     console.log(genre_ids);
 //     let g = [];
-//     // console.log(genresId);
-//     // console.log(resG);
 //     genresId.map(el => {
-//       console.log();
 //       const genre = resG.genres.filter(({ id, name }) => {
-//         // console.log(el);
 //         if (id === el) {
 //           // console.log(name);
 //           return name;
 //         }
-//         // if (element.id === el) {
-//         //   console.log(element);
-//         //   // newEl = element.name;
-//         //   return element.name;
-//         // }
-//         // console.log(newEl);
-//         // return newEl;
 //       });
-//       // console.log(genre[0].name);
-//       genre_ids.length = 0;
-//       g.push(genre[0].name);
-
-//       // genre_ids.push(genre[0].name);
-
-//       // console.log(el);
+//       return g.push(genre[0].name);
 //     });
-//     console.log(genre_ids);
-//     // return g;
-//   }, []);
-//   // console.log(g);
+//     console.log(g.join(','));
+//     console.dir();
+//   const w = document.querySelectorAll('.genre-name');
+//   w.forEach(el => (el.textContent = g.join(',')));
+//   return g.join(',');
+// });
+//   console.log(x);
 // }
 // f();

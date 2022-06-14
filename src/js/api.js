@@ -42,7 +42,7 @@ async function getDataSingleCard(page) {
 async function getDataGenre() {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/genre/movie/list?api_key=${key}&language=en-US`,
+      `https://api.themoviedb.org/3/genre/movie/list?api_key=${key}&language=ru`,
     );
     return response.data;
   } catch (error) {
@@ -66,7 +66,7 @@ async function getDataByInput(input, page) {
 async function getTrailer(id) {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${key}&language=en-US`,
+      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${key}&language=ru`,
     );
     // console.log(response.data.genres);
     return response;

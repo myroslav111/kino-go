@@ -2,6 +2,11 @@
 
   <div class='movie_card' id='bright'>
 
+    <div class='backdrop-youtube is-hidden'>
+      <button class='youtubeg'>X</button>
+      <div id='player'></div>
+    </div>
+
     <div class='close-btn'><button class='close-btn-modal'>X</button></div>
 
     <div class='info_section'>
@@ -20,7 +25,8 @@
         </svg>
 
         <div class='connect'>
-          <a href='' class='share youtube' target='_blank'>
+          <a href='#' class='share youtube'>
+            {{! target='_blank' }}
             <svg role='presentation' class='svg--icon'>
               <use xlink:href='#svg--youtube'></use>
               <span class='clip'>YOU-TUBE</span>

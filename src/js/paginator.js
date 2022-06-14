@@ -11,7 +11,7 @@ function renderButtons(count) {
       );
     } else {
       button.push(
-        `<li class="pager__item active" ><button class="pager__link pag" data-page="${i}">${i}</button></li>`,
+        `<li class=".pager__item.active ><button class="pager__link pag" data-page="${i}">${i}</button></li>`,
       );
     }
   }

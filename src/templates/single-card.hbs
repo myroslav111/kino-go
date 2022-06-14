@@ -3,7 +3,7 @@
 {{#if this.poster_path}}
   <div class='movie-card' >
     <img src="https://image.tmdb.org/t/p/w500{{poster_path}}"
-      class='movie-header'
+      class='movie-header' alt="posterv of cinema"
       id='{{id}}'
     >
       {{!-- <div class='header-icon-container'>
@@ -38,7 +38,7 @@
         <!--row-->
         <div class='info-section genre'>
           <label></label>
-          <span>{{genre_ids}}</span>
+          <span class="genre-name"></span>
         </div>
         <!--seat-->
       </div>

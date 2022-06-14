@@ -1,5 +1,5 @@
 import { refs } from './refs';
-import { singleCardItem } from './searchItemList';
+import { singleCardItem } from './search-item-list';
 
 refs.logoEl.addEventListener('click', onLogoClick);
 

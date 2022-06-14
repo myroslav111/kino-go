@@ -1,6 +1,6 @@
 import { refs } from './refs';
 import { getDataByInput } from './api';
-import singleCard from '../templates/singleCard.hbs';
+import singleCard from '../templates/single-card.hbs';
 import { renderButtons } from './paginator';
 
 refs.formEl.addEventListener('submit', onFormSubmit);

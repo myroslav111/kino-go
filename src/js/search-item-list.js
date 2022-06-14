@@ -1,9 +1,9 @@
 import { getDataSingleCard, getDataGenre } from './api';
-import singleCard from '../templates/singleCard.hbs';
+import singleCard from '../templates/single-card.hbs';
 import { refs } from './refs';
 import { observeOnLastElOfGallery } from './infinit-scr';
-import { modalCardItem } from './modalFilm';
-import { openModalFilmById } from './openAndCloseModal';
+import { modalCardItem } from './modal-film';
+import { openModalFilmById } from './open-and-close-modal';
 import { renderButtons, onClickPagSearch } from './paginator';
 let num = 0;
 

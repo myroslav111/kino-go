@@ -1,6 +1,6 @@
 import { getDataSingleCard, getDataGenre, getDataByInput } from './api';
 import { refs } from './refs';
-import singleCard from '../templates/singleCard.hbs';
+import singleCard from '../templates/single-card.hbs';
 
 function renderButtons(count) {
   const button = [];

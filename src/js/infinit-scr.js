@@ -1,4 +1,4 @@
-import { singleCardItem } from './searchItemList';
+import { singleCardItem } from './search-item-list';
 import { refs } from './refs';
 
 //фун. для инфинити скрола

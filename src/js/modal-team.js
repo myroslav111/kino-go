@@ -1,5 +1,5 @@
 import { refs } from './refs';
-import {renderDevelopersCards} from './renderDevelopersCards'
+import {renderDevelopersCards} from './render-developers-cards'
 
 // добавляет слушателя на GoIT Students в футере
 refs.students.addEventListener('click', onStudentsClick);

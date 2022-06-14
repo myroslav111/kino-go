@@ -13,7 +13,7 @@ function openModalFilmById(e) {
 
 // фун. закрытия модалки
 function closeModalFilm(e) {
-  console.log(e.target);
+  // console.log(e.target);
   if (e.target.nodeName === 'SECTION' || e.target.nodeName === 'BUTTON') {
     refs.modal.classList.add('is-hidden');
     refs.headerEl.classList.remove('is-hidden');

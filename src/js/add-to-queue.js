@@ -1,7 +1,9 @@
+let i=1;
 function addToQueue(event){
     event.preventDefault();
-    console.log('addToQueue', event.target);
-    console.log("Фильм добавлен в список желаемых для просмотра");
-  }
+    console.log('event.target', event.target);
+    console.log("QUEUE - Фильм добавлен в список желаемых для просмотра");
+    localStorage.setItem('queue', i);  
+    i+=1;}
 
   export {addToQueue}   

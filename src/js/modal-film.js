@@ -1,9 +1,9 @@
 import { getData, getTrailer } from './api';
-import modalCard from '../templates/modalCard.hbs';
+import modalCard from '../templates/modal-film.hbs';
 import { refs } from './refs';
-import { closeModalFilm } from './openAndCloseModal';
-import {addToWatched} from './addToWatched';
-import {addToQueue} from './addToQueue'
+import { closeModalFilm } from './open-and-close-modal';
+import {addToWatched} from './add-to-watched';
+import {addToQueue} from './add-to-queue'
 
 
 // фун. создания и рендера модалки

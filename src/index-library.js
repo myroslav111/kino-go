@@ -2,21 +2,21 @@ import './sass/main.scss';
 // var _ = require('lodash');
 import { getData, getDataSingleCard, getDataGenre, getDataByInput } from './js/api';
 // import { refs } from './js/refs';
-// import { modalCardItem } from './js/modalFilm';
-import { singleCardItem } from './js/searchItemList';
+// import { modalCardItem } from './js/modal-film';
+import { singleCardItem } from './js/search-item-list';
 
-// import { onFormSubmit } from './js/searchByName';
+// import { onFormSubmit } from './js/search-by-name';
 import {
   onStudentsClick,
   onModalPressEsc,
   closeModalOnBackdropClick,
   closeModalOnCrossClick,
-} from './js/modalTeam';
+} from './js/modal-team';
 
 import { onClickPagSearch } from './js/paginator';
 
 // import { onLogoClick } from './js/header';
-// import { startingPage } from './js/startingPage';
+// import { startingPage } from './js/starting-page';
 
 // function startingPage() {
 //   document.querySelector('.video').classList.remove('hidden');

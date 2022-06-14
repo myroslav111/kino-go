@@ -1,4 +1,4 @@
-import { modalCardItem } from './modalFilm';
+import { modalCardItem } from './modal-film';
 import { refs } from './refs';
 
 // фун. открытия модалки

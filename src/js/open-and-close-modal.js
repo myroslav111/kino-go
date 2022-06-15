@@ -9,6 +9,8 @@ function openModalFilmById(e) {
   modalCardItem(e.target.id);
   refs.modal.classList.remove('is-hidden');
   refs.headerEl.classList.add('is-hidden');
+
+  document.addEventListener('keydown', closeModalFilm);
 }
 
 // фун. закрытия модалки
@@ -18,6 +20,11 @@ function closeModalFilm(e) {
     refs.modal.classList.add('is-hidden');
     refs.headerEl.classList.remove('is-hidden');
   }
+
+  if(e.code === "Escape"){
+    refs.modal.classList.add('is-hidden');
+    document.removeEventListener('keydown', closeModalFilm)
+}
 }
 
 export { openModalFilmById, closeModalFilm };

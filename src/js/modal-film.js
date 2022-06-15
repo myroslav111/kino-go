@@ -10,6 +10,8 @@ import { onYouTubeIframeAPIReady, closeYouTube } from './youTube';
 
 // фун. создания и рендера модалки
 let path;
+
+
 async function modalCardItem(id) {
   try {
     const res = await (await getData(id)).data;
@@ -20,8 +22,9 @@ async function modalCardItem(id) {
 
     const addToWatchedBtn = document.querySelector('button[data-action="add-to-watched"]');
     const addToQueueBtn = document.querySelector('button[data-action="add-to-queue"]');
-    addToWatchedBtn.addEventListener('click', addToWatched);
+    addToWatchedBtn.addEventListener('click', addToWatched(id));
     addToQueueBtn.addEventListener('click', addToQueue);
+    console.log("id", id);
 
     const bgc = document.querySelector('#bgc');
 

@@ -8,9 +8,9 @@ import { addToQueue } from './add-to-queue';
 
 import { onYouTubeIframeAPIReady, closeYouTube } from './youTube';
 
+
 // фун. создания и рендера модалки
 let path;
-
 
 async function modalCardItem(id) {
   try {
@@ -22,9 +22,11 @@ async function modalCardItem(id) {
 
     const addToWatchedBtn = document.querySelector('button[data-action="add-to-watched"]');
     const addToQueueBtn = document.querySelector('button[data-action="add-to-queue"]');
-    addToWatchedBtn.addEventListener('click', addToWatched(id));
+    addToWatchedBtn.addEventListener('click', addToWatched);
     addToQueueBtn.addEventListener('click', addToQueue);
     console.log("id", id);
+    
+    // console.log(arrayWatched);
 
     const bgc = document.querySelector('#bgc');
 

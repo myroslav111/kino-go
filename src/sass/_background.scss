@@ -1,22 +1,18 @@
-// body {
-//   margin: 0;
-//   padding: 0;
-// }
 .hidden {
   //   opacity: 0;
   pointer-events: none;
   visibility: hidden;
 
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: all 1s ease-out;
   // display: none;
 }
 
 .video {
   height: 100vh;
   background: #000;
-
-  //   transition: opacity 1250ms cubic-bezier(0.4, 0, 0.2, 1),
-  //     visibility 1250ms cubic-bezier(0.4, 0, 0.2, 1);
-  //   opacity: 1;
 }
 
 .video:before {
@@ -48,7 +44,7 @@
   }
 }
 
-h1 .letter {
+div .letter {
   opacity: 0;
   display: inline-block;
   animation: animate 1s linear forwards;
@@ -68,39 +64,39 @@ h1 .letter {
   }
 }
 
-h1 .letter:nth-child(1) {
+div .letter:nth-child(1) {
   animation-delay: 1s;
 }
 
-h1 .letter:nth-child(2) {
+div .letter:nth-child(2) {
   animation-delay: 2s;
 }
 
-h1 .letter:nth-child(3) {
+div .letter:nth-child(3) {
   animation-delay: 2.5s;
 }
 
-h1 .letter:nth-child(4) {
+div .letter:nth-child(4) {
   animation-delay: 3s;
 }
 
-h1 .letter:nth-child(5) {
+div .letter:nth-child(5) {
   animation-delay: 3.5s;
 }
 
-h1 .letter:nth-child(6) {
+div .letter:nth-child(6) {
   animation-delay: 3.75s;
 }
 
-h1 .letter:nth-child(7) {
+div .letter:nth-child(7) {
   animation-delay: 4s;
 }
 
-h1 .letter:nth-child(8) {
+div .letter:nth-child(8) {
   animation-delay: 4.5s;
 }
 
-h1 .letter:nth-child(9) {
+div .letter:nth-child(9) {
   animation-delay: 5s;
 }
 

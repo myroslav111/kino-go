@@ -18,17 +18,19 @@ async function modalCardItem(id) {
     refs.modal.innerHTML = '';
     refs.modal.insertAdjacentHTML('afterbegin', markup);
 
+    // рефи на кнопки модалки по додаванню данніх в локал сторедж
     const addToWatchedBtn = document.querySelector('button[data-action="add-to-watched"]');
     const addToQueueBtn = document.querySelector('button[data-action="add-to-queue"]');
     addToWatchedBtn.addEventListener('click', addToWatched);
     addToQueueBtn.addEventListener('click', addToQueue);
 
+    // бекграунд колор карточки модалки
     const bgc = document.querySelector('#bgc');
-
     bgc.style.background = `url(https://image.tmdb.org/t/p/w500${bgImage}) 70% 0%`;
     bgc.style.backgroundRepeat = 'no-repeat';
     bgc.style.backgroundSize = 'cover';
 
+    // запрос на трейлер фільму
     const trailer = await getTrailer(id);
 
     // id путь к трейлеру ютюб

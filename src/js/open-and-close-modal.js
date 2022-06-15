@@ -16,15 +16,13 @@ function openModalFilmById(e) {
 // фун. закрытия модалки
 function closeModalFilm(e) {
   // console.log(e.target);
-  if (e.target.nodeName === 'SECTION' || e.target.nodeName === 'BUTTON') {
+  if (e.target.nodeName === 'SECTION' || e.target.nodeName === 'BUTTON' || e.code === "Escape") {
     refs.modal.classList.add('is-hidden');
     refs.headerEl.classList.remove('is-hidden');
+    if(e.code === "Escape"){
+            document.removeEventListener('keydown', closeModalFilm)
+           }
   }
-
-  if(e.code === "Escape"){
-    refs.modal.classList.add('is-hidden');
-    document.removeEventListener('keydown', closeModalFilm)
-}
 }
 
 export { openModalFilmById, closeModalFilm };

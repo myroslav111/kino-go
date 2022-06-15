@@ -2,6 +2,7 @@ import { getDataSingleCard, getDataGenre, getDataByInput } from './api';
 import { refs } from './refs';
 import singleCard from '../templates/single-card.hbs';
 
+// фун. створення кнопок 
 function renderButtons(count) {
   const button = [];
   for (let i = 1; i <= count; i++) {
@@ -19,18 +20,27 @@ function renderButtons(count) {
   return ` <li class="pager__item pager__item--prev">
   <button class="pager__link" id="left">&#9837;
   </button>
-</li>
-${murkap}
-<li class="pager__item pager__item--next">
-  <button class="pager__link" id="rigth">&#9839;
-  </button>
-</li>`;
+    </li>
+     ${murkap}
+    <li class="pager__item pager__item--next">
+    <button class="pager__link" id="rigth">&#9839;
+   </button>
+  </li>`;
 }
 
+let index;
+// фун. роботи пагінатора
 async function onClickPagSearch(e) {
   if (e.target.nodeName !== 'BUTTON') {
     return;
   }
+
+  // карент пейдж бекграунд
+  document
+    .querySelectorAll('.pager__link')
+    .forEach(el => el.classList.remove('current-accent-page'));
+
+  // міняемо цифру кнопок
   switch (e.target.id) {
     case 'rigth':
       document.querySelectorAll('.pag').forEach(el => {
@@ -53,6 +63,7 @@ async function onClickPagSearch(e) {
       console.log('чет пошло не так');
   }
 
+  // рендер пейджа по номеру натиснутої кнопки
   switch (document.querySelector('input').value === '') {
     case false:
       const response = await (
@@ -65,8 +76,15 @@ async function onClickPagSearch(e) {
       const res = await (await getDataSingleCard(e.target.dataset.page)).data;
       const dataCinema = res.results;
       const markup = singleCard(dataCinema);
+
       refs.container.innerHTML = '';
       refs.container.insertAdjacentHTML('beforeend', markup);
+      index = res.page;
+
+      // вішаем бекграунд на поточну кнопку
+      if (index === Number(e.target.textContent)) {
+        e.target.classList.add('current-accent-page');
+      }
       break;
 
     default:

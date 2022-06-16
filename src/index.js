@@ -25,6 +25,7 @@ import {
 
 // import { startingPage } from './js/startingPage';
 import { onYouTubeIframeAPIReady } from './js/youTube';
+import { getDataBackEnd, putDataBackEnd } from './js/api-back-end';
 
 function startingPage() {
   document.querySelector('.video').classList.remove('hidden');

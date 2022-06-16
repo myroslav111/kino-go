@@ -16,7 +16,7 @@ async function singleCardItem() {
     const dataCinema = res.results;
     const markup = singleCard(dataCinema);
     refs.container.insertAdjacentHTML('beforeend', markup);
-    
+
     // запуск інфінітскрола на мобілку
     if (document.querySelector('body').scrollWidth < 767) {
       document.querySelector('.nav').classList.add('visually-hidden');

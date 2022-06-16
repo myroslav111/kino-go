@@ -224,6 +224,11 @@
   box-sizing: content-box;
 }
 
+.material-icons:hover {
+  transform: translateY(5%) scale(1.1);
+  z-index: 1;
+}
+
 .list-btn-modal {
   list-style: none;
   padding: 0;

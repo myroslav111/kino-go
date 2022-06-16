@@ -1,4 +1,5 @@
-import { putDataBackEnd, getDataBackEnd } from './api-back-end';
+import { postDataBackEnd, getDataBackEnd } from './api-back-end';
+import { getData } from './api';
 
 let arrayWatched = [];
 const obj = {};
@@ -11,20 +12,26 @@ async function onAddToWatchedBtnClick(event) {
   //     return;
   // }
   //   отпарвка данных на бек
-  await putDataToBackEndWatched(event.target.id);
+  //   const res = await (await getData(event.target.id)).data;
+  //   console.log(res);
+
+  await postDataToBackEndWatched(event.target.id);
 
   console.log('WATCHED - Фильм добавлен в список просмотренных фильмов');
   localStorage.setItem('watched', JSON.stringify(arrayWatched));
 }
 
-async function putDataToBackEndWatched(id) {
-  console.log(id);
-  const res = await getDataBackEnd();
-  const dataRes = res.data;
-  arrayWatched = [...dataRes.watched];
-  arrayWatched.push(id);
-  obj.watched = arrayWatched;
-  putDataBackEnd(obj);
+async function postDataToBackEndWatched(id) {
+  const respons = await (await getData(id)).data;
+  obj.id = respons.id;
+  obj.genres = [...respons.genres];
+  obj.poster_path = respons.poster_path;
+  obj.release_date = respons.release_date;
+  obj.title = respons.title;
+  obj.vote_average = respons.vote_average;
+  obj.vote_count = respons.vote_count;
+
+  postDataBackEnd(obj);
 }
 
 export { onAddToWatchedBtnClick };

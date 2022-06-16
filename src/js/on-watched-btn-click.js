@@ -1,5 +1,5 @@
 import { refs } from './refs';
-import { putDataBackEnd, getDataBackEnd } from './api-back-end';
+import { postDataBackEnd, getDataBackEnd } from './api-back-end';
 import { getData } from './api';
 import watchedCard from '../templates/wathed-card.hbs';
 
@@ -14,17 +14,13 @@ async function onWatchedBtnClick(e) {
   //   console.log('watchedFilms', watchedFilms);
   //   console.log('Список просмотренных');
   const res = await getDataBackEnd();
-  const dataRes = res.data.watched;
+  const dataRes = res.data;
   console.log(dataRes);
+  refs.container.innerHTML = '';
   dataRes.map(async e => {
-    const res = await getData(e);
-    console.log(res.data);
-    const markap = watchedCard(res.data);
-    console.log(markap);
+    const markap = watchedCard(e);
     refs.container.insertAdjacentHTML('beforeend', markap);
   });
 }
 
 export { onWatchedBtnClick };
-// console.log(data.data);
-// refs.container.insertAdjacentHTML('beforeend', singleCard(data.data));

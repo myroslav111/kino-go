@@ -17,18 +17,3 @@ function addToWatched(event) {
 export { addToWatched };
 
 console.log('g');
-// async function back() {
-//   const res = await getDataBackEnd();
-//   console.log(res.data);
-// }
-// back();
-// const obj = {
-//   watched: ['098', '555', '333'],
-//   queue: ['345'],
-// };
-
-// async function put() {
-//   const res = await putDataBackEnd();
-//   console.log(res.data);
-// }
-// back(obj);

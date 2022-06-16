@@ -37,6 +37,8 @@ async function singleCardItem() {
     document.querySelector('.nav').addEventListener('click', onClickPagSearch);
   } catch (error) {
     console.log(error);
+  } finally {
+    numPage = 0;
   }
 }
 

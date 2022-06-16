@@ -1,4 +1,5 @@
-import { putDataBackEnd, getDataBackEnd } from './api-back-end';
+import { postDataBackEndForQueue, getDataBackEnd } from './api-back-end';
+import { getData } from './api';
 
 const obj = {};
 let arrayQueue = [];
@@ -12,7 +13,7 @@ async function onAddToQueueBtnClick(event) {
   //     return;
   //   }
   //   отправка данных на бек
-  await putDataToBackEndQueue(event.target.id);
+  await postDataToBackEndQueue(event.target.id);
 
   arrayQueue.push(event.target.id);
   // console.log("arrayQueue", arrayQueue);
@@ -21,14 +22,18 @@ async function onAddToQueueBtnClick(event) {
   // return arrayQueue;
 }
 
-async function putDataToBackEndQueue(id) {
-  console.log(id);
-  const res = await getDataBackEnd();
-  const dataRes = res.data;
-  arrayQueue = [...dataRes.queue];
-  arrayQueue.push(id);
-  obj.queue = arrayQueue;
-  putDataBackEnd(obj);
+async function postDataToBackEndQueue(id) {
+  const respons = await (await getData(id)).data;
+  obj.id = respons.id;
+  obj.genres = [...respons.genres];
+  obj.poster_path = respons.poster_path;
+  obj.release_date = respons.release_date;
+  obj.title = respons.title;
+  obj.vote_average = respons.vote_average;
+  obj.vote_count = respons.vote_count;
+  console.log(obj);
+
+  postDataBackEndForQueue(obj);
 }
 
 export { onAddToQueueBtnClick };

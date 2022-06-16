@@ -1,5 +1,7 @@
+
 let arrayQueue = [];
 
+// фун. додавання клікнутого фільму у локал сторедж
 function addToQueue(event){
     // event.preventDefault();
     if(arrayQueue.includes(event.target.id)){

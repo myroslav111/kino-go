@@ -1,5 +1,6 @@
 let arrayWatched = [];
 
+//  фун. додавання клікнутого фільму у локал сторедж
 function addToWatched(event){
     // event.preventDefault();
     if(arrayWatched.includes(event.target.id)){
@@ -14,5 +15,4 @@ function addToWatched(event){
     // return arrayWatched;
 }
 
-export {addToWatched}   
-
+export { addToWatched };

@@ -38,7 +38,7 @@ async function getDataSingleCard(page) {
   }
 }
 
-// пока не определили для чего
+// запрос на жанри
 async function getDataGenre() {
   try {
     const response = await axios.get(
@@ -63,6 +63,7 @@ async function getDataByInput(input, page) {
   }
 }
 
+// запрос на трейлер
 async function getTrailer(id) {
   try {
     const response = await axios.get(

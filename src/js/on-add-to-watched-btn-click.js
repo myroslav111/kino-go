@@ -1,5 +1,6 @@
 let arrayWatched = [];
 
+//  фун. додавання клікнутого фільму у локал сторедж
 function onAddToWatchedBtnClick(event){
     // event.preventDefault();
     if(arrayWatched.includes(event.target.id)){
@@ -15,4 +16,5 @@ function onAddToWatchedBtnClick(event){
 }
 
 export {onAddToWatchedBtnClick}   
+
 

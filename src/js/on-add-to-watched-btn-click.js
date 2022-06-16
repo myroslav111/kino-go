@@ -1,6 +1,6 @@
 let arrayWatched = [];
 
-function addToWatched(event){
+function onAddToWatchedBtnClick(event){
     // event.preventDefault();
     if(arrayWatched.includes(event.target.id)){
         console.log("Такой фильм уже есть в списке");
@@ -14,5 +14,5 @@ function addToWatched(event){
     // return arrayWatched;
 }
 
-export {addToWatched}   
+export {onAddToWatchedBtnClick}   
 

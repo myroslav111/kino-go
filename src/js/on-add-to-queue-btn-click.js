@@ -1,6 +1,6 @@
 let arrayQueue = [];
 
-function addToQueue(event){
+function onAddToQueueBtnClick(event){
     // event.preventDefault();
     if(arrayQueue.includes(event.target.id)){
         console.log("Такой фильм уже есть в списке");
@@ -14,4 +14,4 @@ function addToQueue(event){
     // return arrayQueue;
 }
 
-export {addToQueue}   
+export {onAddToQueueBtnClick}   

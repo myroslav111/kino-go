@@ -3,8 +3,8 @@ import modalCard from '../templates/modal-film.hbs';
 import { refs } from './refs';
 
 import { closeModalFilm } from './open-and-close-modal';
-import { addToWatched } from './add-to-watched';
-import { addToQueue } from './add-to-queue';
+import { onAddToWatchedBtnClick } from './on-add-to-watched-btn-click';
+import { onAddToQueueBtnClick } from './on-add-to-queue-btn-click';
 
 import { onYouTubeIframeAPIReady, closeYouTube } from './youTube';
 
@@ -22,8 +22,8 @@ async function modalCardItem(id) {
 
     const addToWatchedBtn = document.querySelector('button[data-action="add-to-watched"]');
     const addToQueueBtn = document.querySelector('button[data-action="add-to-queue"]');
-    addToWatchedBtn.addEventListener('click', addToWatched);
-    addToQueueBtn.addEventListener('click', addToQueue);
+    addToWatchedBtn.addEventListener('click', onAddToWatchedBtnClick);
+    addToQueueBtn.addEventListener('click', onAddToQueueBtnClick);
     console.log("id", id);
     
     // console.log(arrayWatched);

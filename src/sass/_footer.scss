@@ -33,6 +33,12 @@ footer {
   }
 }
 
+@media screen and (min-width: 767.99px) {
+  .hend-gadget {
+    display: none;
+  }
+}
+
 .footer__container {
   text-align: center;
 
@@ -56,6 +62,7 @@ footer {
 .footer__developers {
   @media screen and (min-width: 768px) {
     margin-left: 4px;
+    margin-right: 4px;
   }
   // display: flex;
   // justify-content: center;

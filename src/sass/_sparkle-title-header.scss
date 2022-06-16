@@ -1,0 +1,103 @@
+.sparkle {
+  position: relative;
+  font-size: 1.5em;
+  // letter-spacing: 15px;
+  //   color: ;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+  line-height: 0.7em;
+  outline: none;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    color: grey;
+    box-shadow: none;
+  }
+  18% {
+    color: grey;
+    box-shadow: none;
+  }
+  20% {
+    color: grey;
+    box-shadow: none;
+  }
+  50.1% {
+    color: grey;
+    box-shadow: none;
+  }
+  60% {
+    color: grey;
+    box-shadow: none;
+  }
+  65.1% {
+    color: grey;
+    box-shadow: none;
+  }
+  80% {
+    color: grey;
+    box-shadow: none;
+  }
+  90.1% {
+    color: grey;
+    box-shadow: none;
+  }
+
+  92% {
+    color: grey;
+    box-shadow: none;
+  }
+  18.1% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b01, 0 0 20px #ff6b01, 0 0 40px #ff6b01, 0 0 80px #ff6b01,
+      0 0 160px #ff6b01;
+  }
+  20.1% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b01, 0 0 20px #ff6b01, 0 0 40px #ff6b01, 0 0 80px #ff6b01,
+      0 0 160px #ff6b01;
+  }
+  30% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b01, 0 0 20px #ff6b01, 0 0 40px #ff6b01, 0 0 80px #ff6b01,
+      0 0 160px #ff6b01;
+  }
+  50% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b01, 0 0 20px #ff6b01, 0 0 40px #ff6b01, 0 0 80px #ff6b01,
+      0 0 160px #ff6b01;
+  }
+  60.1% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b01, 0 0 20px #ff6b01, 0 0 40px #ff6b01, 0 0 80px #ff6b01,
+      0 0 160px #ff6b01;
+  }
+  65% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b01, 0 0 20px #ff6b01, 0 0 40px #ff6b01, 0 0 80px #ff6b01,
+      0 0 160px #ff6b01;
+  }
+  80.1% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b01, 0 0 20px #ff6b01, 0 0 40px #ff6b01, 0 0 80px #ff6b01,
+      0 0 160px #ff6b01;
+  }
+  90% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b01, 0 0 20px #ff6b01, 0 0 40px #ff6b01, 0 0 80px #ff6b01,
+      0 0 160px #ff6b01;
+  }
+  92.1% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b01, 0 0 20px #ff6b01, 0 0 40px #ff6b01, 0 0 80px #ff6b01,
+      0 0 160px #ff6b01;
+  }
+  100% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff6b01, 0 0 20px #ff6b01, 0 0 40px #ff6b01, 0 0 80px #ff6b01,
+      0 0 160px #ff6b01;
+  }
+}

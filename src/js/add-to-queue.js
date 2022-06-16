@@ -1,9 +1,17 @@
 let arrayQueue = [];
+
 function addToQueue(event){
     // event.preventDefault();
-    console.log('event.target', event.target);
-    console.log("QUEUE - Фильм добавлен в список желаемых для просмотра");
-    localStorage.setItem('queue', i);  
-    i+=1;}
+    if(arrayQueue.includes(event.target.id)){
+        console.log("Такой фильм уже есть в списке");
+        alert("Такой фильм уже есть в списке");
+        return; 
+    }
+    arrayQueue.push(event.target.id);
+    // console.log("arrayQueue", arrayQueue);  
+    console.log("QUEUE - Фильм добавлен в список просмотренных фильмов");
+    localStorage.setItem("queue", JSON.stringify(arrayQueue));
+    // return arrayQueue;
+}
 
-  export {addToQueue}   
+export {addToQueue}   

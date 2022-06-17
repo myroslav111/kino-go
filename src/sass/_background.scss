@@ -47,10 +47,10 @@
 div .letter {
   opacity: 0;
   display: inline-block;
-  animation: animate 1s linear forwards;
+  animation: start 1s linear forwards;
 }
 
-@keyframes animate {
+@keyframes start {
   0% {
     opacity: 0;
     transform: rotateY(90deg);

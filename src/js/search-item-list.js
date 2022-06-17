@@ -38,7 +38,9 @@ async function singleCardItem() {
   } catch (error) {
     console.log(error);
   } finally {
-    numPage = 0;
+    if (document.querySelector('body').scrollWidth > 767) {
+      numPage = 0;
+    }
   }
 }
 

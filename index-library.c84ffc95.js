@@ -132,4 +132,4 @@ module.exports=[{photo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu
 },{"./refs":"VyiV","./render-developers-cards":"kLVA"}],"DIZc":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var r=require("./js/header-library"),e=require("./js/api"),s=require("./js/search-item-list"),i=require("./js/modal-team"),a=require("./js/paginator");
 },{"./sass/main.scss":"clu1","./js/header-library":"XgnG","./js/api":"cZF8","./js/search-item-list":"Ykfl","./js/modal-team":"O9Th","./js/paginator":"d4Ms"}]},{},["DIZc"], null)
-//# sourceMappingURL=/kino-go/index-library.098b67cc.js.map
+//# sourceMappingURL=/kino-go/index-library.c84ffc95.js.map

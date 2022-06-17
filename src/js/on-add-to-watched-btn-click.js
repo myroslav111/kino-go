@@ -1,27 +1,36 @@
-import { postDataBackEnd, getDataBackEnd } from './api-back-end';
+import { postDataToBackEndWatched } from './api-back-end';
 import { getData } from './api';
 
-let arrayWatched = [];
 const obj = {};
+let arrayWatched = localStorage.getItem('watched') !== null ? JSON.parse(localStorage.getItem('watched')) : [];
+
 //  фун. додавання клікнутого фільму у локал сторедж
 async function onAddToWatchedBtnClick(event) {
   // event.preventDefault();
-  // if(arrayWatched.includes(event.target.id)){
-  //     console.log("Такой фильм уже есть в списке");
-  //     alert("Такой фильм уже есть в списке");
-  //     return;
-  // }
-  //   отпарвка данных на бек
+  // console.log("before record arrayWatched", arrayWatched);
+  // console.log("localStorage.getItem('watched')", localStorage.getItem('watched')); 
+
+  if(arrayWatched.includes(event.target.id)){
+      console.log("Такой фильм уже есть в списке");
+      alert("Такой фильм уже есть в списке");
+      return;
+  }
+
+  arrayWatched.push(event.target.id);
+
+  //   отправка данных на бек
   //   const res = await (await getData(event.target.id)).data;
   //   console.log(res);
 
-  await postDataToBackEndWatched(event.target.id);
+  await createDataObjectAndPostToBackEnd(event.target.id);
 
   console.log('WATCHED - Фильм добавлен в список просмотренных фильмов');
   localStorage.setItem('watched', JSON.stringify(arrayWatched));
+  // console.log("after record arrayWatched", arrayWatched);
+  // console.log("конец ф-ии localStorage", localStorage.getItem('watched'))
 }
 
-async function postDataToBackEndWatched(id) {
+async function createDataObjectAndPostToBackEnd(id) {
   const respons = await (await getData(id)).data;
   obj.id = respons.id;
   obj.genres = [...respons.genres];
@@ -31,7 +40,7 @@ async function postDataToBackEndWatched(id) {
   obj.vote_average = respons.vote_average;
   obj.vote_count = respons.vote_count;
 
-  postDataBackEnd(obj);
+  postDataToBackEndWatched(obj);
 }
 
 export { onAddToWatchedBtnClick };

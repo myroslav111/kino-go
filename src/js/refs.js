@@ -7,6 +7,8 @@ const refs = {
   headerEl: document.querySelector('.header'),
   logoEl: document.querySelector('.header__home'),
   // libraryBtnEl: document.querySelector('.library__search--btn'),
+  home: document.querySelector('.header-home-js'),
+  library: document.querySelector('.header-library-js'),
 
   showWatchedBtn: document.querySelector('button[data-action="show-watched"]'),
   showQueueBtn: document.querySelector('button[data-action="show-queue"]'),

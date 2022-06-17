@@ -8,7 +8,6 @@ import { onAddToQueueBtnClick } from './on-add-to-queue-btn-click';
 
 import { onYouTubeIframeAPIReady, closeYouTube } from './youTube';
 
-
 // фун. создания и рендера модалки
 let path;
 

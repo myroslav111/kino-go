@@ -1,27 +1,29 @@
-import { postDataBackEnd, getDataBackEnd } from './api-back-end';
+import { getDataFromWatchedBackEnd, postDataToBackEndWatched } from './api-back-end';
 import { getData } from './api';
 
-let arrayWatched = [];
+// для localStorage
+// let arrayWatched = localStorage.getItem('watched') !== null ? JSON.parse(localStorage.getItem('watched')) : [];
+
+// для бэкэнда
 const obj = {};
+
 //  фун. додавання клікнутого фільму у локал сторедж
 async function onAddToWatchedBtnClick(event) {
-  // event.preventDefault();
+    // блок для localStorage
   // if(arrayWatched.includes(event.target.id)){
   //     console.log("Такой фильм уже есть в списке");
   //     alert("Такой фильм уже есть в списке");
   //     return;
   // }
-  //   отпарвка данных на бек
-  //   const res = await (await getData(event.target.id)).data;
-  //   console.log(res);
+  // arrayWatched.push(event.target.id);
+  // localStorage.setItem('watched', JSON.stringify(arrayWatched));
 
-  await postDataToBackEndWatched(event.target.id);
-
-  console.log('WATCHED - Фильм добавлен в список просмотренных фильмов');
-  localStorage.setItem('watched', JSON.stringify(arrayWatched));
+// блок для бэкэнда - отправка данных на бек
+  await createDataObjectAndPostToBackEnd(event.target.id);
 }
 
-async function postDataToBackEndWatched(id) {
+async function createDataObjectAndPostToBackEnd(id) {
+  // получение фильма по id с бэкэнда и создание объекта
   const respons = await (await getData(id)).data;
   obj.id = respons.id;
   obj.genres = [...respons.genres];
@@ -30,8 +32,19 @@ async function postDataToBackEndWatched(id) {
   obj.title = respons.title;
   obj.vote_average = respons.vote_average;
   obj.vote_count = respons.vote_count;
+  console.log(obj);
 
-  postDataBackEnd(obj);
+  //получение с бэкэнда Watched списка фильмов 
+  const res = await getDataFromWatchedBackEnd();
+  const dataRes = res.data;
+  // проверка на наличие фильма в списке
+  const isInArray = dataRes.some(data => data.title === obj.title)
+
+  if(isInArray){     
+    return;
+  }
+
+  postDataToBackEndWatched(obj);
 }
 
 export { onAddToWatchedBtnClick };

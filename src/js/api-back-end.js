@@ -1,7 +1,7 @@
 import Notiflix from 'notiflix';
 import axios from 'axios';
 
-async function getDataBackEnd() {
+async function getDataFromWatchedBackEnd() {
   try {
     const response = await axios.get(`https://62a9f628371180affbcc1dc4.mockapi.io/filmoteca`);
     // Notiflix.Loading.custom({
@@ -17,7 +17,7 @@ async function getDataBackEnd() {
   }
 }
 
-async function getDataBackEndForQueue() {
+async function getDataFromQueueBackEnd() {
   try {
     const response = await axios.get(`https://62ab9803a62365888bdecd3c.mockapi.io/filmoteca2`);
     // Notiflix.Loading.custom({
@@ -33,7 +33,7 @@ async function getDataBackEndForQueue() {
   }
 }
 
-async function postDataBackEnd(data) {
+async function postDataToBackEndWatched(data) {
   try {
     const response = await axios.post(
       `https://62a9f628371180affbcc1dc4.mockapi.io/filmoteca`,
@@ -51,7 +51,7 @@ async function postDataBackEnd(data) {
   }
 }
 
-async function postDataBackEndForQueue(data) {
+async function postDataToBackEndQueue(data) {
   try {
     const response = await axios.post(
       `https://62ab9803a62365888bdecd3c.mockapi.io/filmoteca2`,
@@ -69,4 +69,4 @@ async function postDataBackEndForQueue(data) {
   }
 }
 
-export { getDataBackEnd, postDataBackEnd, postDataBackEndForQueue, getDataBackEndForQueue };
+export { getDataFromWatchedBackEnd, postDataToBackEndWatched, getDataFromQueueBackEnd, postDataToBackEndQueue };

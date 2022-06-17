@@ -1,33 +1,25 @@
-import { postDataToBackEndWatched } from './api-back-end';
+import { getDataFromWatchedBackEnd, postDataToBackEndWatched } from './api-back-end';
 import { getData } from './api';
 
+// для localStorage
+// let arrayWatched = localStorage.getItem('watched') !== null ? JSON.parse(localStorage.getItem('watched')) : [];
+
+// для бэкэнда
 const obj = {};
-let arrayWatched = localStorage.getItem('watched') !== null ? JSON.parse(localStorage.getItem('watched')) : [];
 
 //  фун. додавання клікнутого фільму у локал сторедж
 async function onAddToWatchedBtnClick(event) {
-  // event.preventDefault();
-  // console.log("before record arrayWatched", arrayWatched);
-  // console.log("localStorage.getItem('watched')", localStorage.getItem('watched')); 
+    // блок для localStorage
+  // if(arrayWatched.includes(event.target.id)){
+  //     console.log("Такой фильм уже есть в списке");
+  //     alert("Такой фильм уже есть в списке");
+  //     return;
+  // }
+  // arrayWatched.push(event.target.id);
+  // localStorage.setItem('watched', JSON.stringify(arrayWatched));
 
-  if(arrayWatched.includes(event.target.id)){
-      console.log("Такой фильм уже есть в списке");
-      alert("Такой фильм уже есть в списке");
-      return;
-  }
-
-  arrayWatched.push(event.target.id);
-
-  //   отправка данных на бек
-  //   const res = await (await getData(event.target.id)).data;
-  //   console.log(res);
-
+// блок для бэкэнда - отправка данных на бек
   await createDataObjectAndPostToBackEnd(event.target.id);
-
-  console.log('WATCHED - Фильм добавлен в список просмотренных фильмов');
-  localStorage.setItem('watched', JSON.stringify(arrayWatched));
-  // console.log("after record arrayWatched", arrayWatched);
-  // console.log("конец ф-ии localStorage", localStorage.getItem('watched'))
 }
 
 async function createDataObjectAndPostToBackEnd(id) {
@@ -39,6 +31,17 @@ async function createDataObjectAndPostToBackEnd(id) {
   obj.title = respons.title;
   obj.vote_average = respons.vote_average;
   obj.vote_count = respons.vote_count;
+  console.log(obj);
+
+  //получение с бэкэнда списка фильмов с Queue
+  const res = await getDataFromWatchedBackEnd();
+  const dataRes = res.data;
+  // проверка на наличие фильма в списке
+  const isInArray = dataRes.some(data => data.title === obj.title)
+
+  if(isInArray){     
+    return;
+  }
 
   postDataToBackEndWatched(obj);
 }

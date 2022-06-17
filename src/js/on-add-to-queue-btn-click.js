@@ -1,36 +1,29 @@
-import { postDataToBackEndQueue } from './api-back-end';
+import { getDataFromQueueBackEnd, postDataToBackEndQueue } from './api-back-end';
 import { getData } from './api';
 
+// для localStorage
+// let arrayQueue = localStorage.getItem('queue') !== null ? JSON.parse(localStorage.getItem('queue')) : [];
+
+// для бэкэнда
 const obj = {};
-let arrayQueue = localStorage.getItem('queue') !== null ? JSON.parse(localStorage.getItem('queue')) : [];
 
 // фун. додавання клікнутого фільму у локал сторедж
 async function onAddToQueueBtnClick(event) {
-  // event.preventDefault();
-  // console.log("before record arrayQueue", arrayQueue); 
-  // console.log("начало ф-и localStorage", localStorage.getItem('queue'));
-
-    if (arrayQueue.includes(event.target.id)) {
-      console.log('Такой фильм уже есть в списке');
-      alert('Такой фильм уже есть в списке');
-      return;
-    }
-
-  arrayQueue.push(event.target.id);
-
-  //   отправка данных на бек
-  await createDataObjectAndPostToBackEnd(event.target.id);
-
+  // блок для localStorage
+  // if(arrayQueue.includes(event.target.id)){
+  //   console.log("Такой фильм уже есть в списке");
+  //   alert("Такой фильм уже есть в списке");
+  //   return;
+  // }
   // arrayQueue.push(event.target.id);
-  // console.log("arrayQueue", arrayQueue);
-  console.log('QUEUE - Фильм добавлен в список просмотренных фильмов');
-  localStorage.setItem('queue', JSON.stringify(arrayQueue));
-  // console.log("after record arrayQueue", arrayQueue); 
-  // console.log("конец ф-ии localStorage", localStorage.getItem('queue')); 
-  // return arrayQueue;
+  // localStorage.setItem('queue', JSON.stringify(arrayQueue));
+
+  // блок для бэкэнда - отправка данных на бек
+  await createDataObjectAndPostToBackEnd(event.target.id);
 }
 
 async function createDataObjectAndPostToBackEnd(id) {
+  // получение фильма с бэкэнда по id
   const respons = await (await getData(id)).data;
   obj.id = respons.id;
   obj.genres = [...respons.genres];
@@ -40,6 +33,16 @@ async function createDataObjectAndPostToBackEnd(id) {
   obj.vote_average = respons.vote_average;
   obj.vote_count = respons.vote_count;
   console.log(obj);
+
+    //получение с бэкэнда списка фильмов с Queue
+    const res = await getDataFromQueueBackEnd();
+    const dataRes = res.data;
+    // проверка на наличие фильма в списке
+    const isInArray = dataRes.some(data => data.title === obj.title)
+
+    if(isInArray){     
+      return;
+    }
 
   postDataToBackEndQueue(obj);
 }

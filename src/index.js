@@ -43,6 +43,7 @@ function startingPage() {
 
 singleCardItem();
 
+// console.log('d');
 // // вариант артема
 // let q;
 

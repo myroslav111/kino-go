@@ -23,6 +23,7 @@ async function onAddToWatchedBtnClick(event) {
 }
 
 async function createDataObjectAndPostToBackEnd(id) {
+  // получение фильма по id с бэкэнда и создание объекта
   const respons = await (await getData(id)).data;
   obj.id = respons.id;
   obj.genres = [...respons.genres];
@@ -33,7 +34,7 @@ async function createDataObjectAndPostToBackEnd(id) {
   obj.vote_count = respons.vote_count;
   console.log(obj);
 
-  //получение с бэкэнда списка фильмов с Queue
+  //получение с бэкэнда Watched списка фильмов 
   const res = await getDataFromWatchedBackEnd();
   const dataRes = res.data;
   // проверка на наличие фильма в списке

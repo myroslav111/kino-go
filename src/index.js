@@ -39,9 +39,9 @@ function startingPage() {
   }, 7000);
 }
 
-// startingPage();
+startingPage();
 
-singleCardItem();
+// singleCardItem();
 
 // console.log('d');
 // // вариант артема

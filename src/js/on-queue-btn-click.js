@@ -2,6 +2,7 @@ import { refs } from './refs';
 import { getDataFromQueueBackEnd } from './api-back-end';
 import { getData } from './api';
 import watchedCard from '../templates/wathed-card.hbs';
+import singleCard from '../templates/single-card.hbs'
 
 async function onQueueBtnClick(e) {
   // блок для localStorage
@@ -11,10 +12,10 @@ async function onQueueBtnClick(e) {
       alert('В списке QUEUE нет фильмов');
       return;
     }
-    console.log("queueFilms", queueFilms);
-    const markup = JSON.parse(queueFilms);
-    console.log("markup", markup);
-    refs.container.insertAdjacentHTML('beforeend', markup);
+    // создание разметки по шаблону из распарсеного ответа из localStorage
+    const markup = singleCard(JSON.parse(queueFilms));
+    refs.container.innerHTML = markup;
+
 
   // блок для бэкэнда 
   // const res = await getDataFromQueueBackEnd();

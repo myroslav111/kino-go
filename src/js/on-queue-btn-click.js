@@ -2,21 +2,25 @@ import { refs } from './refs';
 import { getDataFromQueueBackEnd } from './api-back-end';
 import { getData } from './api';
 import watchedCard from '../templates/wathed-card.hbs';
+import singleCard from '../templates/single-card.hbs';
+import Notiflix from 'notiflix';
+
 
 async function onQueueBtnClick(e) {
-  // блок для localStorage
-    // const queueFilms = localStorage.getItem('queue');
+  // // блок для localStorage
+  //   const queueFilms = localStorage.getItem('queue');
+  //   if (queueFilms === null) {
+  //     Notiflix.Notify.info('В списке QUEUE нет фильмов.');
+  //     return;
+  //   }
+  //   // создание разметки по шаблону из распарсеного ответа из localStorage
+  //   const markup = singleCard(JSON.parse(queueFilms));
+  //   refs.container.innerHTML = markup;
 
-    // if (queueFilms === null) {
-    //   console.log('В списке QUEUE нет фильмов');
-    //   alert('В списке QUEUE нет фильмов');
-    //   return;
-    // }
 
-  // блок для бэкэнда 
+  // // блок для бэкэнда 
   const res = await getDataFromQueueBackEnd();
   const dataRes = res.data;
-  console.log("dataRes", dataRes);
   refs.container.innerHTML = '';
   dataRes.map(async e => {
     const markup = watchedCard(e);

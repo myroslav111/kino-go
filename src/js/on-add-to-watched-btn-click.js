@@ -1,19 +1,19 @@
 import { createDataObjectByIdFromAPI } from './createDataObjectByIdFromAPI'
 import { getDataFromWatchedBackEnd, postDataToBackEndWatched } from './api-back-end';
 import { getData } from './api';
+import Notiflix from 'notiflix';
 
 //  фун. додавання клікнутого фільму у локал сторедж
 async function onAddToWatchedBtnClick(event) {
   // создание объекта данных фильма по id
   const filmData = await createDataObjectByIdFromAPI(event.target.id);
   
-  // блок для localStorage
+  // // блок для localStorage
   // let arrayWatched = localStorage.getItem('watched') !== null ? JSON.parse(localStorage.getItem('watched')) : [];
   // // проверка на наличие текущего фильма в списке фильмов
   // let isInArray = arrayWatched.some(elem => elem.title === filmData.title)
   // if(isInArray){
-  //   console.log("Такой фильм уже есть в списке");
-  //   alert("Такой фильм уже есть в списке");
+  //   Notiflix.Notify.info("Такой фильм уже есть в списке.");
   //   return;
   // }
   // arrayWatched.push(filmData);
@@ -21,7 +21,7 @@ async function onAddToWatchedBtnClick(event) {
 
 
   // блок для бэкэнда 
-  //получение с бэкэнда Watched списка фильмов 
+  // получение с бэкэнда Watched списка фильмов 
   const res = await getDataFromWatchedBackEnd();
   const dataRes = res.data;
   // проверка на наличие фильма в списке

@@ -13,7 +13,7 @@ async function onAddToWatchedBtnClick(event) {
   // // проверка на наличие текущего фильма в списке фильмов
   // let isInArray = arrayWatched.some(elem => elem.title === filmData.title)
   // if(isInArray){
-  //   Notiflix.Notify.info("Такой фильм уже есть в списке.");
+  //   Notiflix.Notify.failure("Такой фильм уже есть в WATCHED.");
   //   return;
   // }
   // arrayWatched.push(filmData);
@@ -27,10 +27,12 @@ async function onAddToWatchedBtnClick(event) {
   // проверка на наличие фильма в списке
   const isInArray = dataRes.some(data => data.title === filmData.title);
 
-  if (isInArray) {
+  if(isInArray){   
+    Notiflix.Notify.failure("Такой фильм уже есть в WATCHED.");  
     return;
   }
   postDataToBackEndWatched(filmData);
+  Notiflix.Notify.success('Фильм добавлен в WATCHED.')
 }
 
 export { onAddToWatchedBtnClick };

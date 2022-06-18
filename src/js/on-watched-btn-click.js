@@ -8,6 +8,7 @@ import Notiflix from 'notiflix';
 async function onWatchedBtnClick(e) {
   // блок для localStorage
 
+
     // const watchedFilms = localStorage.getItem('watched');
     // if (watchedFilms === null) {
     //   Notiflix.Notify.failure('В WATCHED нет фильмов.');
@@ -17,7 +18,7 @@ async function onWatchedBtnClick(e) {
     // const markup = singleCardTpl(JSON.parse(watchedFilms));
     // refs.container.innerHTML = markup;
 
-    
+  
   // // блок для бэкэнда
   Notiflix.Loading.custom('Loading...', {
     customSvgCode:

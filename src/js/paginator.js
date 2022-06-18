@@ -1,6 +1,6 @@
 import { getDataSingleCard, getDataGenre, getDataByInput } from './api';
 import { refs } from './refs';
-import singleCard from '../templates/single-card.hbs';
+import singleCardTpl from '../templates/single-card.hbs';
 
 // фун. створення кнопок 
 function renderButtons(count) {
@@ -69,13 +69,13 @@ async function onClickPagSearch(e) {
       const response = await (
         await getDataByInput(document.querySelector('input').value, e.target.dataset.page)
       ).data;
-      refs.container.innerHTML = singleCard(response.results);
+      refs.container.innerHTML = singleCardTpl(response.results);
       break;
 
     case true:
       const res = await (await getDataSingleCard(e.target.dataset.page)).data;
       const dataCinema = res.results;
-      const markup = singleCard(dataCinema);
+      const markup = singleCardTpl(dataCinema);
 
       refs.container.innerHTML = '';
       refs.container.insertAdjacentHTML('beforeend', markup);

@@ -1,6 +1,6 @@
 import { refs } from './refs';
 import { getDataByInput } from './api';
-import singleCard from '../templates/single-card.hbs';
+import singleCardTpl from '../templates/single-card.hbs';
 import { renderButtons } from './paginator';
 
 refs.formEl.addEventListener('submit', onFormSubmit);
@@ -16,7 +16,7 @@ async function onFormSubmit(e) {
   }
 
   const response = await (await getDataByInput(formData)).data;
-  refs.container.innerHTML = singleCard(response.results);
+  refs.container.innerHTML = singleCardTpl(response.results);
   refs.pagContainer.innerHTML = '';
 
   // умови для роботи пагінатора

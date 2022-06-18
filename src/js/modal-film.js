@@ -1,5 +1,5 @@
 import { getData, getTrailer } from './api';
-import modalCard from '../templates/modal-film.hbs';
+import modalFilmTpl from '../templates/modal-film.hbs';
 import { refs } from './refs';
 
 import { closeModalFilm } from './open-and-close-modal';
@@ -14,7 +14,7 @@ let path;
 async function modalCardItem(id) {
   try {
     const res = await (await getData(id)).data;
-    const markup = modalCard(res);
+    const markup = modalFilmTpl(res);
     const bgImage = res.backdrop_path;
     refs.modal.innerHTML = '';
     refs.modal.insertAdjacentHTML('afterbegin', markup);

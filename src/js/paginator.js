@@ -16,12 +16,12 @@ function renderButtons(count) {
       );
     }
   }
-  const murkap = button.join('');
+  const markup = button.join('');
   return ` <li class="pager__item pager__item--prev">
   <button class="pager__link" id="left">&#9837;
   </button>
     </li>
-     ${murkap}
+     ${markup}
     <li class="pager__item pager__item--next">
     <button class="pager__link" id="rigth">&#9839;
    </button>

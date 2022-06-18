@@ -10,26 +10,29 @@ async function onQueueBtnClick(e) {
 
     // const queueFilms = localStorage.getItem('queue');
     // if (queueFilms === null) {
-    //   Notiflix.Notify.info('В списке QUEUE нет фильмов.');
+    //   Notiflix.Notify.failure('В QUEUE нет фильмов.');
     //   return;
     // }
     // // создание разметки по шаблону из распарсеного ответа из localStorage
     // const markup = singleCardTpl(JSON.parse(queueFilms));
     // refs.container.innerHTML = markup;
 
-
+    
+  // // блок для бэкэнда
   Notiflix.Loading.custom('Loading...', {
     customSvgCode:
       '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">...</svg>',
   });
 
-
+  // подсветка активной вкладки на my-library
   refs.showQueueBtn.setAttribute('data-action', 'open');
+
   if (refs.showWatchedBtn.classList.contains('color-orange')) {
     refs.showWatchedBtn.classList.remove('color-orange');
   }
   refs.showQueueBtn.classList.add('color-orange');
-  // // блок для бэкэнда
+
+  // забор списка из бэкэнда и рендер
   const res = await getDataFromQueueBackEnd();
   const dataRes = res.data;
   refs.container.innerHTML = '';

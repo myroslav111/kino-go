@@ -13,7 +13,7 @@ async function onAddToQueueBtnClick(event) {
   // // проверка на наличие текущего фильма в списке фильмов
   // let isInArray = arrayQueue.some(elem => elem.title === filmData.title)
   // if(isInArray){
-  //   Notiflix.Notify.info("Такой фильм уже есть в списке.");
+  //   Notiflix.Notify.failure("Такой фильм уже есть в QUEUE.");
   //   return;
   // }
   // arrayQueue.push(filmData);
@@ -31,6 +31,7 @@ async function onAddToQueueBtnClick(event) {
     return;
   }
   postDataToBackEndQueue(filmData);
+  Notiflix.Notify.success('Фильм добавлен в QUEUE.')
 }
 
 export { onAddToQueueBtnClick };

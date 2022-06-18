@@ -85,10 +85,18 @@ async function onClickPagSearch(e) {
       if (index === Number(e.target.textContent)) {
         e.target.classList.add('current-accent-page');
        
-       
         const currentPage = document.querySelector("button.pager__link.pag.current-accent-page");
         const prev = document.querySelector("#left");
         const next = document.querySelector("#rigth");
+        // next.addEventListener('click', onDiezBtnClick);
+       
+
+        // function onDiezBtnClick(){
+        //   console.log("privet");
+        //   prev.classList.remove("is-hidden");
+        //   next.removeEventListener('click', onDiezBtnClick);
+        // }
+
         // делаем кнопку со значком "♭" скрытой при текущей странице = 1
         if(currentPage.dataset.page !== "1"){
           prev.classList.remove("is-hidden");

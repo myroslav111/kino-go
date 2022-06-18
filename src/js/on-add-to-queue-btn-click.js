@@ -27,7 +27,8 @@ async function onAddToQueueBtnClick(event) {
   // проверка на наличие фильма в списке
   const isInArray = dataRes.some(data => data.title === filmData.title)
 
-  if(isInArray){     
+  if(isInArray){ 
+    Notiflix.Notify.failure("Такой фильм уже есть в QUEUE.")    
     return;
   }
   postDataToBackEndQueue(filmData);

@@ -24,12 +24,24 @@ async function modalCardItem(id) {
     const addToQueueBtn = document.querySelector('button[data-action="add-to-queue"]');
     addToWatchedBtn.addEventListener('click', onAddToWatchedBtnClick);
     addToQueueBtn.addEventListener('click', onAddToQueueBtnClick);
-    console.log("id", id);
-    
+    console.log('id', id);
+
     // console.log(arrayWatched);
+    // Watched
+    console.log(refs.showWatchedBtn.dataset.action === 'open');
+    if (
+      refs.showWatchedBtn.dataset.action === 'open' ||
+      refs.showQueueBtn.dataset.action === 'open'
+    ) {
+      // list-btn-modal
+      document.querySelector('.list-btn-modal').classList.add('is-hidden');
+      document.querySelector('.raise').classList.remove('is-hidden');
+      // document.querySelector('.movie_social');
+    }
 
     // бекграунд колор карточки модалки
     const bgc = document.querySelector('#bgc');
+
     bgc.style.background = `url(https://image.tmdb.org/t/p/w500${bgImage}) 70% 0%`;
     bgc.style.backgroundRepeat = 'no-repeat';
     bgc.style.backgroundSize = 'cover';

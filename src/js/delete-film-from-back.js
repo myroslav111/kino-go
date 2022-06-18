@@ -1,8 +1,8 @@
 import {
   getDataFromWatchedBackEnd,
-  deleteDataToBackEndWatched,
+  deleteDataFromBackEndWatched,
   getDataFromQueueBackEnd,
-  deleteDataToBackEndQueue,
+  deleteDataFromBackEndQueue,
 } from './api-back-end';
 import { refs } from './refs';
 import { getData } from './api';
@@ -22,7 +22,8 @@ async function deleteFilm(e) {
           idForDel = Number(el.ids);
         }
       });
-      await deleteDataToBackEndWatched(idForDel);
+      await deleteDataFromBackEndWatched(idForDel);
+      Notiflix.Notify.info('Фильм удален из WATCHED.');
       return;
     } else {
       const responseQueue = await getDataFromQueueBackEnd();
@@ -32,7 +33,8 @@ async function deleteFilm(e) {
           idForDel = Number(el.ids);
         }
       });
-      await deleteDataToBackEndQueue(idForDel);
+      await deleteDataFromBackEndQueue(idForDel);
+      Notiflix.Notify.info('Фильм удален из QUEUE.');
       return;
     }
   } catch (error) {

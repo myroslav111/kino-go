@@ -69,7 +69,7 @@ async function postDataToBackEndQueue(data) {
   }
 }
 
-async function deleteDataToBackEndWatched(id) {
+async function deleteDataFromBackEndWatched(id) {
   try {
     await axios.delete(`https://62a9f628371180affbcc1dc4.mockapi.io/filmoteca/${id}`);
     // Notiflix.Loading.custom({
@@ -83,7 +83,7 @@ async function deleteDataToBackEndWatched(id) {
   }
 }
 
-async function deleteDataToBackEndQueue(id) {
+async function deleteDataFromBackEndQueue(id) {
   try {
     await axios.delete(`https://62ab9803a62365888bdecd3c.mockapi.io/filmoteca2/${id}`);
     // Notiflix.Loading.custom({
@@ -102,6 +102,6 @@ export {
   postDataToBackEndWatched,
   getDataFromQueueBackEnd,
   postDataToBackEndQueue,
-  deleteDataToBackEndQueue,
-  deleteDataToBackEndWatched,
+  deleteDataFromBackEndQueue,
+  deleteDataFromBackEndWatched,
 };

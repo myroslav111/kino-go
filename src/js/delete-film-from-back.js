@@ -6,6 +6,8 @@ import {
 } from './api-back-end';
 import { refs } from './refs';
 import { getData } from './api';
+import { onWatchedBtnClick } from './on-watched-btn-click';
+import { onQueueBtnClick } from './on-queue-btn-click';
 
 async function deleteFilm(e) {
   try {
@@ -35,6 +37,13 @@ async function deleteFilm(e) {
     }
   } catch (error) {
     console.log(error);
+  } finally {
+    refs.modal.classList.add('is-hidden');
+    if (refs.showWatchedBtn.classList.contains('color-orange')) {
+      onWatchedBtnClick();
+    } else {
+      onQueueBtnClick();
+    }
   }
 }
 

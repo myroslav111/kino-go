@@ -1,4 +1,4 @@
-import { createDataObjectByIdFromAPI } from './createDataObjectByIdFromAPI'
+import { createDataObjectByIdFromAPI } from './createDataObjectByIdFromAPI';
 import { getDataFromQueueBackEnd, postDataToBackEndQueue } from './api-back-end';
 import { getData } from './api';
 import Notiflix from 'notiflix';
@@ -9,7 +9,7 @@ async function onAddToQueueBtnClick(event) {
   const filmData = await createDataObjectByIdFromAPI(event.target.id);
 
   // // блок для localStorage
-  // let arrayQueue = localStorage.getItem('queue') !== null ? JSON.parse(localStorage.getItem('queue')) : [];  
+  // let arrayQueue = localStorage.getItem('queue') !== null ? JSON.parse(localStorage.getItem('queue')) : [];
   // // проверка на наличие текущего фильма в списке фильмов
   // let isInArray = arrayQueue.some(elem => elem.title === filmData.title)
   // if(isInArray){
@@ -19,15 +19,14 @@ async function onAddToQueueBtnClick(event) {
   // arrayQueue.push(filmData);
   // localStorage.setItem('queue', JSON.stringify(arrayQueue));
 
-
-  // // блок для бэкэнда 
-  // // получение с бэкэнда Queue списка фильмов 
+  // // блок для бэкэнда
+  // // получение с бэкэнда Queue списка фильмов
   const res = await getDataFromQueueBackEnd();
   const dataRes = res.data;
   // проверка на наличие фильма в списке
-  const isInArray = dataRes.some(data => data.title === filmData.title)
+  const isInArray = dataRes.some(data => data.title === filmData.title);
 
-  if(isInArray){     
+  if (isInArray) {
     return;
   }
   postDataToBackEndQueue(filmData);

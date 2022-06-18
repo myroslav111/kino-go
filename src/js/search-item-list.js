@@ -1,5 +1,5 @@
 import { getDataSingleCard, getDataGenre } from './api';
-import singleCard from '../templates/single-card.hbs';
+import singleCardTpl from '../templates/single-card.hbs';
 import { refs } from './refs';
 import { observeOnLastElOfGallery } from './infinit-scr';
 import { modalCardItem } from './modal-film';
@@ -14,7 +14,7 @@ async function singleCardItem() {
     // запрос на популярні
     const res = await (await getDataSingleCard(numPage)).data;
     const dataCinema = res.results;
-    const markup = singleCard(dataCinema);
+    const markup = singleCardTpl(dataCinema);
     refs.container.insertAdjacentHTML('beforeend', markup);
 
     // запуск інфінітскрола на мобілку

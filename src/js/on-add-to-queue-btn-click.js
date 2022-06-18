@@ -20,8 +20,8 @@ async function onAddToQueueBtnClick(event) {
   // localStorage.setItem('queue', JSON.stringify(arrayQueue));
 
 
-  // блок для бэкэнда 
-  // получение с бэкэнда Queue списка фильмов 
+  // // блок для бэкэнда 
+  // // получение с бэкэнда Queue списка фильмов 
   const res = await getDataFromQueueBackEnd();
   const dataRes = res.data;
   // проверка на наличие фильма в списке

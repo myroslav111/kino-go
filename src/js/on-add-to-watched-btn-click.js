@@ -8,7 +8,7 @@ async function onAddToWatchedBtnClick(event) {
   // создание объекта данных фильма по id
   const filmData = await createDataObjectByIdFromAPI(event.target.id);
   
-  // // блок для localStorage
+  // блок для localStorage
   // let arrayWatched = localStorage.getItem('watched') !== null ? JSON.parse(localStorage.getItem('watched')) : [];
   // // проверка на наличие текущего фильма в списке фильмов
   // let isInArray = arrayWatched.some(elem => elem.title === filmData.title)
@@ -20,8 +20,8 @@ async function onAddToWatchedBtnClick(event) {
   // localStorage.setItem('watched', JSON.stringify(arrayWatched));
 
 
-  // блок для бэкэнда 
-  // получение с бэкэнда Watched списка фильмов 
+  // // блок для бэкэнда 
+  // // получение с бэкэнда Watched списка фильмов 
   const res = await getDataFromWatchedBackEnd();
   const dataRes = res.data;
   // проверка на наличие фильма в списке

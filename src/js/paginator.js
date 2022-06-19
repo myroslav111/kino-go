@@ -63,8 +63,7 @@ async function onClickPagSearch(e) {
       console.log('чет пошло не так');
   }
 
-///// localStorage
-
+///// запись выбранной в пагинаторе страницы в localStorage
 let pageNumber = e.target.dataset.page;
 localStorage.setItem("pageNumber", pageNumber);
 

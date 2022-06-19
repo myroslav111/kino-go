@@ -8,6 +8,7 @@ refs.formEl.addEventListener('submit', onFormSubmit);
 // фун. при клікі на лупу(кнопка) рендер пошуку по інпуту
 async function onFormSubmit(e) {
   e.preventDefault();
+  localStorage.setItem("pageNumber", 1);
 
   // текст інпуту
   const formData = e.target.header.value;

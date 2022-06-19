@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
 footer {
+  // font-family: 'Caveat', cursive;
+  // font-family: ;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -41,7 +44,7 @@ footer {
 
 .footer__container {
   text-align: center;
-
+  font-family: 'Caveat', cursive;
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: center;

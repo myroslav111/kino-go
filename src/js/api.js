@@ -7,7 +7,7 @@ const URL_POPULAR = 'https://api.themoviedb.org/3/movie/popular';
 const URL_FOR_GENRE = 'https://api.themoviedb.org/3/genre/movie/list';
 const URL_FOR_SEARCH_BY_NAME = 'https://api.themoviedb.org/3/search/movie';
 
-// поиск по id
+// поиск по id фильма на апи themoviedb
 async function getData(id) {
   try {
     const response = await axios.get(`${URL_FOR_ID}/${id}?api_key=${key}&language=ru`);
@@ -23,7 +23,7 @@ async function getData(id) {
   }
 }
 
-// поиск популярных фил.
+// поиск популярных фил. на апи themoviedb
 async function getDataSingleCard(page) {
   try {
     const response = await axios.get(`${URL_POPULAR}?api_key=${key}&language=ru&page=${page}`);
@@ -39,7 +39,7 @@ async function getDataSingleCard(page) {
   }
 }
 
-// запрос на жанри
+// запрос на жанри на апи themoviedb
 async function getDataGenre() {
   try {
     const response = await axios.get(`${URL_FOR_GENRE}?api_key=${key}&language=ru`);
@@ -49,7 +49,7 @@ async function getDataGenre() {
   }
 }
 
-// поиск по инпуту
+// поиск по инпуту на апи themoviedb
 const page = 1;
 async function getDataByInput(input, page) {
   try {
@@ -61,7 +61,7 @@ async function getDataByInput(input, page) {
   }
 }
 
-// запрос на трейлер
+// запрос на трейлер на апи themoviedb
 async function getTrailer(id) {
   try {
     const response = await axios.get(`${URL_FOR_ID}/${id}/videos?api_key=${key}&language=ru`);

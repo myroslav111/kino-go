@@ -8,6 +8,7 @@ import { refs } from './refs';
 import { getData } from './api';
 import { onWatchedBtnClick } from './on-watched-btn-click';
 import { onQueueBtnClick } from './on-queue-btn-click';
+import Notiflix from 'notiflix';
 
 async function deleteFilm(e) {
   try {

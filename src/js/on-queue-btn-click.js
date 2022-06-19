@@ -35,6 +35,11 @@ async function onQueueBtnClick(e) {
   // забор списка из бэкэнда и рендер
   const res = await getDataFromQueueBackEnd();
   const dataRes = res.data;
+  // // проверка на наличие фильмов в списке
+   if(res.data.length === 0){
+    Notiflix.Notify.failure('В QUEUE нет фильмов.')
+  };
+
   refs.container.innerHTML = '';
   dataRes.map(async e => {
     const markup = libraryCardFilmTpl(e);

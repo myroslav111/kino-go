@@ -1,6 +1,11 @@
 import { getDataSingleCard, getDataGenre, getDataByInput } from './api';
 import { refs } from './refs';
+
+
+import { getAllCardFilms } from './get-popular-films-for-render';
+
 import singleCardTpl from '../templates/single-card.hbs';
+
 
 // фун. створення кнопок
 function renderButtons(count) {
@@ -80,16 +85,19 @@ async function onClickPagSearch(e) {
       break;
 
     case true:
-      const res = await (await getDataSingleCard(e.target.dataset.page)).data;
-      const dataCinema = res.results;
-      const markup = singleCardTpl(dataCinema);
+
+      const allCardFilms = await getAllCardFilms(e.target.dataset.page);
+      const markup = singleCardTpl(allCardFilms.results);
 
       refs.container.innerHTML = '';
       refs.container.insertAdjacentHTML('beforeend', markup);
-      index = res.page;
+      index = allCardFilms.page;
+
+ 
       if (document.querySelectorAll('.pag')[5].dataset.page > 6) {
         prev.classList.remove('is-hidden');
       }
+
 
       // вішаем бекграунд на поточну кнопку
       if (index === Number(e.target.textContent)) {

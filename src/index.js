@@ -18,6 +18,8 @@ import {
   closeModalOnCrossClick,
 } from './js/modal-team';
 
+import { scrollToTop } from './js/back-to-top-button';
+
 // import './js/youTube';
 // import { refs } from './js/refs';
 
@@ -42,27 +44,29 @@ function startingPage() {
 
 singleCardItem();
 
-// // вариант артема
-// let q;
-
-//   //   el.textContent = x;
-//   //   // console.dir(el);
-//   // });
-//   console.log(x);
-// });
-
 //////////////////////
 // мой вариант
 // async function f() {
+//   // *отримання усіх розпромісованих жанрів
 //   const resG = await getDataGenre();
 
 //   const resC = await getDataSingleCard();
-//   const arrC = resC.data.results;
-//   console.log(arrC);
-//   const x = arrC.map(({ genre_ids }) => {
+
+//   // *отримання усіх розпромісованих карточок фільмів
+//   const filmData = resC.data.results;
+//   console.log('🚀 ~ filmData ', filmData);
+
+//   // *перебирання усіх розпромісованих карточок фільмів
+//   filmData.forEach(({ genre_ids }, index) => {
+//     // *масив жанрів окремої карточки
 //     const genresId = genre_ids;
-//     console.log(genre_ids);
+//     filmData[index].ganreString = janres.id
+//     // console.log(genresId);
+
+//     // *створення пустого масиву
 //     let g = [];
+
+//     // *перебирання масив жанрів окремої карточки
 //     genresId.map(el => {
 //       const genre = resG.genres.filter(({ id, name }) => {
 //         if (id === el) {
@@ -70,14 +74,58 @@ singleCardItem();
 //           return name;
 //         }
 //       });
+
+//       // *повертаємо масив з "id" та "name"
 //       return g.push(genre[0].name);
 //     });
-//     console.log(g.join(','));
-//     console.dir();
-//   const w = document.querySelectorAll('.genre-name');
-//   w.forEach(el => (el.textContent = g.join(',')));
-//   return g.join(',');
-// });
-//   console.log(x);
+//     // console.log(g.join(','));
+
+//     // *доступ до "СПАНІВ"
+//     const w = document.querySelectorAll('.genre-name');
+//     w.forEach(el => (el.textContent = g.join(',')));
+//     return g.join(',');
+//   });
+//   // console.log(x);
+
+//   const options = {
+//     janre: filmsJanre,
+//     data: filmData,
+//   };
+//   // console.log('🚀 ~ options', options);
+//   // markup += hbs(options)
+
+//   return options;
 // }
 // f();
+
+// export { f };
+
+// вариант артема
+// let q;
+// getDataGenre()
+//   .then(data => data)
+//   .then(data => (q = data));
+// // console.log(q.genres);
+// getDataSingleCard()
+//   .then(data => data.data.results)
+//   .then(data => {
+//     // console.log(data.data.results);
+
+//     const films = data;
+
+//     films.forEach(({ genre_ids }, index) => {
+//       // console.log(genre_ids);
+//       // console.log(q.genres);
+
+//       const r = q.genres
+//         .filter(el => {
+//           return genre_ids.includes(el.id);
+//         })
+//         .map(({ name }) => {
+//           return name;
+//         });
+//       // console.log();
+//       films[index].janreStr = r.join(',');
+//     });
+//     return films;
+//   });

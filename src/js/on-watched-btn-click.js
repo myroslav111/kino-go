@@ -34,13 +34,19 @@ async function onWatchedBtnClick(e) {
   refs.showWatchedBtn.classList.add('color-orange');
 
   // забор списка из бэкэнда и рендер
-  const res = await getDataFromWatchedBackEnd();
+  const res = await getDataFromWatchedBackEnd(); 
   const dataRes = res.data;
+  // проверка на наличие фильмов в списке
+  if(dataRes.length === 0){
+    Notiflix.Notify.failure('В WATCHED нет фильмов.')
+  };
+
   refs.container.innerHTML = '';
   dataRes.map(async e => {
     const markup = libraryCardFilmTpl(e);
     refs.container.insertAdjacentHTML('beforeend', markup);
   });
+  
 }
 
 export { onWatchedBtnClick };

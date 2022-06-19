@@ -1,4 +1,4 @@
-import { createDataObjectByIdFromAPI } from './createDataObjectByIdFromAPI';
+import { createDataObjectByIdFromAPI } from './create-data-object-by-id-from-api';
 import { getDataFromWatchedBackEnd, postDataToBackEndWatched } from './api-back-end';
 import { getData } from './api';
 import Notiflix from 'notiflix';

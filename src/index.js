@@ -32,5 +32,4 @@ function startingPage() {
 }
 
 // startingPage();
-
 singleCardItem();

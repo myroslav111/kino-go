@@ -10,7 +10,8 @@ let numPage = 0;
 
 // фун. рендеру запроса популярних фильмов
 async function singleCardItem() {
-  numPage += 1;
+  // numPage += 1;
+  numPage = localStorage.getItem("pageNumber");
   try {
     // запрос на популярні
     const allCardFilms = await getAllCardFilms(numPage);

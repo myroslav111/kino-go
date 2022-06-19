@@ -21,14 +21,16 @@
         {{! <div class='imax-logo'></div> }}
       </div>
       <div class='movie-info'>
+        <div class='info-section genre'>
+          <span class="genre-name">{{janreStr}}</span>
+        </div>
         <div class='info-section'>
-          {{!-- <label>Date</label> --}}
-          <span>{{release_date}}</span>
+          <span>{{date_release}}</span>
         </div>
         <!--date,time-->
         <div class='info-section'>
           {{!-- <label>Vote</label> --}}
-          <span>{{vote_count}}</span>
+          {{!-- <span>{{vote_count}}</span> --}}
         </div>
         <!--screen-->
         <div class='info-section extend'>
@@ -36,14 +38,7 @@
           <span>{{vote_average}}</span>
         </div>
         <!--row-->
-        <div class='info-section genre'>
-          <label></label>
 
-          <span class="genre-name">{{janreStr}}</span>
-
-          {{!-- <span class="genre-name">{{genre_ids}}</span> --}}
-
-        </div>
         <!--seat-->
       </div>
     </div>

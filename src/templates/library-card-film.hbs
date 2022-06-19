@@ -16,25 +16,21 @@
         {{! <div class='imax-logo'></div> }}
       </div>
       <div class='movie-info'>
+        <div class='info-section genre'>
+          <span class="genre-name">{{this.genres.[0].name}}{{#unless @last}} {{/unless}}{{this.genres.[1].name}}</span>
+        </div>
         <div class='info-section'>
-          {{!-- <label>Date</label> --}}
           <span>{{release_date}}</span>
         </div>
         <!--date,time-->
         <div class='info-section'>
-          {{!-- <label>Vote</label> --}}
-          <span>{{vote_count}}</span>
         </div>
         <!--screen-->
         <div class='info-section extend'>
-          {{!-- <label>Votes</label> --}}
           <span>{{vote_average}}</span>
         </div>
         <!--row-->
-        <div class='info-section genre'>
-          {{!-- <label></label> --}}
-          <span class="genre-name">{{this.genres.[0].name}}{{#unless @last}} {{/unless}}{{this.genres.[1].name}}</span>
-        </div>
+ 
         {{!-- {{#each this.genres}} {{#unless @last}} {{name}} {{/unless}} {{/each}} --}}
         {{!-- {{#each this.genres}}{{name}}{{/each}} --}}
         {{!-- {{#unless @last}}, {{/unless}} --}}

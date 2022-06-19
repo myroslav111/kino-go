@@ -5,6 +5,7 @@ import { observeOnLastElOfGallery } from './infinit-scr';
 import { modalCardItem } from './modal-film';
 import { openModalFilmById } from './open-and-close-modal';
 import { renderButtons, onClickPagSearch } from './paginator';
+import { getAllCardFilms } from './get-popular-films-for-render';
 let numPage = 0;
 
 // фун. рендеру запроса популярних фильмов
@@ -13,9 +14,8 @@ async function singleCardItem() {
   numPage = localStorage.getItem("pageNumber");
   try {
     // запрос на популярні
-    const res = await (await getDataSingleCard(numPage)).data;
-    const dataCinema = res.results;
-    const markup = singleCardTpl(dataCinema);
+    const allCardFilms = await getAllCardFilms(numPage);
+    const markup = singleCardTpl(allCardFilms.results);
     refs.container.insertAdjacentHTML('beforeend', markup);
 
     // запуск інфінітскрола на мобілку
@@ -32,7 +32,7 @@ async function singleCardItem() {
     const pagesButtons = document.querySelectorAll('.pager__link');
 
     // підсвічуем поточну сторінку
-    pagesButtons[res.page].classList.add('current-accent-page');
+    pagesButtons[allCardFilms.page].classList.add('current-accent-page');
 
     // слухач пагинатора при кліке
     document.querySelector('.nav').addEventListener('click', onClickPagSearch);

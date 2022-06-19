@@ -2,6 +2,7 @@ import { refs } from './refs';
 import { getDataByInput } from './api';
 import singleCardTpl from '../templates/single-card.hbs';
 import { renderButtons } from './paginator';
+import { getCardByName } from './get-films-by-name';
 
 refs.formEl.addEventListener('submit', onFormSubmit);
 
@@ -15,8 +16,7 @@ async function onFormSubmit(e) {
   if (formData === '') {
     return;
   }
-
-  const response = await (await getDataByInput(formData)).data;
+  const response = await getCardByName(formData);
   refs.container.innerHTML = singleCardTpl(response.results);
   refs.pagContainer.innerHTML = '';
 

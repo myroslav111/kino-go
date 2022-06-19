@@ -12,6 +12,10 @@ import {
   closeModalOnBackdropClick,
   closeModalOnCrossClick,
 } from './js/modal-team';
+import { scrollToTop } from './js/back-to-top-button';
+// import './js/youTube';
+// import { refs } from './js/refs';
+// import { startingPage } from './js/starting-page';
 import { onYouTubeIframeAPIReady } from './js/youTube';
 import { getDataBackEnd, putDataBackEnd } from './js/api-back-end';
 

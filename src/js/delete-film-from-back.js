@@ -14,6 +14,7 @@ async function deleteFilm(e) {
   try {
     const res = await (await getData(e.target.id)).data;
     let idForDel;
+    // проверка на какой вкладке находится пользователь чтоб понимать откуда удалять фильм
     if (refs.showWatchedBtn.classList.contains('color-orange')) {
       const responseWatched = await getDataFromWatchedBackEnd();
       const dataResWatched = responseWatched.data;
@@ -23,6 +24,7 @@ async function deleteFilm(e) {
           idForDel = Number(el.ids);
         }
       });
+      // удаляем фильм на бекенде
       await deleteDataFromBackEndWatched(idForDel);
       Notiflix.Notify.info('Фильм удален из WATCHED.');
       return;
@@ -34,6 +36,7 @@ async function deleteFilm(e) {
           idForDel = Number(el.ids);
         }
       });
+      // удаляем фильм на бекенде
       await deleteDataFromBackEndQueue(idForDel);
       Notiflix.Notify.info('Фильм удален из QUEUE.');
       return;
@@ -41,6 +44,7 @@ async function deleteFilm(e) {
   } catch (error) {
     console.log(error);
   } finally {
+    // делаем рефреш страници
     refs.modal.classList.add('is-hidden');
     if (refs.showWatchedBtn.classList.contains('color-orange')) {
       onWatchedBtnClick();

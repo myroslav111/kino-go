@@ -91,16 +91,6 @@ a:hover {
   display: table-cell;
 }
 
-// .imax-logo {
-//   width: 50px;
-//   height: 15px;
-//   background-size: contain;
-//   display: table-cell;
-//   float: right;
-//   position: relative;
-//   margin-top: 5px;
-// }
-
 .movie-info {
   margin-top: 0.51em;
   display: flex;
@@ -140,8 +130,8 @@ a:hover {
 }
 
 .info-section span {
-  font-weight: 600;
-  font-size: 10px;
+  font-weight: 700;
+  font-size: 8px;
 }
 
 @media screen and (max-width: 500px) {

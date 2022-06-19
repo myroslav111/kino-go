@@ -1,6 +1,7 @@
 import Notiflix from 'notiflix';
 import axios from 'axios';
 
+// запрос на получение масива с обьектами фильмов с бекенда для Watched
 async function getDataFromWatchedBackEnd() {
   try {
     const response = await axios.get(`https://62a9f628371180affbcc1dc4.mockapi.io/filmoteca`);
@@ -17,6 +18,7 @@ async function getDataFromWatchedBackEnd() {
   }
 }
 
+// запрос на получение масива с обьектами фильмов с бекенда для Queue
 async function getDataFromQueueBackEnd() {
   try {
     const response = await axios.get(`https://62ab9803a62365888bdecd3c.mockapi.io/filmoteca2`);
@@ -33,6 +35,7 @@ async function getDataFromQueueBackEnd() {
   }
 }
 
+// отправка обьекта с фильмом на бекенд в библиотеку Watched
 async function postDataToBackEndWatched(data) {
   try {
     const response = await axios.post(
@@ -47,10 +50,11 @@ async function postDataToBackEndWatched(data) {
   } catch (error) {
     console.log(error);
   } finally {
-    Notiflix.Loading.remove(2000);
+    // Notiflix.Loading.remove(2000);
   }
 }
 
+// отправка обьекта с фильмом на бекенд в библиотеку Queue
 async function postDataToBackEndQueue(data) {
   try {
     const response = await axios.post(
@@ -69,6 +73,7 @@ async function postDataToBackEndQueue(data) {
   }
 }
 
+// удаление обьекта с фильмом с библиотеки бекенда Watched
 async function deleteDataFromBackEndWatched(id) {
   try {
     await axios.delete(`https://62a9f628371180affbcc1dc4.mockapi.io/filmoteca/${id}`);
@@ -83,6 +88,7 @@ async function deleteDataFromBackEndWatched(id) {
   }
 }
 
+// удаление обьекта с фильмом с библиотеки бекенда Queue
 async function deleteDataFromBackEndQueue(id) {
   try {
     await axios.delete(`https://62ab9803a62365888bdecd3c.mockapi.io/filmoteca2/${id}`);

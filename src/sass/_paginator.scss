@@ -14,7 +14,8 @@
   width: 400px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #e9e9e9;
+  // background-color: #e9e9e9;
+  background: linear-gradient(transparent, grey);
   border-radius: 20px;
   padding: 0;
 
@@ -22,6 +23,13 @@
   align-items: flex-end;
   justify-content: center;
 }
+
+.pager:hover {
+  background: linear-gradient(transparent, black);
+  transform: translateY(5%) scale(1.1);
+  z-index: 1;
+}
+
 .pager__item {
   display: inline-block;
   vertical-align: top;
@@ -54,8 +62,9 @@
   height: 2.625rem;
   line-height: 2.625rem;
   margin-left: -1px;
-  color: #2f3640;
+  // color: #2f3640;
   // color: #ff6b08;
+  color: white;
   text-decoration: none;
   transition: 0.3s;
 

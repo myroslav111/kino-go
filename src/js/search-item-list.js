@@ -1,5 +1,5 @@
 import { getDataSingleCard, getDataGenre } from './api';
-import singleCard from '../templates/single-card.hbs';
+import singleCardTpl from '../templates/single-card.hbs';
 import { refs } from './refs';
 import { observeOnLastElOfGallery } from './infinit-scr';
 import { modalCardItem } from './modal-film';
@@ -14,9 +14,7 @@ async function singleCardItem() {
   try {
     // запрос на популярні
     const allCardFilms = await getAllCardFilms(numPage);
-
-    const markup = singleCard(allCardFilms.results);
-
+    const markup = singleCardTpl(allCardFilms.results);
     refs.container.insertAdjacentHTML('beforeend', markup);
 
     // запуск інфінітскрола на мобілку
@@ -39,6 +37,10 @@ async function singleCardItem() {
     document.querySelector('.nav').addEventListener('click', onClickPagSearch);
   } catch (error) {
     console.log(error);
+  } finally {
+    if (document.querySelector('body').scrollWidth > 767) {
+      numPage = 0;
+    }
   }
 }
 

@@ -1,6 +1,6 @@
 import { refs } from './refs';
 import { getDataByInput } from './api';
-import singleCard from '../templates/single-card.hbs';
+import singleCardTpl from '../templates/single-card.hbs';
 import { renderButtons } from './paginator';
 import { getCardByName } from './get-films-by-name';
 
@@ -15,10 +15,8 @@ async function onFormSubmit(e) {
   if (formData === '') {
     return;
   }
-
   const response = await getCardByName(formData);
-  console.log('🚀 ~ response', response);
-  refs.container.innerHTML = singleCard(response.results);
+  refs.container.innerHTML = singleCardTpl(response.results);
   refs.pagContainer.innerHTML = '';
 
   // умови для роботи пагінатора

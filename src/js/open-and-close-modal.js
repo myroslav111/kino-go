@@ -1,6 +1,7 @@
 import { modalCardItem } from './modal-film';
 import { refs } from './refs';
 import { closeYouTube } from './youTube';
+import { onWatchedBtnClick } from './on-watched-btn-click';
 
 // фун. открытия модалки
 function openModalFilmById(e) {
@@ -9,7 +10,6 @@ function openModalFilmById(e) {
   }
   modalCardItem(e.target.id);
   refs.modal.classList.remove('is-hidden');
-  refs.headerEl.classList.add('is-hidden');
   document.addEventListener('keydown', closeModalFilm);
 }
 
@@ -21,12 +21,18 @@ function closeModalFilm(e) {
     e.code === 'Escape'
   ) {
     refs.modal.classList.add('is-hidden');
-    refs.headerEl.classList.remove('is-hidden');
     closeYouTube();
     if (e.code === 'Escape') {
       document.removeEventListener('keydown', closeModalFilm);
     }
   }
+  // console.log(refs.library.classList.contains('current'));
+  // if (
+  //   refs.library.classList.contains('current') &&
+  //   refs.showWatchedBtn.classList.contains('color-orange')
+  // ) {
+  //   onWatchedBtnClick();
+  // }
 }
 
 export { openModalFilmById, closeModalFilm };

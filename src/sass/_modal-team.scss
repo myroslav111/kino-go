@@ -1,4 +1,5 @@
 .backdrop {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   position: fixed;
   z-index: 100;
   overflow-y: scroll;
@@ -6,9 +7,20 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(58, 49, 47, 0.8);
+  padding-top: 30px;
+  // background-color: rgba(64, 62, 61, 0.9);
+  // transform: rotateY(180deg);
+  // background-color: #333;
+  // background-image: url(https://userscontent2.emaze.com/images/f9538183-0f…c8ab90421e3b/3d28e192fda5c17250f96a2779c84475.jpg);
+  background-image: url('https://i0.wp.com/ravemotionpictures.com/wp-content/uploads/2022/03/Best-Movies-on-Netflix.jpg?w=1512&ssl=1');
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (max-width: 768px) {
+  .backdrop {
+    padding-top: 0;
+  }
 }
 
 .backdrop.is-hidden .modal-team {
@@ -17,21 +29,21 @@
 }
 
 .modal-team {
-  position: absolute;
-  top: 9.5%;
-  left: 9.5%;
-  min-width: 90vw;
-  min-height: 90vh;
-  opacity: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  transform: translate(-5%, -5%) scale(1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  background: #ffffff;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+  // position: absolute;
+  // top: 9.5%;
+  // left: 9.5%;
+  // min-width: 90vw;
+  // min-height: 90vh;
+  // opacity: 1;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-around;
+  // transform: translate(-5%, -5%) scale(1);
+  // transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  // background: #ffffff;
+  // box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+  //   0px 2px 1px rgba(0, 0, 0, 0.2);
+  // border-radius: 4px;
 
   // @media screen and (min-width: 768px) {
   //   min-width: 400px;
@@ -42,6 +54,11 @@
   //     min-width: 800px;
   //     min-height: 400px;
   // }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background: #16384c;
 }
 
 button.close {
@@ -49,33 +66,25 @@ button.close {
   padding: 0;
   top: 8px;
   right: 8px;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
+  fill: #ffffff;
   border-radius: 50%;
   // border: 1px solid #0000001a;
   border-color: transparent;
-  background-color: inherit;
+  background-color: tomato;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
 }
 
 button.close:hover,
 button.close:focus {
-  // fill: #FF6B08;
+  fill: black;
   background-color: #ff6b08;
   cursor: pointer;
-}
-
-.team-list {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-
-  padding: 0;
-  // border: 3px solid green;
 }
 
 .developer {
@@ -94,25 +103,6 @@ button.close:focus {
   }
 }
 
-.developer-photo {
-  margin-bottom: 10px;
-  display: block;
-  width: 85px;
-  // height: 60px;
-  // border: 1px solid rgb(248, 245, 49);
-  background-size:cover;
-
-  @media screen and (min-width: 768px) {
-    width: 200px;
-    // height: 200px;
-  }
-
-  @media screen and (min-width: 1024px) {
-    width: 280px;
-    // height: 280px;
-  }
-}
-
 .developer-data {
   margin-bottom: 10px;
   font-size: 11px;
@@ -125,40 +115,36 @@ button.close:focus {
   }
 }
 
-.developer-position{
+.developer-position {
   margin-bottom: 10px;
   font-size: 9px;
-  
-    @media screen and (min-width: 768px) {
-      font-size: 14px;
-    }
-  
-    @media screen and (min-width: 1024px) {
-      font-size: 22px;
-    }
+  color: #ff6b08;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 22px;
+  }
 }
 
-.developer-github{
-//     border: 3px dashed red;
-//     // position: relative;
-//     // display: flex;
-//     // justify-content: center;
-//     // align-items: center;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.developer-github {
+  //     border: 3px dashed red;
+  //     // position: relative;
+  //     // display: flex;
+  //     // justify-content: center;
+  //     // align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-// .developer-github:hover,
-// .developer-github:focus {
-//     background-color: #ff6b08;
-// }
 
 .icon-github {
   width: 32px;
   height: 32px;
-    border-radius: 50%;
+  border-radius: 50%;
 
   // @media screen and (min-width: 768px){
   //   width: 20px;
@@ -171,7 +157,94 @@ button.close:focus {
 }
 
 .icon-github:hover,
-.icon-github:focus{
+.icon-github:focus {
   background-color: #ff6b08;
   border-radius: 50%;
+}
+
+.team-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding: 0;
+  // border: 3px solid green;
+
+  position: relative;
+  // width: 700px;
+  justify-content: center;
+  padding: 30px;
+}
+
+.team-list .card {
+  border-radius: 10px;
+  position: relative;
+  max-width: 300px;
+  height: 410px;
+  background: #ffffff;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 10px 20px #ff6b08;
+}
+
+.team-list .card:hover {
+  height: 490px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .team-list .card:hover {
+    height: 494px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .team-list .card:hover {
+    height: 460px;
+  }
+}
+.team-list .card .imgBx {
+  position: relative;
+  width: 260px;
+  // height: 173px;
+  top: -30px;
+  left: 0px;
+  z-index: 1;
+  // box-shadow: 0px 0px 150px -45px rgb(255 51 0 / 50%);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.team-list .card .imgBx img {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  // box-shadow: -16px 6px 15px #ced0d3;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+.team-list .card .content {
+  position: relative;
+  margin-top: -140px;
+  padding: 10px 15px;
+  text-align: center;
+  color: #111;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.team-list .card:hover .content {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -25px;
+  transition-delay: 0.3s;
+}
+@media screen and (max-width: 768px) {
+  .team-list .card:hover .content {
+    margin-top: -25px;
+  }
 }

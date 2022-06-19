@@ -44,6 +44,8 @@ function stopVideo() {
 
 function closeYouTube(e) {
   // e.stopPropagation();
+  if (!player) return;
+
   player.destroy();
   document.querySelector('.backdrop-youtube').classList.add('is-hidden');
 }

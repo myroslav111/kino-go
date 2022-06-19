@@ -1,13 +1,12 @@
 import { getData, getTrailer } from './api';
-import modalCard from '../templates/modal-film.hbs';
+import modalFilmTpl from '../templates/modal-film.hbs';
 import { refs } from './refs';
-
+import { deleteFilm } from './delete-film-from-back';
 import { closeModalFilm } from './open-and-close-modal';
 import { onAddToWatchedBtnClick } from './on-add-to-watched-btn-click';
 import { onAddToQueueBtnClick } from './on-add-to-queue-btn-click';
 
 import { onYouTubeIframeAPIReady, closeYouTube } from './youTube';
-
 
 // фун. создания и рендера модалки
 let path;
@@ -15,22 +14,34 @@ let path;
 async function modalCardItem(id) {
   try {
     const res = await (await getData(id)).data;
-    const markup = modalCard(res);
+    const markup = modalFilmTpl(res);
     const bgImage = res.backdrop_path;
     refs.modal.innerHTML = '';
     refs.modal.insertAdjacentHTML('afterbegin', markup);
 
-    // рефи на кнопки модалки по додаванню данніх в локал сторедж
+    // рефи на кнопки модалки по додаванню данніх в локал сторедж и бека
     const addToWatchedBtn = document.querySelector('button[data-action="add-to-watched"]');
     const addToQueueBtn = document.querySelector('button[data-action="add-to-queue"]');
     addToWatchedBtn.addEventListener('click', onAddToWatchedBtnClick);
     addToQueueBtn.addEventListener('click', onAddToQueueBtnClick);
-    console.log("id", id);
-    
-    // console.log(arrayWatched);
+
+    // подсветка бекграунда кнопки текущей вкладки
+    try {
+      if (
+        refs.showWatchedBtn.dataset.action === 'open' ||
+        refs.showQueueBtn.dataset.action === 'open'
+      ) {
+        document.querySelector('.list-btn-modal').classList.add('is-hidden');
+        document.querySelector('.raise').classList.remove('is-hidden');
+        document.querySelector('.raise').addEventListener('click', deleteFilm);
+      }
+    } catch (error) {
+      console.log(error);
+    }
 
     // бекграунд колор карточки модалки
     const bgc = document.querySelector('#bgc');
+
     bgc.style.background = `url(https://image.tmdb.org/t/p/w500${bgImage}) 70% 0%`;
     bgc.style.backgroundRepeat = 'no-repeat';
     bgc.style.backgroundSize = 'cover';

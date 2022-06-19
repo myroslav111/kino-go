@@ -1,7 +1,11 @@
 import { getDataSingleCard, getDataGenre, getDataByInput } from './api';
 import { refs } from './refs';
-import singleCard from '../templates/single-card.hbs';
+
+
 import { getAllCardFilms } from './get-popular-films-for-render';
+
+import singleCardTpl from '../templates/single-card.hbs';
+
 
 // фун. створення кнопок
 function renderButtons(count) {
@@ -17,12 +21,12 @@ function renderButtons(count) {
       );
     }
   }
-  const murkap = button.join('');
+  const markup = button.join('');
   return ` <li class="pager__item pager__item--prev">
-  <button class="pager__link" id="left">&#9837;
+  <button class="pager__link is-hidden" id="left">&#9837;
   </button>
     </li>
-     ${murkap}
+     ${markup}
     <li class="pager__item pager__item--next">
     <button class="pager__link" id="rigth">&#9839;
    </button>
@@ -32,6 +36,9 @@ function renderButtons(count) {
 let index;
 // фун. роботи пагінатора
 async function onClickPagSearch(e) {
+  const currentPage = document.querySelector('button.pager__link.pag.current-accent-page');
+  const prev = document.querySelector('#left');
+  const next = document.querySelector('#rigth');
   if (e.target.nodeName !== 'BUTTON') {
     return;
   }
@@ -48,42 +55,58 @@ async function onClickPagSearch(e) {
         el.dataset.page = Number(el.dataset.page) + 1;
         el.textContent = el.dataset.page;
       });
+      prev.classList.remove('is-hidden');
+      // break;
       return;
 
     case 'left':
-      if (document.querySelectorAll('.pag')[0].dataset.page === '1') {
-        return;
-      }
       document.querySelectorAll('.pag').forEach(el => {
         el.dataset.page = Number(el.dataset.page) - 1;
         el.textContent = el.dataset.page;
       });
+      if (document.querySelectorAll('.pag')[0].dataset.page === '1') {
+        prev.classList.add('is-hidden');
+        return;
+      }
+      // break;
       return;
 
     default:
-      console.log('чет пошло не так');
+      console.log('все гуд');
   }
 
   // рендер пейджа по номеру натиснутої кнопки
-  switch (document.querySelector('input').value === '') {
+  switch (document.querySelector('input').value === '' && e.target.classList.contains('pag')) {
     case false:
       const response = await (
         await getDataByInput(document.querySelector('input').value, e.target.dataset.page)
       ).data;
-      refs.container.innerHTML = singleCard(response.results);
+      refs.container.innerHTML = singleCardTpl(response.results);
       break;
 
     case true:
+
       const allCardFilms = await getAllCardFilms(e.target.dataset.page);
-      const markup = singleCard(allCardFilms.results);
+      const markup = singleCardTpl(allCardFilms.results);
 
       refs.container.innerHTML = '';
       refs.container.insertAdjacentHTML('beforeend', markup);
       index = allCardFilms.page;
 
+ 
+      if (document.querySelectorAll('.pag')[5].dataset.page > 6) {
+        prev.classList.remove('is-hidden');
+      }
+
+
       // вішаем бекграунд на поточну кнопку
       if (index === Number(e.target.textContent)) {
         e.target.classList.add('current-accent-page');
+
+        // делаем кнопку со значком "♭" скрытой при текущей странице = 1
+        if (document.querySelectorAll('.pag')[0] > Number('1')) {
+          prev.classList.remove('is-hidden');
+        }
       }
       break;
 

@@ -1,21 +1,23 @@
-[{
-    "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuhK69ZqpgZZzweFUU2y3yOWpXiJ_riCV6IQ&usqp=CAU",
+[
+  {
+    "photo": "https://failiem.lv/thumb_show.php?i=9kns4xhxh",
     "description": "Photo Myroslav Kozar",
     "name": "Myroslav Kozar",
-    "position": "Team Lead",
+    "position": "Team Lead (режисер)",
     "github": "https://github.com/myroslav111"
-},
-{
+  },
+  {
     "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-Uluxe_P-hVIU0sdsqf3KII4Ul9WPqtVTFg&usqp=CAU",
     "description": "Photo Volodymyr Kavun",
     "name": "Volodymyr Kavun",
-    "position": "Scrum Master",
+    "position": "Scrum (продюсер)",
     "github": "https://github.com/VolodymyrKavun"
-},
-{
+  },
+  {
     "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQyM8LgVM2mwIwDeoBVLwXH3sLVDrE70xdiw&usqp=CAU",
     "description": "Photo Maksim Peltek",
     "name": "Maksim Peltek",
-    "position": "Developer",
+    "position": "Developer (звезда кино)",
     "github": "https://github.com/Maksimchik36"
-}]
+  }
+]

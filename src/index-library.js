@@ -10,6 +10,7 @@ import {
   closeModalOnBackdropClick,
   closeModalOnCrossClick,
 } from './js/modal-team';
+import { onLogoClick } from './js/on-logo-click';
 import { onClickPagSearch } from './js/paginator';
 
 onWatchedBtnClick();

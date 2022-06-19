@@ -28,5 +28,4 @@ function startingPage() {
 }
 
 // startingPage();
-
 singleCardItem();

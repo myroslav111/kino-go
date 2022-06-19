@@ -63,16 +63,23 @@ async function onClickPagSearch(e) {
       console.log('чет пошло не так');
   }
 
+///// localStorage
+
+let pageNumber = e.target.dataset.page;
+localStorage.setItem("pageNumber", pageNumber);
+
   // рендер пейджа по номеру натиснутої кнопки
   switch (document.querySelector('input').value === '') {
     case false:
       const response = await (
         await getDataByInput(document.querySelector('input').value, e.target.dataset.page)
       ).data;
+      
       refs.container.innerHTML = singleCardTpl(response.results);
       break;
 
     case true:
+      pageNumber = localStorage.getItem("pageNumber");
       const res = await (await getDataSingleCard(e.target.dataset.page)).data;
       const dataCinema = res.results;
       const markup = singleCardTpl(dataCinema);

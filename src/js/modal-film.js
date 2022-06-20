@@ -14,6 +14,7 @@ let path;
 async function modalCardItem(id) {
   try {
     const res = await (await getData(id)).data;
+    console.log(res);
     const markup = modalFilmTpl(res);
     const bgImage = res.backdrop_path;
     refs.modal.innerHTML = '';

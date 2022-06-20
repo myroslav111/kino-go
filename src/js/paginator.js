@@ -83,10 +83,9 @@ async function onClickPagSearch(e) {
   switch (refs.inputEl.value === '' && e.target.classList.contains('pag')) {
     case false:
       const response = await getCardByName(refs.inputEl.value, Number(e.target.dataset.page));
-
       refs.container.innerHTML = singleCardTpl(response.results);
       break;
-
+    // todo
     case true:
       pageNumber = localStorage.getItem('pageNumber');
 

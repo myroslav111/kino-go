@@ -10,6 +10,8 @@ function openModalFilmById(e) {
   }
   modalCardItem(e.target.id);
   refs.modal.classList.remove('is-hidden');
+  refs.scrollToTopBtn.classList.add('is-hidden');
+  document.querySelector('body').classList.add('stop-scrolling');
   document.addEventListener('keydown', closeModalFilm);
 }
 
@@ -21,6 +23,8 @@ function closeModalFilm(e) {
     e.code === 'Escape'
   ) {
     refs.modal.classList.add('is-hidden');
+    refs.scrollToTopBtn.classList.remove('is-hidden');
+    document.querySelector('body').classList.remove('stop-scrolling');
     closeYouTube();
     if (e.code === 'Escape') {
       document.removeEventListener('keydown', closeModalFilm);

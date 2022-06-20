@@ -10,6 +10,7 @@ refs.modalStudents.addEventListener('click', closeModalOnBackdropClick);
 function onStudentsClick(event) {
   event.preventDefault();
   refs.modalStudents.classList.remove('is-hidden');
+  document.querySelector('body').classList.add('stop-scrolling');
   document.addEventListener('keydown', onModalPressEsc);
   refs.closeModalTeam.addEventListener('click', closeModalOnCrossClick);
   renderDevelopersCards();
@@ -19,6 +20,7 @@ function onStudentsClick(event) {
 function onModalPressEsc(event) {
   if (event.code === 'Escape') {
     refs.modalStudents.classList.add('is-hidden');
+    document.querySelector('body').classList.remove('stop-scrolling');
     document.removeEventListener('keydown', onModalPressEsc);
   }
 }
@@ -28,6 +30,7 @@ function closeModalOnBackdropClick(event) {
   if (event.target === refs.modalStudents) {
     // console.log("event.target", event.target);
     refs.modalStudents.classList.add('is-hidden');
+    document.querySelector('body').classList.remove('stop-scrolling');
   }
 }
 
@@ -37,6 +40,7 @@ function closeModalOnCrossClick(event) {
   if (event.currentTarget === refs.closeModalTeam) {
     console.log('event.target', event.target);
     refs.modalStudents.classList.add('is-hidden');
+    document.querySelector('body').classList.remove('stop-scrolling');
     refs.closeModalTeam.removeEventListener('click', closeModalOnCrossClick);
   }
 }

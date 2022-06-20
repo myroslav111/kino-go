@@ -35,6 +35,7 @@ async function onWatchedBtnClick(e) {
 
   // забор списка из бэкэнда и рендер
   const res = await getDataFromWatchedBackEnd(); 
+  console.log('res', res);
   const dataRes = res.data;
   // проверка на наличие фильмов в списке
   if(dataRes.length === 0){

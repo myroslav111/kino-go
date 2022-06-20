@@ -1,4 +1,7 @@
-function onAddToWatchedBtnClickForLocalStorage(event) {
+import { createDataObjectByIdFromAPI } from './create-data-object-by-id-from-api';
+import Notiflix from 'notiflix';
+
+async function onAddToWatchedBtnClickForLocalStorage(event) {
     // создание объекта данных фильма по id
   const filmData = await createDataObjectByIdFromAPI(event.target.id);
 

@@ -2,6 +2,9 @@ import { getData, getTrailer } from './api';
 import modalFilmTpl from '../templates/modal-film.hbs';
 import { refs } from './refs';
 import { deleteFilm } from './delete-film-from-back';
+import { onAddToQueueBtnClickForLocalStorage } from './on-add-to-queue-btn-click-for-local-storage';
+import { onAddToWatchedBtnClickForLocalStorage } from './on-add-to-watched-btn-click-for-local-storage';
+import { deleteFilmFromLocalStorage } from './delete-film-from-local-storage';
 import { closeModalFilm } from './open-and-close-modal';
 import { onAddToWatchedBtnClick } from './on-add-to-watched-btn-click';
 import { onAddToQueueBtnClick } from './on-add-to-queue-btn-click';
@@ -22,18 +25,27 @@ async function modalCardItem(id) {
     // рефи на кнопки модалки по додаванню данніх в локал сторедж и бека
     const addToWatchedBtn = document.querySelector('button[data-action="add-to-watched"]');
     const addToQueueBtn = document.querySelector('button[data-action="add-to-queue"]');
-    addToWatchedBtn.addEventListener('click', onAddToWatchedBtnClick);
-    addToQueueBtn.addEventListener('click', onAddToQueueBtnClick);
+    
+    // для localStorage раскомментировать
+    addToWatchedBtn.addEventListener('click', onAddToWatchedBtnClickForLocalStorage);
+    addToQueueBtn.addEventListener('click', onAddToQueueBtnClickForLocalStorage);
+    
+    // // для бэкэнда раскомментировать
+    // addToWatchedBtn.addEventListener('click', onAddToWatchedBtnClick);
+    // addToQueueBtn.addEventListener('click', onAddToQueueBtnClick);
 
     // подсветка бекграунда кнопки текущей вкладки
     try {
       if (
-        refs.showWatchedBtn.dataset.action === 'open' ||
-        refs.showQueueBtn.dataset.action === 'open'
+        refs.library.classList.contains('current')
+        // refs.showWatchedBtn.dataset.action === 'open' ||
+        // refs.showQueueBtn.dataset.action === 'open'
       ) {
         document.querySelector('.list-btn-modal').classList.add('is-hidden');
         document.querySelector('.raise').classList.remove('is-hidden');
-        document.querySelector('.raise').addEventListener('click', deleteFilm);
+        // document.querySelector('.raise').addEventListener('click', deleteFilm);
+        document.querySelector('.raise').addEventListener('click', deleteFilmFromLocalStorage);
+
       }
     } catch (error) {
       console.log(error);

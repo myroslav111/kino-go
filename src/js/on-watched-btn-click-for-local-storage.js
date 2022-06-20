@@ -1,6 +1,9 @@
-function onWatchedBtnClickForLocalStorage(e) {
+import Notiflix from 'notiflix';
+
+async function onWatchedBtnClickForLocalStorage(e) {
     // блок для localStorage
-    const watchedFilms = localStorage.getItem('watched');
+  const watchedFilms = localStorage.getItem('watched');
+  console.log("watchedFilms", watchedFilms);
     if (watchedFilms === null) {
       Notiflix.Notify.failure('В WATCHED нет фильмов.');
       return;

@@ -1,3 +1,5 @@
+import Notiflix from 'notiflix';
+
 function onQueueBtnClickForLocalStorage(event) {
     // блок для localStorage
 

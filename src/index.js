@@ -14,22 +14,9 @@ import {
 } from './js/modal-team';
 import { scrollToTop } from './js/back-to-top-button';
 // import './js/youTube';
-// import { refs } from './js/refs';
 // import { startingPage } from './js/starting-page';
 import { onYouTubeIframeAPIReady } from './js/youTube';
 import { getDataBackEnd, putDataBackEnd } from './js/api-back-end';
+import { startingPage } from './js/starting-page';
 
-function startingPage() {
-  document.querySelector('.video').classList.remove('hidden');
-  setTimeout(() => {
-    try {
-      singleCardItem();
-    } catch (error) {
-    } finally {
-      document.querySelector('.video').classList.add('hidden');
-    }
-  }, 7000);
-}
-
-// startingPage();
 singleCardItem();

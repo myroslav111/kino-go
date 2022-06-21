@@ -5,7 +5,7 @@ import { deleteFilm } from './delete-film-from-back';
 import { closeModalFilm } from './open-and-close-modal';
 import { onAddToWatchedBtnClick } from './on-add-to-watched-btn-click';
 import { onAddToQueueBtnClick } from './on-add-to-queue-btn-click';
-
+import Notiflix from 'notiflix';
 import { onYouTubeIframeAPIReady, closeYouTube } from './youTube';
 
 // фун. создания и рендера модалки
@@ -14,7 +14,6 @@ let path;
 async function modalCardItem(id) {
   try {
     const res = await (await getData(id)).data;
-    console.log(res);
     const markup = modalFilmTpl(res);
     const bgImage = res.backdrop_path;
     refs.modal.innerHTML = '';
@@ -37,7 +36,7 @@ async function modalCardItem(id) {
         document.querySelector('.raise').addEventListener('click', deleteFilm);
       }
     } catch (error) {
-      console.log(error);
+      // console.log();
     }
 
     // бекграунд колор карточки модалки
@@ -52,6 +51,7 @@ async function modalCardItem(id) {
 
     // id путь к трейлеру ютюб
     path = trailer.data.results[0].key;
+    console.log(path);
     const refIconYouTobe = document.querySelector('.svg--icon');
 
     // слушаем кнопку открытия ютюба

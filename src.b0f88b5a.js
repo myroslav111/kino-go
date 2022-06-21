@@ -148,4 +148,4 @@ module.exports=[{photo:"https://failiem.lv/thumb_show.php?i=9kns4xhxh",descripti
 },{"./search-item-list":"Ykfl"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=require("./js/api"),r=require("./js/refs"),s=require("./js/modal-film"),i=require("./js/search-item-list"),a=require("./js/search-by-name"),u=require("./js/header"),q=require("./js/paginator"),t=require("./js/modal-team"),j=require("./js/back-to-top-button"),m=require("./js/youTube"),n=require("./js/api-back-end"),o=require("./js/starting-page");(0,i.singleCardItem)();
 },{"./sass/main.scss":"clu1","./js/api":"cZF8","./js/refs":"VyiV","./js/modal-film":"voJm","./js/search-item-list":"Ykfl","./js/search-by-name":"l8eg","./js/header":"cGsR","./js/paginator":"d4Ms","./js/modal-team":"O9Th","./js/back-to-top-button":"PVc9","./js/youTube":"gy8x","./js/api-back-end":"nN8i","./js/starting-page":"P3h6"}]},{},["Focm"], null)
-//# sourceMappingURL=/kino-go/src.53407228.js.map
+//# sourceMappingURL=/kino-go/src.b0f88b5a.js.map

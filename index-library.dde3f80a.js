@@ -140,4 +140,4 @@ module.exports=[{photo:"https://failiem.lv/thumb_show.php?i=9kns4xhxh",descripti
 },{"./refs":"VyiV","./search-item-list":"Ykfl"}],"DIZc":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=require("./js/api"),r=require("./js/refs"),i=require("./js/search-item-list"),s=require("./js/on-watched-btn-click"),t=require("./js/on-queue-btn-click"),c=require("./js/modal-team"),n=require("./js/on-logo-click"),u=require("./js/paginator");(0,s.onWatchedBtnClick)(),r.refs.showQueueBtn.addEventListener("click",t.onQueueBtnClick),r.refs.showWatchedBtn.addEventListener("click",s.onWatchedBtnClick);
 },{"./sass/main.scss":"clu1","./js/api":"cZF8","./js/refs":"VyiV","./js/search-item-list":"Ykfl","./js/on-watched-btn-click":"bieZ","./js/on-queue-btn-click":"Fcxt","./js/modal-team":"O9Th","./js/on-logo-click":"j3tH","./js/paginator":"d4Ms"}]},{},["DIZc"], null)
-//# sourceMappingURL=/kino-go/index-library.f500dc40.js.map
+//# sourceMappingURL=/kino-go/index-library.dde3f80a.js.map

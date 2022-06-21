@@ -12,4 +12,4 @@ function startingPage() {
   }, 7000);
 }
 
-// startingPage();
+startingPage();

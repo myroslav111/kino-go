@@ -12,15 +12,17 @@ let numPage = 0;
 async function singleCardItem(num) {
   // numPage += 1;
   numPage = localStorage.getItem('pageNumber');
+  let allCardFilms;
+
   try {
     // запрос на популярні
     // перевірка чи ми зараз на мобілі якщо так то локал сторідж вімикаемо
     if (num) {
-      const allCardFilms = await getAllCardFilms(num);
+      allCardFilms = await getAllCardFilms(num);
       const markup = singleCardTpl(allCardFilms.results);
       refs.container.insertAdjacentHTML('beforeend', markup);
     } else {
-      const allCardFilms = await getAllCardFilms(numPage);
+      allCardFilms = await getAllCardFilms(numPage);
       const markup = singleCardTpl(allCardFilms.results);
       refs.container.insertAdjacentHTML('beforeend', markup);
     }

@@ -269,7 +269,9 @@
   color: #ff6b08;
 }
 
-.stop-scrolling {
-  height: 100%;
-  overflow: hidden;
+@media screen and (min-width: 768px) {
+  .stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+  }
 }

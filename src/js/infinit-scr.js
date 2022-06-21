@@ -1,6 +1,6 @@
 import { singleCardItem } from './search-item-list';
 import { refs } from './refs';
-let num = 0;
+let num = 1;
 
 //фун. для инфинити скрола
 function observeOnLastElOfGallery(set) {

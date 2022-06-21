@@ -4,7 +4,7 @@ import { refs } from './refs';
 import { deleteFilm } from './delete-film-from-back';
 import { onAddToQueueBtnClickForLocalStorage } from './on-add-to-queue-btn-click-for-local-storage';
 import { onAddToWatchedBtnClickForLocalStorage } from './on-add-to-watched-btn-click-for-local-storage';
-import { deleteFilmFromLocalStorage } from './delete-film-from-local-storage';
+import { deleteFilmFromQueueForLocalStorage } from './delete-film-from-queue-for-local-storage';
 import { closeModalFilm } from './open-and-close-modal';
 import { onAddToWatchedBtnClick } from './on-add-to-watched-btn-click';
 import { onAddToQueueBtnClick } from './on-add-to-queue-btn-click';
@@ -43,8 +43,13 @@ async function modalCardItem(id) {
       ) {
         document.querySelector('.list-btn-modal').classList.add('is-hidden');
         document.querySelector('.raise').classList.remove('is-hidden');
+
+        // // для localStorage раскомментировать 
+        document.querySelector('.raise').addEventListener('click', deleteFilmFromQueueForLocalStorage);
+
+
+        // // для бэкэнда раскомментировать 
         // document.querySelector('.raise').addEventListener('click', deleteFilm);
-        document.querySelector('.raise').addEventListener('click', deleteFilmFromLocalStorage);
 
       }
     } catch (error) {

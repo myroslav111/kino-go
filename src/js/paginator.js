@@ -56,7 +56,6 @@ async function onClickPagSearch(e) {
         el.textContent = el.dataset.page;
       });
       prev.classList.remove('is-hidden');
-      // break;
       return;
 
     case 'left':
@@ -68,7 +67,6 @@ async function onClickPagSearch(e) {
         prev.classList.add('is-hidden');
         return;
       }
-      // break;
       return;
 
     default:

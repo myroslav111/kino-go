@@ -48,6 +48,7 @@ async function onClickPagSearch(e) {
     .querySelectorAll('.pager__link')
     .forEach(el => el.classList.remove('current-accent-page'));
 
+  e.target.classList.add('current-accent-page');
   // міняемо цифру кнопок
   switch (e.target.id) {
     case 'rigth':
@@ -73,21 +74,20 @@ async function onClickPagSearch(e) {
       console.log('все гуд');
   }
 
-  ///// запись выбранной в пагинаторе страницы в localStorage
+  /// запись выбранной в пагинаторе страницы в localStorage
   let pageNumber = e.target.dataset.page;
   localStorage.setItem('pageNumber', pageNumber);
 
   // рендер пейджа по номеру натиснутої кнопки
   switch (refs.inputEl.value === '' && e.target.classList.contains('pag')) {
     case false:
-      const response = await getCardByName(refs.inputEl.value, Number(e.target.dataset.page));
+      const response = await getCardByName(refs.inputEl.value, Number(pageNumber));
       refs.container.innerHTML = singleCardTpl(response.results);
       break;
-    // todo
     case true:
       pageNumber = localStorage.getItem('pageNumber');
 
-      const allCardFilms = await getAllCardFilms(e.target.dataset.page);
+      const allCardFilms = await getAllCardFilms(pageNumber);
       const markup = singleCardTpl(allCardFilms.results);
 
       refs.container.innerHTML = '';

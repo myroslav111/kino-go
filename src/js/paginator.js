@@ -47,6 +47,8 @@ async function onClickPagSearch(e) {
   document
     .querySelectorAll('.pager__link')
     .forEach(el => el.classList.remove('current-accent-page'));
+          // e.target.classList.add('current-accent-page');
+
 
   // міняемо цифру кнопок
   switch (e.target.id) {

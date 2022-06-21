@@ -19,13 +19,13 @@ async function onWatchedBtnClick(e) {
     // refs.container.innerHTML = markup;
 
   
-  // // блок для бэкэнда
+  // блок для бэкэнда
   Notiflix.Loading.custom('Loading...', {
     customSvgCode:
       '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">...</svg>',
   });
 
-  // подсветка активной вкладки на my-library 
+  // автоматическая подсветка активной вкладки при переходе на my-library 
   refs.showWatchedBtn.setAttribute('data-action', 'open');
 
   if (refs.showQueueBtn.classList.contains('color-orange')) {
@@ -35,7 +35,7 @@ async function onWatchedBtnClick(e) {
 
   // забор списка из бэкэнда и рендер
   const res = await getDataFromWatchedBackEnd(); 
-  console.log('res', res);
+  // console.log('res', res);
   const dataRes = res.data;
   // проверка на наличие фильмов в списке
   if(dataRes.length === 0){

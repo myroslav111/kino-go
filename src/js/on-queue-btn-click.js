@@ -18,13 +18,13 @@ async function onQueueBtnClick(e) {
     // refs.container.innerHTML = markup;
 
     
-  // // блок для бэкэнда
+  // блок для бэкэнда
   Notiflix.Loading.custom('Loading...', {
     customSvgCode:
       '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">...</svg>',
   });
 
-  // подсветка активной вкладки на my-library
+  // подсветка активной вкладки на my-library при нажатии на кнопку QUEUE
   refs.showQueueBtn.setAttribute('data-action', 'open');
 
   if (refs.showWatchedBtn.classList.contains('color-orange')) {

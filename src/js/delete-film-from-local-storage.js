@@ -1,7 +1,7 @@
-import {createDataObjectByIdFromAPI} from './create-data-object-by-id-from-api'
+import {createDataObjectByIdFromApiForLocalStorage} from './create-data-object-by-id-from-api-for-local-storage'
 
 async function deleteFilmFromLocalStorage(event) {
-      const filmData = await createDataObjectByIdFromAPI(event.target.id);
+      const filmData = await createDataObjectByIdFromApiForLocalStorage(event.target.id);
 
     console.log(filmData);
 }

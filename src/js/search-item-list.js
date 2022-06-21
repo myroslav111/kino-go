@@ -9,17 +9,25 @@ import { getAllCardFilms } from './get-popular-films-for-render';
 let numPage = 0;
 
 // фун. рендеру запроса популярних фильмов
-async function singleCardItem() {
+async function singleCardItem(num) {
   // numPage += 1;
-  numPage = localStorage.getItem("pageNumber");
+  numPage = localStorage.getItem('pageNumber');
   try {
     // запрос на популярні
-    const allCardFilms = await getAllCardFilms(numPage);
-    const markup = singleCardTpl(allCardFilms.results);
-    refs.container.insertAdjacentHTML('beforeend', markup);
+    // перевірка чи ми зараз на мобілі якщо так то локал сторідж вімикаемо
+    if (num) {
+      const allCardFilms = await getAllCardFilms(num);
+      const markup = singleCardTpl(allCardFilms.results);
+      refs.container.insertAdjacentHTML('beforeend', markup);
+    } else {
+      const allCardFilms = await getAllCardFilms(numPage);
+      const markup = singleCardTpl(allCardFilms.results);
+      refs.container.insertAdjacentHTML('beforeend', markup);
+    }
 
     // запуск інфінітскрола на мобілку
     if (document.querySelector('body').scrollWidth < 767) {
+      // numPage += 1;
       document.querySelector('.nav').classList.add('visually-hidden');
       observeOnLastElOfGallery(document.querySelectorAll('.movie-card'));
     }

@@ -1,5 +1,6 @@
 import { singleCardItem } from './search-item-list';
 import { refs } from './refs';
+let num = 0;
 
 //фун. для инфинити скрола
 function observeOnLastElOfGallery(set) {
@@ -11,14 +12,15 @@ function observeOnLastElOfGallery(set) {
 
   function handleImg(myImg, observer) {
     if (myImg[0].isIntersecting) {
-      loadImage();
+      num += 1;
+      loadImage(num);
     }
   }
 
   const observer = new IntersectionObserver(handleImg, optios);
   observer.observe(set[set.length - 1]);
-  function loadImage() {
-    singleCardItem();
+  function loadImage(num) {
+    singleCardItem(num);
   }
 }
 

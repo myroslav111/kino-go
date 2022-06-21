@@ -46,8 +46,12 @@ async function modalCardItem(id) {
         document.querySelector('.raise').classList.remove('is-hidden');
 
         // // для localStorage раскомментировать 
-        document.querySelector('.raise').addEventListener('click', deleteFilmFromQueueForLocalStorage);
-        document.querySelector('.raise').addEventListener('click', deleteFilmFromWatchedForLocalStorage);
+        if(refs.showQueueBtn.classList.contains('color-orange')){
+          document.querySelector('.raise').addEventListener('click', deleteFilmFromQueueForLocalStorage);
+        }
+        if(refs.showWatchedBtn.classList.contains('color-orange')){
+          document.querySelector('.raise').addEventListener('click', deleteFilmFromWatchedForLocalStorage);
+        }
 
 
         // // для бэкэнда раскомментировать 

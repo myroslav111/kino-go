@@ -15,6 +15,8 @@ async function onAddToQueueBtnClickForLocalStorage(event) {
   }
   arrayQueue.push(filmData);
   localStorage.setItem('queue', JSON.stringify(arrayQueue));
+  Notiflix.Notify.success('Фильм добавлен в QUEUE.')
+
 }
 
 export { onAddToQueueBtnClickForLocalStorage };

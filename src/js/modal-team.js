@@ -28,6 +28,8 @@ function closeModalOnBackdropClick(event) {
   if (event.target === refs.modalStudents) {
     // console.log("event.target", event.target);
     refs.modalStudents.classList.add('is-hidden');
+    document.removeEventListener('keydown', onModalPressEsc);
+
   }
 }
 

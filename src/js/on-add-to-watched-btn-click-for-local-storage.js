@@ -13,6 +13,7 @@ async function onAddToWatchedBtnClickForLocalStorage(event) {
   }
   arrayWatched.push(filmData);
   localStorage.setItem('watched', JSON.stringify(arrayWatched));
+  Notiflix.Notify.success('Фильм добавлен в WATCHED.');
 }
 
 export {onAddToWatchedBtnClickForLocalStorage}

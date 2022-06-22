@@ -3,12 +3,6 @@ import singleCardTpl from '../templates/single-card.hbs'
 import Notiflix from 'notiflix';
 
 async function onWatchedBtnClickForLocalStorage(e) {
-  const watchedFilms = localStorage.getItem('watched');
-    if (watchedFilms === null) {
-      Notiflix.Notify.failure('В WATCHED нет фильмов.');
-      return;
-  }
-  
   // автоматическая подсветка активной вкладки при переходе на my-library 
   refs.showWatchedBtn.setAttribute('data-action', 'open');
 
@@ -16,6 +10,11 @@ async function onWatchedBtnClickForLocalStorage(e) {
     refs.showQueueBtn.classList.remove('color-orange');
   }
   refs.showWatchedBtn.classList.add('color-orange');
+
+  const watchedFilms = localStorage.getItem('watched');
+    if (watchedFilms === null || watchedFilms === "[]") {
+      Notiflix.Notify.failure('В WATCHED нет фильмов.');
+  }  
 
     // создание разметки по шаблону из распарсеного ответа
     const markup = singleCardTpl(JSON.parse(watchedFilms));

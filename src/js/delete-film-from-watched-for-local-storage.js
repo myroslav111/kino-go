@@ -1,6 +1,8 @@
 import {refs} from './refs';
 import singleCardTpl from '../templates/single-card.hbs';
-import {createDataObjectByIdFromApiForLocalStorage} from './create-data-object-by-id-from-api-for-local-storage'
+import { createDataObjectByIdFromApiForLocalStorage } from './create-data-object-by-id-from-api-for-local-storage';
+import { onWatchedBtnClickForLocalStorage } from './on-watched-btn-click-for-local-storage';
+import Notiflix from 'notiflix';
 
 async function deleteFilmFromWatchedForLocalStorage(event) {
   // создает объект по id фильма
@@ -11,10 +13,11 @@ async function deleteFilmFromWatchedForLocalStorage(event) {
   const filteredArray = arrayWatched.filter(el => el.id !== filmData.id);
   // запись нового массива в localStorage
   localStorage.setItem('watched', JSON.stringify(filteredArray));
+
+  Notiflix.Notify.info('Фильм удален из WATCHED.');
   // рендер обновленного списка
-  const watchedFilms = localStorage.getItem('watched');
-  const markup = singleCardTpl(JSON.parse(watchedFilms));
-    refs.container.innerHTML = markup;
+  await onWatchedBtnClickForLocalStorage();
+  refs.modal.classList.add('is-hidden');
 }
 
 export {deleteFilmFromWatchedForLocalStorage}

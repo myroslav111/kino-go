@@ -10,7 +10,6 @@ function onLogoClick() {
   if (!refs.library.classList.contains('current')) {
     refs.formEl.reset();
   }
-  console.log(document.querySelector('.nav'));
   document.querySelector('.pager').innerHTML = '';
   singleCardItem();
   refs.logoEl.removeEventListener('click', onLogoClick);

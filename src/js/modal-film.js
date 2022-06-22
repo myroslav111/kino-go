@@ -51,7 +51,6 @@ async function modalCardItem(id) {
 
     // id путь к трейлеру ютюб
     path = trailer.data.results[0].key;
-    console.log(path);
     const refIconYouTobe = document.querySelector('.svg--icon');
 
     // слушаем кнопку открытия ютюба

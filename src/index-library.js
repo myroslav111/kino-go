@@ -12,6 +12,7 @@ import {
 } from './js/modal-team';
 import { onLogoClick } from './js/on-logo-click';
 import { onClickPagSearch } from './js/paginator';
+import { openModalFilmById, closeModalFilm } from './js/open-and-close-modal';
 
 onWatchedBtnClick();
 refs.showQueueBtn.addEventListener('click', onQueueBtnClick);

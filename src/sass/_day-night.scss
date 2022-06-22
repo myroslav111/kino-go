@@ -1,0 +1,136 @@
+html.dark,
+.dark body {
+  color: #fff;
+  background: #000;
+  background-image: url('../images/bgi/alIPFZ3-movie-backgrounds.webp');
+  background-position: bottom;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 100px;
+}
+
+.containerrr {
+  position: fixed;
+  width: 15px;
+  left: 0px;
+  z-index: 900;
+}
+
+.dark .containerrr {
+  background: #000;
+  background-image: url('../images/bgi/alIPFZ3-movie-backgrounds.webp');
+  background-position: bottom;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 100px;
+}
+
+.toggle_switch {
+  width: 100px;
+  height: 45px;
+  position: relative;
+}
+
+input[type='checkbox'].switch_3 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  outline: 0;
+  z-index: 1;
+}
+
+svg.checkbox .outer-ring {
+  stroke-dasharray: 375;
+  stroke-dashoffset: 375;
+  -webkit-animation: resetRing 0.35s ease-in-out forwards;
+  animation: resetRing 0.35s ease-in-out forwards;
+}
+
+input[type='checkbox'].switch_3:checked + svg.checkbox .outer-ring {
+  -webkit-animation: animateRing 0.35s ease-in-out forwards;
+  animation: animateRing 0.35s ease-in-out forwards;
+}
+
+input[type='checkbox'].switch_3:checked + svg.checkbox .is_checked {
+  opacity: 1;
+  -webkit-transform: translateX(0) rotate(0deg);
+  transform: translateX(0) rotate(0deg);
+}
+
+input[type='checkbox'].switch_3:checked + svg.checkbox .is_unchecked {
+  opacity: 0;
+  -webkit-transform: translateX(-200%) rotate(180deg);
+  transform: translateX(-200%) rotate(180deg);
+}
+
+svg.checkbox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+svg.checkbox .is_checked {
+  opacity: 0;
+  fill: yellow;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: translateX(200%) rotate(45deg);
+  transform: translateX(200%) rotate(45deg);
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+svg.checkbox .is_unchecked {
+  opacity: 1;
+  fill: #fff;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: translateX(0) rotate(0deg);
+  transform: translateX(0) rotate(0deg);
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+@-webkit-keyframes animateRing {
+  to {
+    stroke-dashoffset: 0;
+    stroke: #b0aa28;
+  }
+}
+
+@keyframes animateRing {
+  to {
+    stroke-dashoffset: 0;
+    stroke: #b0aa28;
+  }
+}
+
+@-webkit-keyframes resetRing {
+  to {
+    stroke-dashoffset: 0;
+    stroke: #233043;
+  }
+}
+
+@keyframes resetRing {
+  to {
+    stroke-dashoffset: 0;
+    stroke: #233043;
+  }
+}

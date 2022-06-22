@@ -46,6 +46,7 @@ async function deleteFilm(e) {
   } finally {
     // делаем рефреш страници
     refs.modal.classList.add('is-hidden');
+    document.querySelector('body').classList.remove('stop-scrolling');
     if (refs.showWatchedBtn.classList.contains('color-orange')) {
       onWatchedBtnClick();
     } else {

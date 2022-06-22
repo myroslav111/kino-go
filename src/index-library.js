@@ -16,13 +16,16 @@ import { onQueueBtnClickForLocalStorage } from './js/on-queue-btn-click-for-loca
 import { onWatchedBtnClickForLocalStorage } from './js/on-watched-btn-click-for-local-storage';
 
 
-// // для localStorage раскомментировать
+// // // для localStorage раскомментировать
 // onWatchedBtnClickForLocalStorage();
 // refs.showQueueBtn.addEventListener('click', onQueueBtnClickForLocalStorage);
 // refs.showWatchedBtn.addEventListener('click', onWatchedBtnClickForLocalStorage);
+// console.log("Сейчас у нас работает localStorage");
 
 
-// // для бэкэнда раскомментировать
+// для бэкэнда раскомментировать
 onWatchedBtnClick();
 refs.showQueueBtn.addEventListener('click', onQueueBtnClick);
 refs.showWatchedBtn.addEventListener('click', onWatchedBtnClick);
+console.log("Сейчас у нас работает back-end");
+

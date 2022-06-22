@@ -27,13 +27,20 @@ async function modalCardItem(id) {
     const addToWatchedBtn = document.querySelector('button[data-action="add-to-watched"]');
     const addToQueueBtn = document.querySelector('button[data-action="add-to-queue"]');
     
-    // // для localStorage раскомментировать
+
+    // // // для localStorage раскомментировать
     // addToWatchedBtn.addEventListener('click', onAddToWatchedBtnClickForLocalStorage);
     // addToQueueBtn.addEventListener('click', onAddToQueueBtnClickForLocalStorage);
+    // console.log("Сейчас у нас работает localStorage");
+
     
-    // // для бэкэнда раскомментировать
+
+    // для бэкэнда раскомментировать
     addToWatchedBtn.addEventListener('click', onAddToWatchedBtnClick);
     addToQueueBtn.addEventListener('click', onAddToQueueBtnClick);
+    console.log("Сейчас у нас работает back-end");
+
+
 
     // подсветка бекграунда кнопки текущей вкладки
     try {
@@ -45,17 +52,21 @@ async function modalCardItem(id) {
         document.querySelector('.list-btn-modal').classList.add('is-hidden');
         document.querySelector('.raise').classList.remove('is-hidden');
 
-        // // // для localStorage раскомментировать 
+        // // // для localStorage раскомментировать
         // if(refs.showQueueBtn.classList.contains('color-orange')){
         //   document.querySelector('.raise').addEventListener('click', deleteFilmFromQueueForLocalStorage);
         // }
         // if(refs.showWatchedBtn.classList.contains('color-orange')){
         //   document.querySelector('.raise').addEventListener('click', deleteFilmFromWatchedForLocalStorage);
         // }
+        // console.log("Сейчас у нас работает localStorage");
+
 
 
         // // для бэкэнда раскомментировать 
         document.querySelector('.raise').addEventListener('click', deleteFilm);
+        console.log("Сейчас у нас работает back-end");
+
 
       }
     } catch (error) {

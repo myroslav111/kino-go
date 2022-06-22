@@ -3,9 +3,11 @@ const refs = {
   container: document.querySelector('.container'),
 
   formEl: document.querySelector('form'),
- 
+
   headerEl: document.querySelector('.header'),
   logoEl: document.querySelector('.header__home'),
+
+  inputEl: document.querySelector('input'),
 
   home: document.querySelector('.header-home-js'),
   library: document.querySelector('.header-library-js'),
@@ -17,6 +19,7 @@ const refs = {
   modalStudents: document.querySelector('.backdrop'),
   closeModalTeam: document.querySelector('button.close'),
   teamList: document.querySelector('.team-list'),
+  scrollToTopBtn: document.querySelector('.scroll__to--top'),
 
   pagContainer: document.querySelector('.pager'),
 };

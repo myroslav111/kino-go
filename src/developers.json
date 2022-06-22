@@ -3,21 +3,21 @@
     "photo": "https://failiem.lv/thumb_show.php?i=9kns4xhxh",
     "description": "Photo Myroslav Kozar",
     "name": "Myroslav Kozar",
-    "position": "Team Lead (режисер)",
+    "position": "Вешатель",
     "github": "https://github.com/myroslav111"
   },
   {
-    "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-Uluxe_P-hVIU0sdsqf3KII4Ul9WPqtVTFg&usqp=CAU",
+    "photo": "https://files.fm/thumb_show.php?i=pdm5uue5d",
     "description": "Photo Volodymyr Kavun",
     "name": "Volodymyr Kavun",
-    "position": "Scrum (продюсер)",
+    "position": "Охотник за головами",
     "github": "https://github.com/VolodymyrKavun"
   },
   {
     "photo": "https://files.fm/thumb_show.php?i=55xdz2dhk",
     "description": "Photo Maksim Peltek",
     "name": "Maksim Peltek",
-    "position": "Developer (звезда кино)",
+    "position": "Ковбой",
     "github": "https://github.com/Maksimchik36"
   }
 ]

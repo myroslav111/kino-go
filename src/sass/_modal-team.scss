@@ -168,13 +168,14 @@ button.close:focus {
   align-items: center;
   flex-wrap: wrap;
 
-  padding: 0;
+  padding: 15px 15px 50px 15px;
+  // padding-bottom: 15px;
   // border: 3px solid green;
 
   position: relative;
   // width: 700px;
   justify-content: center;
-  padding: 30px;
+  // padding: 30px;
 }
 
 .team-list .card {
@@ -210,7 +211,7 @@ button.close:focus {
 .team-list .card .imgBx {
   position: relative;
   width: 260px;
-  // height: 173px;
+  height: 367px;
   top: -30px;
   left: 0px;
   z-index: 1;

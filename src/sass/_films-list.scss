@@ -69,10 +69,12 @@ a:hover {
 }
 
 .movie-card:hover {
+
   cursor: pointer;
   -webkit-transform: scale(1.03);
   transform: scale(1.03);
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+
 }
 
 .movie-content {
@@ -129,7 +131,7 @@ a:hover {
 
 .info-section span {
   font-weight: 500;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 @media screen and (max-width: 500px) {

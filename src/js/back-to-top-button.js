@@ -1,13 +1,14 @@
-const scrollToTopBtn = document.querySelector('.scroll__to--top');
+import { refs } from './refs';
+
 const rootElement = document.documentElement;
 
 // *відрізок, на якому з'являється кнопка
 function handleScroll() {
   const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
   if (rootElement.scrollTop / scrollTotal > 0.15) {
-    scrollToTopBtn.classList.add('show--btn');
+    refs.scrollToTopBtn.classList.add('show--btn');
   } else {
-    scrollToTopBtn.classList.remove('show--btn');
+    refs.scrollToTopBtn.classList.remove('show--btn');
   }
 }
 
@@ -18,7 +19,7 @@ function scrollToTop() {
     behavior: 'smooth',
   });
 }
-scrollToTopBtn.addEventListener('click', scrollToTop);
+refs.scrollToTopBtn.addEventListener('click', scrollToTop);
 document.addEventListener('scroll', handleScroll);
 
 export { scrollToTop };

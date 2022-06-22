@@ -9,7 +9,7 @@ import { deleteFilmFromWatchedForLocalStorage} from './delete-film-from-watched-
 import { closeModalFilm } from './open-and-close-modal';
 import { onAddToWatchedBtnClick } from './on-add-to-watched-btn-click';
 import { onAddToQueueBtnClick } from './on-add-to-queue-btn-click';
-
+import Notiflix from 'notiflix';
 import { onYouTubeIframeAPIReady, closeYouTube } from './youTube';
 
 // фун. создания и рендера модалки
@@ -70,7 +70,7 @@ async function modalCardItem(id) {
 
       }
     } catch (error) {
-      console.log(error);
+      // console.log();
     }
 
     // бекграунд колор карточки модалки

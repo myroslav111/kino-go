@@ -1,11 +1,11 @@
 import { getDataSingleCard, getDataGenre, getDataByInput } from './api';
 import { refs } from './refs';
 
-
 import { getAllCardFilms } from './get-popular-films-for-render';
 
 import singleCardTpl from '../templates/single-card.hbs';
-
+import Notiflix from 'notiflix';
+import { getCardByName } from './get-films-by-name';
 
 // фун. створення кнопок
 function renderButtons(count) {
@@ -50,6 +50,7 @@ async function onClickPagSearch(e) {
           // e.target.classList.add('current-accent-page');
 
 
+  e.target.classList.add('current-accent-page');
   // міняемо цифру кнопок
   switch (e.target.id) {
     case 'rigth':
@@ -58,7 +59,6 @@ async function onClickPagSearch(e) {
         el.textContent = el.dataset.page;
       });
       prev.classList.remove('is-hidden');
-      // break;
       return;
 
     case 'left':
@@ -70,47 +70,35 @@ async function onClickPagSearch(e) {
         prev.classList.add('is-hidden');
         return;
       }
-      // break;
       return;
 
     default:
       console.log('все гуд');
   }
 
-///// запись выбранной в пагинаторе страницы в localStorage
-let pageNumber = e.target.dataset.page;
-localStorage.setItem("pageNumber", pageNumber);
+  /// запись выбранной в пагинаторе страницы в localStorage
+  let pageNumber = e.target.dataset.page;
+  localStorage.setItem('pageNumber', pageNumber);
 
   // рендер пейджа по номеру натиснутої кнопки
-  switch (document.querySelector('input').value === '' && e.target.classList.contains('pag')) {
+  switch (refs.inputEl.value === '' && e.target.classList.contains('pag')) {
     case false:
-      const response = await (
-        await getDataByInput(document.querySelector('input').value, e.target.dataset.page)
-      ).data;
-      
+      const response = await getCardByName(refs.inputEl.value, Number(pageNumber));
       refs.container.innerHTML = singleCardTpl(response.results);
       break;
-
     case true:
+      pageNumber = localStorage.getItem('pageNumber');
 
-      pageNumber = localStorage.getItem("pageNumber");
-
-
-
-
-      const allCardFilms = await getAllCardFilms(e.target.dataset.page);
+      const allCardFilms = await getAllCardFilms(pageNumber);
       const markup = singleCardTpl(allCardFilms.results);
-
 
       refs.container.innerHTML = '';
       refs.container.insertAdjacentHTML('beforeend', markup);
       index = allCardFilms.page;
 
- 
       if (document.querySelectorAll('.pag')[5].dataset.page > 6) {
         prev.classList.remove('is-hidden');
       }
-
 
       // вішаем бекграунд на поточну кнопку
       if (index === Number(e.target.textContent)) {

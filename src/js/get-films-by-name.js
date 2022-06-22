@@ -1,12 +1,12 @@
 import { getDataGenre, getDataByInput } from './api';
 
 // Ф-я отримання усіх популярних карток фільмів
-async function getCardByName(name) {
+async function getCardByName(name, page) {
   // *усі жанри
   const getJanre = await getDataGenre();
 
   // * проміс карточок фільмів
-  const getFilms = await getDataByInput(name);
+  const getFilms = await getDataByInput(name, page);
 
   // * розпромісовані карточки фільмів
   const filmsByName = getFilms.data;

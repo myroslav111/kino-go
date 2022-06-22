@@ -27,13 +27,13 @@ async function modalCardItem(id) {
     const addToWatchedBtn = document.querySelector('button[data-action="add-to-watched"]');
     const addToQueueBtn = document.querySelector('button[data-action="add-to-queue"]');
     
-    // для localStorage раскомментировать
-    addToWatchedBtn.addEventListener('click', onAddToWatchedBtnClickForLocalStorage);
-    addToQueueBtn.addEventListener('click', onAddToQueueBtnClickForLocalStorage);
+    // // для localStorage раскомментировать
+    // addToWatchedBtn.addEventListener('click', onAddToWatchedBtnClickForLocalStorage);
+    // addToQueueBtn.addEventListener('click', onAddToQueueBtnClickForLocalStorage);
     
     // // для бэкэнда раскомментировать
-    // addToWatchedBtn.addEventListener('click', onAddToWatchedBtnClick);
-    // addToQueueBtn.addEventListener('click', onAddToQueueBtnClick);
+    addToWatchedBtn.addEventListener('click', onAddToWatchedBtnClick);
+    addToQueueBtn.addEventListener('click', onAddToQueueBtnClick);
 
     // подсветка бекграунда кнопки текущей вкладки
     try {
@@ -45,17 +45,17 @@ async function modalCardItem(id) {
         document.querySelector('.list-btn-modal').classList.add('is-hidden');
         document.querySelector('.raise').classList.remove('is-hidden');
 
-        // // для localStorage раскомментировать 
-        if(refs.showQueueBtn.classList.contains('color-orange')){
-          document.querySelector('.raise').addEventListener('click', deleteFilmFromQueueForLocalStorage);
-        }
-        if(refs.showWatchedBtn.classList.contains('color-orange')){
-          document.querySelector('.raise').addEventListener('click', deleteFilmFromWatchedForLocalStorage);
-        }
+        // // // для localStorage раскомментировать 
+        // if(refs.showQueueBtn.classList.contains('color-orange')){
+        //   document.querySelector('.raise').addEventListener('click', deleteFilmFromQueueForLocalStorage);
+        // }
+        // if(refs.showWatchedBtn.classList.contains('color-orange')){
+        //   document.querySelector('.raise').addEventListener('click', deleteFilmFromWatchedForLocalStorage);
+        // }
 
 
         // // для бэкэнда раскомментировать 
-        // document.querySelector('.raise').addEventListener('click', deleteFilm);
+        document.querySelector('.raise').addEventListener('click', deleteFilm);
 
       }
     } catch (error) {

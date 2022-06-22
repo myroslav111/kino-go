@@ -28,7 +28,6 @@ function onModalPressEsc(event) {
 // закрывает модалку при click на backdrop
 function closeModalOnBackdropClick(event) {
   if (event.target === refs.modalStudents) {
-    // console.log("event.target", event.target);
     refs.modalStudents.classList.add('is-hidden');
     document.querySelector('body').classList.remove('stop-scrolling');
   }

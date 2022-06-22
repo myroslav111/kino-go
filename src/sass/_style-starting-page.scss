@@ -7,17 +7,23 @@
   transform: translate(-50%, -50%);
   z-index: -1;
   transition: all 1s ease-out;
+
   // display: none;
+  transition: 3.7s;
 }
 
 .video {
   height: 100vh;
+
   background: #000;
+  z-index: 1000;
+
+  // transition: 3.7s;
 }
 
 .video:before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -39,6 +45,7 @@
   font-size: 5em;
   font-family: sans-serif;
   letter-spacing: 0.2em;
+  // transition: 1.7s;
   @media screen and (max-width: 425.99px) {
     font-size: 2em;
   }
@@ -101,7 +108,7 @@ div .letter:nth-child(9) {
 }
 
 video {
-  width: 100%;
-  height: 113%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
 }

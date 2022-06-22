@@ -29,6 +29,7 @@ function onModalPressEsc(event) {
 function closeModalOnBackdropClick(event) {
   if (event.target === refs.modalStudents) {
     refs.modalStudents.classList.add('is-hidden');
+    document.removeEventListener('keydown', onModalPressEsc);
     document.querySelector('body').classList.remove('stop-scrolling');
   }
 }
@@ -37,7 +38,7 @@ function closeModalOnBackdropClick(event) {
 function closeModalOnCrossClick(event) {
   console.log(event.currentTarget === refs.closeModalTeam);
   if (event.currentTarget === refs.closeModalTeam) {
-    console.log('event.target', event.target);
+    // console.log('event.target', event.target);
     refs.modalStudents.classList.add('is-hidden');
     document.querySelector('body').classList.remove('stop-scrolling');
     refs.closeModalTeam.removeEventListener('click', closeModalOnCrossClick);

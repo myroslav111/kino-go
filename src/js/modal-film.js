@@ -2,6 +2,10 @@ import { getData, getTrailer } from './api';
 import modalFilmTpl from '../templates/modal-film.hbs';
 import { refs } from './refs';
 import { deleteFilm } from './delete-film-from-back';
+import { onAddToQueueBtnClickForLocalStorage } from './on-add-to-queue-btn-click-for-local-storage';
+import { onAddToWatchedBtnClickForLocalStorage } from './on-add-to-watched-btn-click-for-local-storage';
+import { deleteFilmFromQueueForLocalStorage } from './delete-film-from-queue-for-local-storage';
+import { deleteFilmFromWatchedForLocalStorage} from './delete-film-from-watched-for-local-storage';
 import { closeModalFilm } from './open-and-close-modal';
 import { onAddToWatchedBtnClick } from './on-add-to-watched-btn-click';
 import { onAddToQueueBtnClick } from './on-add-to-queue-btn-click';
@@ -22,18 +26,48 @@ async function modalCardItem(id) {
     // рефи на кнопки модалки по додаванню данніх в локал сторедж и бека
     const addToWatchedBtn = document.querySelector('button[data-action="add-to-watched"]');
     const addToQueueBtn = document.querySelector('button[data-action="add-to-queue"]');
+    
+
+    // // // для localStorage раскомментировать
+    // addToWatchedBtn.addEventListener('click', onAddToWatchedBtnClickForLocalStorage);
+    // addToQueueBtn.addEventListener('click', onAddToQueueBtnClickForLocalStorage);
+    // console.log("Сейчас у нас работает localStorage");
+
+    
+
+    // для бэкэнда раскомментировать
     addToWatchedBtn.addEventListener('click', onAddToWatchedBtnClick);
     addToQueueBtn.addEventListener('click', onAddToQueueBtnClick);
+    console.log("Сейчас у нас работает back-end");
+
+
 
     // подсветка бекграунда кнопки текущей вкладки
     try {
       if (
-        refs.showWatchedBtn.dataset.action === 'open' ||
-        refs.showQueueBtn.dataset.action === 'open'
+        refs.library.classList.contains('current')
+        // refs.showWatchedBtn.dataset.action === 'open' ||
+        // refs.showQueueBtn.dataset.action === 'open'
       ) {
         document.querySelector('.list-btn-modal').classList.add('is-hidden');
         document.querySelector('.raise').classList.remove('is-hidden');
+
+        // // // для localStorage раскомментировать
+        // if(refs.showQueueBtn.classList.contains('color-orange')){
+        //   document.querySelector('.raise').addEventListener('click', deleteFilmFromQueueForLocalStorage);
+        // }
+        // if(refs.showWatchedBtn.classList.contains('color-orange')){
+        //   document.querySelector('.raise').addEventListener('click', deleteFilmFromWatchedForLocalStorage);
+        // }
+        // console.log("Сейчас у нас работает localStorage");
+
+
+
+        // // для бэкэнда раскомментировать 
         document.querySelector('.raise').addEventListener('click', deleteFilm);
+        console.log("Сейчас у нас работает back-end");
+
+
       }
     } catch (error) {
       // console.log();

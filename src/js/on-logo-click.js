@@ -9,7 +9,7 @@ function onLogoClick() {
     localStorage.setItem("pageNumber", 1);
     refs.container.innerHTML = '';
     refs.formEl.reset();
-    console.log(document.querySelector('.nav'));
+    // console.log(document.querySelector('.nav'));
     document.querySelector('.pager').innerHTML = '';
     singleCardItem();
   }

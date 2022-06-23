@@ -3,7 +3,7 @@ import { getDataFromQueueBackEnd, postDataToBackEndQueue } from './api-back-end'
 import { getData } from './api';
 import Notiflix from 'notiflix';
 
-// фун. додавання клікнутого фільму у локал сторедж
+// фун. додавання клікнутого фільму в back-end Queue
 async function onAddToQueueBtnClick(event) {
   // // создание объекта данных фильма по id
   const filmData = await createDataObjectByIdFromAPI(event.target.id);

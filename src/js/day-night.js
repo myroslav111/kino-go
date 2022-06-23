@@ -11,6 +11,7 @@ function darkLight(e) {
   addDarkClassToHTML();
 });
 }
+
 function addDarkClassToHTML() {
   try {
     if (localStorage.getItem('theme') === 'dark') {

@@ -5,6 +5,7 @@ import libraryCardFilmTpl from '../templates/library-card-film.hbs';
 import singleCardTpl from '../templates/single-card.hbs';
 import Notiflix from 'notiflix';
 
+// отображение списка фильмов Watched из back-end
 async function onWatchedBtnClick(e) {
   Notiflix.Loading.custom('Loading...', {
     customSvgCode:
@@ -32,7 +33,6 @@ async function onWatchedBtnClick(e) {
     const markup = libraryCardFilmTpl(e);
     refs.container.insertAdjacentHTML('beforeend', markup);
   });
-  
 }
 
 export { onWatchedBtnClick };

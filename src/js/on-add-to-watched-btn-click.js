@@ -3,7 +3,7 @@ import { getDataFromWatchedBackEnd, postDataToBackEndWatched } from './api-back-
 import { getData } from './api';
 import Notiflix from 'notiflix';
 
-//  фун. додавання клікнутого фільму у локал сторедж
+// фун. додавання клікнутого фільму в back-end Watched
 async function onAddToWatchedBtnClick(event) {
   // // создание объекта данных фильма по id
   const filmData = await createDataObjectByIdFromAPI(event.target.id);

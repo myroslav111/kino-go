@@ -1,7 +1,7 @@
 import { createDataObjectByIdFromApiForLocalStorage } from "./create-data-object-by-id-from-api-for-local-storage";
 import Notiflix from 'notiflix';
 
-
+// добавляет выбранный фильм в localStorage
 async function onAddToQueueBtnClickForLocalStorage(event) {
     // создание объекта данных фильма по id
   const filmData = await createDataObjectByIdFromApiForLocalStorage(event.target.id);

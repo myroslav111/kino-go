@@ -12,9 +12,9 @@ import { onAddToQueueBtnClick } from './on-add-to-queue-btn-click';
 import Notiflix from 'notiflix';
 import { onYouTubeIframeAPIReady, closeYouTube } from './youTube';
 
-// фун. создания и рендера модалки
 let path;
 
+// фун. создания и рендера модалки
 async function modalCardItem(id) {
   try {
     const res = await (await getData(id)).data;
@@ -23,7 +23,7 @@ async function modalCardItem(id) {
     refs.modal.innerHTML = '';
     refs.modal.insertAdjacentHTML('afterbegin', markup);
 
-    // рефи на кнопки модалки по додаванню данніх в локал сторедж и бека
+    // рефи на кнопки модалки по додаванню даних в список Watched або Queue
     const addToWatchedBtn = document.querySelector('button[data-action="add-to-watched"]');
     const addToQueueBtn = document.querySelector('button[data-action="add-to-queue"]');
     
@@ -34,22 +34,23 @@ async function modalCardItem(id) {
     // console.log("Сейчас у нас работает localStorage");
 
     
-
     // для бэкэнда раскомментировать
     addToWatchedBtn.addEventListener('click', onAddToWatchedBtnClick);
     addToQueueBtn.addEventListener('click', onAddToQueueBtnClick);
     console.log("Сейчас у нас работает back-end");
 
 
-
     // подсветка бекграунда кнопки текущей вкладки
     try {
+      // если открыта вкладка my-library....
       if (
         refs.library.classList.contains('current')
         // refs.showWatchedBtn.dataset.action === 'open' ||
         // refs.showQueueBtn.dataset.action === 'open'
       ) {
+        // делаем кнопки добавления фильма скрытыми
         document.querySelector('.list-btn-modal').classList.add('is-hidden');
+        // делаем кнопку удаления фильма видимой
         document.querySelector('.raise').classList.remove('is-hidden');
 
 
@@ -87,11 +88,11 @@ async function modalCardItem(id) {
     path = trailer.data.results[0].key;
     const refIconYouTobe = document.querySelector('.svg--icon');
 
-    // слушаем кнопку открытия ютюба
+    // добавляем слушателя на кнопку открытия ютюба
     refIconYouTobe.addEventListener('click', openYouTobePlaer);
     const refBtnCloseYouTubePlaer = document.querySelector('.youtubeg');
 
-    // слушаем кнопку закрытия ютюба
+    // добавляем слушателя на кнопку закрытия ютюба
     refBtnCloseYouTubePlaer.addEventListener('click', closeYouTube);
   } catch (error) {
     console.log(error);

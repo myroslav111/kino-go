@@ -1,8 +1,6 @@
 import { getDataSingleCard, getDataGenre, getDataByInput } from './api';
 import { refs } from './refs';
-
 import { getAllCardFilms } from './get-popular-films-for-render';
-
 import singleCardTpl from '../templates/single-card.hbs';
 import Notiflix from 'notiflix';
 import { getCardByName } from './get-films-by-name';
@@ -34,6 +32,7 @@ function renderButtons(count) {
 }
 
 let index;
+
 // фун. роботи пагінатора
 async function onClickPagSearch(e) {
   const currentPage = document.querySelector('button.pager__link.pag.current-accent-page');
@@ -48,7 +47,6 @@ async function onClickPagSearch(e) {
     .querySelectorAll('.pager__link')
     .forEach(el => el.classList.remove('current-accent-page'));
           // e.target.classList.add('current-accent-page');
-
 
   e.target.classList.add('current-accent-page');
   // міняемо цифру кнопок

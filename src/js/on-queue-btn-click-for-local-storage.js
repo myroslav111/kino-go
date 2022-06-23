@@ -2,6 +2,7 @@ import { refs } from './refs';
 import singleCardTpl from '../templates/single-card.hbs';
 import Notiflix from 'notiflix';
 
+// отображение списка фильмов Queue из localStorage
 async function onQueueBtnClickForLocalStorage(event) {
   // подсветка активной вкладки на my-library при нажатии на кнопку QUEUE
   refs.showQueueBtn.setAttribute('data-action', 'open');
@@ -20,4 +21,5 @@ async function onQueueBtnClickForLocalStorage(event) {
   const markup = singleCardTpl(JSON.parse(queueFilms));
   refs.container.innerHTML = markup;
 }
+
 export { onQueueBtnClickForLocalStorage };

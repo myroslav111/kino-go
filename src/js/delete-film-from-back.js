@@ -10,6 +10,7 @@ import { onWatchedBtnClick } from './on-watched-btn-click';
 import { onQueueBtnClick } from './on-queue-btn-click';
 import Notiflix from 'notiflix';
 
+// удаление фильма из back-end
 async function deleteFilm(e) {
   try {
     const res = await (await getData(e.target.id)).data;
@@ -24,7 +25,7 @@ async function deleteFilm(e) {
           idForDel = Number(el.ids);
         }
       });
-      // удаляем фильм на бекенде
+      // удаляем фильм на бекенде из Watched
       await deleteDataFromBackEndWatched(idForDel);
       Notiflix.Notify.info('Фильм удален из WATCHED.');
       return;
@@ -36,7 +37,7 @@ async function deleteFilm(e) {
           idForDel = Number(el.ids);
         }
       });
-      // удаляем фильм на бекенде
+      // удаляем фильм на бекенде из Queue
       await deleteDataFromBackEndQueue(idForDel);
       Notiflix.Notify.info('Фильм удален из QUEUE.');
       return;

@@ -2,6 +2,7 @@ import { refs } from './refs';
 import singleCardTpl from '../templates/single-card.hbs'
 import Notiflix from 'notiflix';
 
+// отображение списка фильмов Watched из localStorage
 async function onWatchedBtnClickForLocalStorage(e) {
   // автоматическая подсветка активной вкладки при переходе на my-library 
   refs.showWatchedBtn.setAttribute('data-action', 'open');
@@ -20,4 +21,5 @@ async function onWatchedBtnClickForLocalStorage(e) {
     const markup = singleCardTpl(JSON.parse(watchedFilms));
     refs.container.innerHTML = markup;
 }
+
 export { onWatchedBtnClickForLocalStorage };

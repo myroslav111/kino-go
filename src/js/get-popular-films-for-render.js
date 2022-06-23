@@ -15,7 +15,6 @@ async function getAllCardFilms(page) {
   films.results.forEach(({ genre_ids, release_date }, index) => {
     const date = release_date.slice(0, 4);
     films.results[index].date_release = date;
-    // console.log(date);
     const stringJanres = getJanre.genres
       .filter(el => {
         return genre_ids.includes(el.id);
@@ -27,7 +26,6 @@ async function getAllCardFilms(page) {
     stringJanres.splice(2, 5, 'Other');
     films.results[index].janreStr = stringJanres;
   });
-  // console.log(films);
   return films;
 }
 

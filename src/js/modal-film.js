@@ -52,6 +52,7 @@ async function modalCardItem(id) {
         document.querySelector('.list-btn-modal').classList.add('is-hidden');
         document.querySelector('.raise').classList.remove('is-hidden');
 
+
         // // // для localStorage раскомментировать
         // if(refs.showQueueBtn.classList.contains('color-orange')){
         //   document.querySelector('.raise').addEventListener('click', deleteFilmFromQueueForLocalStorage);
@@ -60,7 +61,6 @@ async function modalCardItem(id) {
         //   document.querySelector('.raise').addEventListener('click', deleteFilmFromWatchedForLocalStorage);
         // }
         // console.log("Сейчас у нас работает localStorage");
-
 
 
         // // для бэкэнда раскомментировать 

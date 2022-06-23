@@ -6,20 +6,6 @@ import singleCardTpl from '../templates/single-card.hbs';
 import Notiflix from 'notiflix';
 
 async function onWatchedBtnClick(e) {
-  // блок для localStorage
-
-
-    // const watchedFilms = localStorage.getItem('watched');
-    // if (watchedFilms === null) {
-    //   Notiflix.Notify.failure('В WATCHED нет фильмов.');
-    //   return;
-    // }
-    // // создание разметки по шаблону из распарсеного ответа из localStorage
-    // const markup = singleCardTpl(JSON.parse(watchedFilms));
-    // refs.container.innerHTML = markup;
-
-  
-  // блок для бэкэнда
   Notiflix.Loading.custom('Loading...', {
     customSvgCode:
       '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">...</svg>',
@@ -35,7 +21,6 @@ async function onWatchedBtnClick(e) {
 
   // забор списка из бэкэнда и рендер
   const res = await getDataFromWatchedBackEnd(); 
-  // console.log('res', res);
   const dataRes = res.data;
   // проверка на наличие фильмов в списке
   if(dataRes.length === 0){

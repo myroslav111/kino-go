@@ -5,6 +5,14 @@ const rootElement = document.documentElement;
 // *відрізок, на якому з'являється кнопка
 function handleScroll() {
   const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+
+   // // Макс тестил
+  if (!document.querySelector('.video').classList.contains('hidden')){
+    console.log("Видимая фильмотека");
+    return;
+  }
+
+
   if (rootElement.scrollTop / scrollTotal > 0.15) {
     refs.scrollToTopBtn.classList.add('show--btn');
   } else {

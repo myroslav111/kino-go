@@ -38,7 +38,6 @@ function closeModalOnBackdropClick(event) {
 function closeModalOnCrossClick(event) {
   console.log(event.currentTarget === refs.closeModalTeam);
   if (event.currentTarget === refs.closeModalTeam) {
-    // console.log('event.target', event.target);
     refs.modalStudents.classList.add('is-hidden');
     document.querySelector('body').classList.remove('stop-scrolling');
     refs.closeModalTeam.removeEventListener('click', closeModalOnCrossClick);

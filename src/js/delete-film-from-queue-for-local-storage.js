@@ -4,6 +4,7 @@ import {createDataObjectByIdFromApiForLocalStorage} from './create-data-object-b
 import { onQueueBtnClickForLocalStorage } from './on-queue-btn-click-for-local-storage';
 import Notiflix from 'notiflix';
 
+// удаляет фильм из localStorage Queue и обновляет список с помощью onQueueBtnClickForLocalStorage
 async function deleteFilmFromQueueForLocalStorage(event) {
   // создает объект по id фильма
   const filmData = await createDataObjectByIdFromApiForLocalStorage(event.target.id);

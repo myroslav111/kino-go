@@ -4,6 +4,7 @@ import { createDataObjectByIdFromApiForLocalStorage } from './create-data-object
 import { onWatchedBtnClickForLocalStorage } from './on-watched-btn-click-for-local-storage';
 import Notiflix from 'notiflix';
 
+// удаляет фильм из localStorage Watched и обновляет список с помощью onWatchedBtnClickForLocalStorage
 async function deleteFilmFromWatchedForLocalStorage(event) {
   // создает объект по id фильма
   const filmData = await createDataObjectByIdFromApiForLocalStorage(event.target.id);

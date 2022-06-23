@@ -1,5 +1,6 @@
 import { singleCardItem } from './search-item-list';
 import { refs } from './refs';
+
 let num = 1;
 
 //фун. для инфинити скрола

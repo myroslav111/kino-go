@@ -5,20 +5,8 @@ import libraryCardFilmTpl from '../templates/library-card-film.hbs';
 import singleCardTpl from '../templates/single-card.hbs';
 import Notiflix from 'notiflix';
 
+// отображение списка фильмов Queue из back-end
 async function onQueueBtnClick(e) {
-   // блок для localStorage
-
-    // const queueFilms = localStorage.getItem('queue');
-    // if (queueFilms === null) {
-    //   Notiflix.Notify.failure('В QUEUE нет фильмов.');
-    //   return;
-    // }
-    // // создание разметки по шаблону из распарсеного ответа из localStorage
-    // const markup = singleCardTpl(JSON.parse(queueFilms));
-    // refs.container.innerHTML = markup;
-
-    
-  // блок для бэкэнда
   Notiflix.Loading.custom('Loading...', {
     customSvgCode:
       '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">...</svg>',

@@ -1,6 +1,8 @@
-import {getData} from './api'
-import {getCardByName} from './get-films-by-name'
+import { getData } from './api';
+import { getCardByName } from './get-films-by-name';
+
 const obj = {};
+
 // создание объекта из API по id  
 async function createDataObjectByIdFromApiForLocalStorage(id) {
   const response = await (await getData(id)).data;
@@ -13,4 +15,5 @@ async function createDataObjectByIdFromApiForLocalStorage(id) {
   obj.vote_count = response.vote_count;
   return obj;
 }
+
 export {createDataObjectByIdFromApiForLocalStorage}

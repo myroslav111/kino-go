@@ -16,7 +16,7 @@ async function singleCardItem(num) {
 
   try {
     // запрос на популярні
-    // перевірка чи ми зараз на мобілі якщо так то локал сторідж вімикаемо
+    // перевірка чи ми зараз на мобілі якщо так то локал сторідж вимикаемо
     if (num) {
       allCardFilms = await getAllCardFilms(num);
       const markup = singleCardTpl(allCardFilms.results);
